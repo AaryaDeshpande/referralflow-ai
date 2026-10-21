@@ -1,0 +1,301 @@
+{
+  "timestamp": "2026-10-21T02:40:42.888Z",
+  "mode": "Node VM state-transition tests with explicit DOM stubs; no browser rendering, human usability test, team rehearsal or real delivery verified",
+  "assertions": 422,
+  "totalTests": 65,
+  "passed": 65,
+  "failed": 0,
+  "results": [
+    {
+      "name": "A loads with DOM stubs and exposes its own API",
+      "status": "passed"
+    },
+    {
+      "name": "B core loads without a browser and exposes its own API",
+      "status": "passed"
+    },
+    {
+      "name": "C core loads without a browser and exposes its own API",
+      "status": "passed"
+    },
+    {
+      "name": "A prevents empty generation, premature approval and premature export",
+      "status": "passed"
+    },
+    {
+      "name": "A generates an editable letter from supplied fictional notes",
+      "status": "passed"
+    },
+    {
+      "name": "A requires clinician review, recipient confirmation and unresolved acknowledgement",
+      "status": "passed"
+    },
+    {
+      "name": "A exports exactly the approved letter with explicit simulation labels",
+      "status": "passed"
+    },
+    {
+      "name": "A copies state out without allowing caller mutation of approved report",
+      "status": "passed"
+    },
+    {
+      "name": "A letter and recipient changes each invalidate approval and exports",
+      "status": "passed"
+    },
+    {
+      "name": "A changed source requires regeneration even after confirmations",
+      "status": "passed"
+    },
+    {
+      "name": "A missing source facts remain explicit until acknowledged",
+      "status": "passed"
+    },
+    {
+      "name": "A reset clears patient, drafts, recipient, approval and export state",
+      "status": "passed"
+    },
+    {
+      "name": "A HTML export escapes editable report content",
+      "status": "passed"
+    },
+    {
+      "name": "B keeps recipient portal locked before approval and handoff",
+      "status": "passed"
+    },
+    {
+      "name": "B uses deterministic source-grounded draft and complete recipient check",
+      "status": "passed"
+    },
+    {
+      "name": "B required-field validation prevents approval of missing handoff context",
+      "status": "passed"
+    },
+    {
+      "name": "B handoff exposes a copy of the approved version with owner and unresolved facts",
+      "status": "passed"
+    },
+    {
+      "name": "B revisions preserve prior delivered snapshot and version-bound response until new handoff",
+      "status": "passed"
+    },
+    {
+      "name": "B removing either approval check or opening revision preserves prior delivered version",
+      "status": "passed"
+    },
+    {
+      "name": "B comprehension JSON is local, version-linked and never alters approved report",
+      "status": "passed"
+    },
+    {
+      "name": "B reset clears report, approvals, handoff, response and version history",
+      "status": "passed"
+    },
+    {
+      "name": "C prevents drafting without preparation checks and specialist role cannot prepare",
+      "status": "passed"
+    },
+    {
+      "name": "C missing-source cases cannot draft, approve, export or simulate return",
+      "status": "passed"
+    },
+    {
+      "name": "C coordinator routes draft but cannot edit or approve it",
+      "status": "passed"
+    },
+    {
+      "name": "C specialist must reconfirm after edits and cannot export coordinator handoff",
+      "status": "passed"
+    },
+    {
+      "name": "C approved export matches frozen snapshot and return requires export",
+      "status": "passed"
+    },
+    {
+      "name": "C editing after approval clears export/return and blocks reuse",
+      "status": "passed"
+    },
+    {
+      "name": "C changing recipient invalidates approval and updates report recipient together",
+      "status": "passed"
+    },
+    {
+      "name": "C selecting missing-note case never reuses another case approved snapshot",
+      "status": "passed"
+    },
+    {
+      "name": "C caller state is copied and reset restores fictional case states",
+      "status": "passed"
+    },
+    {
+      "name": "C invalid role and case actions leave workflow state unchanged",
+      "status": "passed"
+    },
+    {
+      "name": "Observation scorecard leaves unrecorded values blank and no vote fabricated",
+      "status": "passed"
+    },
+    {
+      "name": "Observation scorecard preserves observed values including actual zero",
+      "status": "passed"
+    },
+    {
+      "name": "A/B/C share the same main case identities, destination and clinical source facts",
+      "status": "passed"
+    },
+    {
+      "name": "A source buttons focus and select exact source ranges and report absent sections",
+      "status": "passed"
+    },
+    {
+      "name": "A new note cannot inherit another case recipient or salutation",
+      "status": "passed"
+    },
+    {
+      "name": "A Reset demo button clears edits and restores the first task",
+      "status": "passed"
+    },
+    {
+      "name": "B clinician review and recipient check are independently mandatory",
+      "status": "passed"
+    },
+    {
+      "name": "B approved sample is explicitly seeded and cannot overwrite an in-progress draft",
+      "status": "passed"
+    },
+    {
+      "name": "B timing alias stays synchronized and delivered export remains frozen during editing",
+      "status": "passed"
+    },
+    {
+      "name": "C clinical review and recipient confirmation are independently mandatory for current revision",
+      "status": "passed"
+    },
+    {
+      "name": "C completed cases leave ready queue and counts match state",
+      "status": "passed"
+    },
+    {
+      "name": "C UI input and navigation retain specialist edits across case and role changes",
+      "status": "passed"
+    },
+    {
+      "name": "A.html: all inline scripts parse",
+      "status": "passed"
+    },
+    {
+      "name": "A.html: literal local links resolve",
+      "status": "passed"
+    },
+    {
+      "name": "B.html: all inline scripts parse",
+      "status": "passed"
+    },
+    {
+      "name": "B.html: literal local links resolve",
+      "status": "passed"
+    },
+    {
+      "name": "C.html: all inline scripts parse",
+      "status": "passed"
+    },
+    {
+      "name": "C.html: literal local links resolve",
+      "status": "passed"
+    },
+    {
+      "name": "development-log.html: all inline scripts parse",
+      "status": "passed"
+    },
+    {
+      "name": "development-log.html: literal local links resolve",
+      "status": "passed"
+    },
+    {
+      "name": "evaluate.html: all inline scripts parse",
+      "status": "passed"
+    },
+    {
+      "name": "evaluate.html: literal local links resolve",
+      "status": "passed"
+    },
+    {
+      "name": "evidence.html: all inline scripts parse",
+      "status": "passed"
+    },
+    {
+      "name": "evidence.html: literal local links resolve",
+      "status": "passed"
+    },
+    {
+      "name": "guide.html: all inline scripts parse",
+      "status": "passed"
+    },
+    {
+      "name": "guide.html: literal local links resolve",
+      "status": "passed"
+    },
+    {
+      "name": "index.html: all inline scripts parse",
+      "status": "passed"
+    },
+    {
+      "name": "index.html: literal local links resolve",
+      "status": "passed"
+    },
+    {
+      "name": "Scripted walkthrough 1: A completes notes → reviewed report → approved local handoff",
+      "status": "passed"
+    },
+    {
+      "name": "Scripted walkthrough 1: B completes notes → reviewed report → approved local handoff",
+      "status": "passed"
+    },
+    {
+      "name": "Scripted walkthrough 1: C completes notes → reviewed report → approved local handoff",
+      "status": "passed"
+    },
+    {
+      "name": "Scripted walkthrough 2: A completes notes → reviewed report → approved local handoff",
+      "status": "passed"
+    },
+    {
+      "name": "Scripted walkthrough 2: B completes notes → reviewed report → approved local handoff",
+      "status": "passed"
+    },
+    {
+      "name": "Scripted walkthrough 2: C completes notes → reviewed report → approved local handoff",
+      "status": "passed"
+    }
+  ],
+  "sharedFixture": {
+    "patient": "Alex Morgan",
+    "dob": "12 March 1984",
+    "caseId": "RF-1042",
+    "date": "20 October 2026",
+    "specialist": "Dr. Arjun Patel",
+    "recipient": "Dr. Elena Ruiz",
+    "practice": "Cedar Grove Dental",
+    "destination": "referrals@cedargrove.example",
+    "assessment": "Localized gum inflammation was recorded around tooth #19.",
+    "treatment": "Periodontal assessment completed. Findings were discussed with the patient.",
+    "followup": "Specialist review in six weeks.",
+    "action": "Please share the prior radiograph before the follow-up visit.",
+    "unresolved": "The earlier radiograph was not included."
+  },
+  "scriptedWalkthroughs": {
+    "runs": 2,
+    "failed": 0,
+    "browser": false,
+    "humanOrTeamRehearsal": false
+  },
+  "sha256": {
+    "A.html": "ce4afc076a6e542b9774c94f30b8592b880f30166bf0d79fde1c72a371a13f55",
+    "B.html": "2946f67c186aa547289a81b895a400f748c85471fddb6385f30edd2141b8f6b1",
+    "C.html": "12d20d853bce2e6b3326a0900c38754d1a65d18b09ce0b05e3292d65a60f8270",
+    "development-log.html": "7c62a1fcb108b1d5349158704a0e641743acfb6e312d06eeeb958f43fef9c9bd",
+    "evaluate.html": "9db402f8434157505af5f322dc2c247e9f48cf3320f79a6f6d6e136d9ec51918",
+    "evidence.html": "7bfbac63392fed2aa31b22f436de81b9b91faa27ba9002a1708ffc2dcb71a387",
+    "guide.html": "9f4ceb0c2bda8a37cabec599e600fbb25e039beb8cccf60d6de58fcf2648e1ff",
+    "index.html": "6e5aa82e98eaf3ec4ce33514f0f487a13eb992f67a52dbf2ade4edc2d92363e0"
+  }
+}

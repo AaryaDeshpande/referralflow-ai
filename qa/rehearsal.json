@@ -1,0 +1,315 @@
+{
+  "timestamp": "2026-10-21T02:40:42.868Z",
+  "method": "Node VM state-transition tests with explicit DOM stubs; no browser rendering, human usability test, team rehearsal or real delivery verified",
+  "label": "Two scripted API walkthroughs of all three prototypes",
+  "humanOrTeamRehearsal": false,
+  "browserRenderingVerified": false,
+  "realMessagesSent": false,
+  "limits": "No human task times, comprehension, clinical accuracy, customer value or willingness to pay measured.",
+  "runs": [
+    {
+      "round": 1,
+      "scenario": "Shared main case, full workflow",
+      "prototypes": [
+        {
+          "prototype": "A",
+          "steps": [
+            {
+              "action": "Load shared fictional specialist note",
+              "status": "passed"
+            },
+            {
+              "action": "Create draft from supplied note",
+              "status": "passed"
+            },
+            {
+              "action": "Acknowledge recorded unresolved radiograph",
+              "status": "passed"
+            },
+            {
+              "action": "Confirm specialist review",
+              "status": "passed"
+            },
+            {
+              "action": "Confirm recipient and destination",
+              "status": "passed"
+            },
+            {
+              "action": "Approve current revision",
+              "status": "passed"
+            },
+            {
+              "action": "Export frozen TXT snapshot locally",
+              "status": "passed"
+            },
+            {
+              "action": "Prepare print-ready HTML snapshot",
+              "status": "passed"
+            }
+          ],
+          "status": "passed",
+          "exportSha256": "980b83ae3b56a0862c9700a7f55a5fa238fb962ea8fa7bbdd3016e7547f2e9a7"
+        },
+        {
+          "prototype": "B",
+          "steps": [
+            {
+              "action": "Read shared existing specialist note",
+              "status": "passed"
+            },
+            {
+              "action": "Create structured draft",
+              "status": "passed"
+            },
+            {
+              "action": "Confirm clinician review",
+              "status": "passed"
+            },
+            {
+              "action": "Confirm recipient",
+              "status": "passed"
+            },
+            {
+              "action": "Approve version one",
+              "status": "passed"
+            },
+            {
+              "action": "Simulate explicit handoff",
+              "status": "passed"
+            },
+            {
+              "action": "Export delivered approved report",
+              "status": "passed"
+            },
+            {
+              "action": "Record a local comprehension answer tied to version",
+              "status": "passed"
+            }
+          ],
+          "status": "passed",
+          "exportSha256": "36ffd89451e477554a7ba679b6e5e96a2e8f27235a608bb8e426e23ce151b1eb"
+        },
+        {
+          "prototype": "C",
+          "steps": [
+            {
+              "action": "Select shared case by visible ID",
+              "status": "passed"
+            },
+            {
+              "action": "Coordinator checks existing note",
+              "status": "passed"
+            },
+            {
+              "action": "Coordinator checks intended recipient",
+              "status": "passed"
+            },
+            {
+              "action": "Prepare and route draft",
+              "status": "passed"
+            },
+            {
+              "action": "Switch simulated role to specialist",
+              "status": "passed"
+            },
+            {
+              "action": "Confirm specialist review of this revision",
+              "status": "passed"
+            },
+            {
+              "action": "Confirm intended recipient",
+              "status": "passed"
+            },
+            {
+              "action": "Approve frozen snapshot",
+              "status": "passed"
+            },
+            {
+              "action": "Switch simulated role to coordinator",
+              "status": "passed"
+            },
+            {
+              "action": "Export approved snapshot locally",
+              "status": "passed"
+            },
+            {
+              "action": "Mark handoff complete locally",
+              "status": "passed"
+            }
+          ],
+          "status": "passed",
+          "exportSha256": "a246cf6a6f61bcab6e64ba08ebcfaa2237bf975f023e3373259890750ab869e0"
+        }
+      ]
+    },
+    {
+      "round": 2,
+      "scenario": "Shared main case with revision and reapproval",
+      "prototypes": [
+        {
+          "prototype": "A",
+          "steps": [
+            {
+              "action": "Load shared fictional specialist note",
+              "status": "passed"
+            },
+            {
+              "action": "Create draft from supplied note",
+              "status": "passed"
+            },
+            {
+              "action": "Revise report wording",
+              "status": "passed"
+            },
+            {
+              "action": "Acknowledge recorded unresolved radiograph",
+              "status": "passed"
+            },
+            {
+              "action": "Confirm specialist review",
+              "status": "passed"
+            },
+            {
+              "action": "Confirm recipient and destination",
+              "status": "passed"
+            },
+            {
+              "action": "Approve current revision",
+              "status": "passed"
+            },
+            {
+              "action": "Export frozen TXT snapshot locally",
+              "status": "passed"
+            },
+            {
+              "action": "Prepare print-ready HTML snapshot",
+              "status": "passed"
+            }
+          ],
+          "status": "passed",
+          "exportSha256": "5c415ab39966a98eeb2f29abe7941a8ff7ab304230e376b6f7c87aefe26d50c1"
+        },
+        {
+          "prototype": "B",
+          "steps": [
+            {
+              "action": "Read shared existing specialist note",
+              "status": "passed"
+            },
+            {
+              "action": "Create structured draft",
+              "status": "passed"
+            },
+            {
+              "action": "Confirm clinician review",
+              "status": "passed"
+            },
+            {
+              "action": "Confirm recipient",
+              "status": "passed"
+            },
+            {
+              "action": "Approve version one",
+              "status": "passed"
+            },
+            {
+              "action": "Simulate explicit handoff",
+              "status": "passed"
+            },
+            {
+              "action": "Open revision while retaining delivered version",
+              "status": "passed"
+            },
+            {
+              "action": "Edit draft wording",
+              "status": "passed"
+            },
+            {
+              "action": "Repeat clinician review",
+              "status": "passed"
+            },
+            {
+              "action": "Repeat recipient confirmation",
+              "status": "passed"
+            },
+            {
+              "action": "Approve replacement version",
+              "status": "passed"
+            },
+            {
+              "action": "Simulate replacement handoff",
+              "status": "passed"
+            },
+            {
+              "action": "Export delivered approved report",
+              "status": "passed"
+            },
+            {
+              "action": "Record a local comprehension answer tied to version",
+              "status": "passed"
+            }
+          ],
+          "status": "passed",
+          "exportSha256": "a291447a4a2c070aea06c0410d17b8b09fdd8c6c871717a2cc54171e4f79072b"
+        },
+        {
+          "prototype": "C",
+          "steps": [
+            {
+              "action": "Select shared case by visible ID",
+              "status": "passed"
+            },
+            {
+              "action": "Coordinator checks existing note",
+              "status": "passed"
+            },
+            {
+              "action": "Coordinator checks intended recipient",
+              "status": "passed"
+            },
+            {
+              "action": "Prepare and route draft",
+              "status": "passed"
+            },
+            {
+              "action": "Switch simulated role to specialist",
+              "status": "passed"
+            },
+            {
+              "action": "Save report wording revision",
+              "status": "passed"
+            },
+            {
+              "action": "Confirm specialist review of this revision",
+              "status": "passed"
+            },
+            {
+              "action": "Confirm intended recipient",
+              "status": "passed"
+            },
+            {
+              "action": "Approve frozen snapshot",
+              "status": "passed"
+            },
+            {
+              "action": "Switch simulated role to coordinator",
+              "status": "passed"
+            },
+            {
+              "action": "Export approved snapshot locally",
+              "status": "passed"
+            },
+            {
+              "action": "Mark handoff complete locally",
+              "status": "passed"
+            }
+          ],
+          "status": "passed",
+          "exportSha256": "764cac1618ca0079d022eeb556d405614f5c1d05e2d71b5dda3caff4b6f62e20"
+        }
+      ]
+    }
+  ],
+  "completedRuns": 2,
+  "failedWalkthroughs": 0
+}
