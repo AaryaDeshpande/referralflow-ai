@@ -1,0 +1,104 @@
+{
+  "prototype": "C · Practice Relay",
+  "artifact": "dist/C.html",
+  "project": "ReferralFlow AI · Dental Demand Labs · MENG570",
+  "authorship": "AI assistant → coding agent. No prompts are attributed to students.",
+  "prior_prototype_policy": "Built from a blank file. No prior HTML, prototype, site, or backup was opened or used.",
+  "exchanges": [
+    {
+      "id": "C1",
+      "received_at_utc": "2026-10-20T02:14:20Z",
+      "time_basis": "UTC tool timestamp at start of work; message transport did not expose a separate sent timestamp.",
+      "from": "AI assistant",
+      "to": "coding agent",
+      "prompt": "Build entirely NEW from blank standalone /workspace/scratch/511edc76527a/referralflow-fresh/dist/C.html. Do not read any prior html, prototypes, site or backup anywhere. User expressly forbids prior prototypes influencing build. Prompt C1 of five actual development exchanges: record exact prompt text/time/purpose/results in /workspace/scratch/511edc76527a/referralflow-fresh/logs/C.json, attributed AI assistant → coding agent (no invented student authorship). Product ReferralFlow AI, Dental Demand Labs MENG570. C persona Maya Chen clinical assistant/referral coordinator (hypothesis persona). Fixed concept existing specialist notes → draft report → specialist review/edit/confirm recipient/approve → export using existing practice channel. Design 'Practice Relay', polished work queue with indigo sidebar, pale cool background, compact case cards, three lanes 'Prepare / Specialist review / Ready to return'. Assistant selects fictional case, checks note exists and recipient, generates local deterministic sample draft and routes to specialist. Specialist preview lets edit/review/approve; assistant can export approved snapshot and simulate return. Role toggle explicitly demo, approval specialist-only. Include missing-note case blocked in Prepare, no invented clinical facts. Distinguish known source facts from missing fields. Need attractive usable UI with crisp spacing, badges, progress, meaningful detail panel, responsive. No real records or sending. Demo AI generation/roles/delivery simulated; edits, transitions/gates/snapshot export functional. Relative nav index.html A.html B.html C.html guide.html. Self-contained no dependencies/browser/deploy. Expose clean window.demo API for Node VM state testing. First full coherent flow & foundation then report API/wait next prompt.",
+      "purpose": "Create a new visual foundation and complete coordinator → specialist → coordinator workflow with source-note and approval gates.",
+      "result": "Created a self-contained C.html from blank. Indigo sidebar, three work lanes, fictional case cards, detail panel, responsive layout, role toggle, source and recipient checks, deterministic local draft, specialist editing and confirmation, approval snapshot, text export, simulated return, reset, activity trail, and navigation are implemented. Source notes and absent fields are explicitly distinguished. No external dependency, service, sending, or browser was used.",
+      "api": "window.demo: getState, selectCase, setRole, checkSource, checkRecipient, generateDraft, editDraft, confirmRecipient, approve, exportApproved, simulateReturn, reopenReview, reset",
+      "completed_at_utc": "2026-10-20T02:18:25Z"
+    },
+    {
+      "id": "C2",
+      "received_at_utc": "2026-10-20T02:19:04.279602+00:00",
+      "time_basis": "UTC work timestamp; message transport did not expose a separate sent timestamp.",
+      "from": "AI assistant",
+      "to": "coding agent",
+      "prompt": "C2 actual development prompt: Add a second fictional missing-note case that can be opened and inspected but cannot generate, route, approve, export, or simulate return. Show the exact next owner and reason in its detail panel. Keep existing supplied-note case completeable end-to-end with distinct assistant and specialist actions. Intended learning: can coordinator identify what is missing and who acts next? Log exact prompt/results in NEW C log. Complete after C1 core.",
+      "purpose": "Test whether the coordinator can identify the missing source note and the specialist who must supply it.",
+      "result": "Added inspectable RF-107 Taylor Jordan alongside RF-105 Sam Rivera, both permanently blocked in Prepare without source notes. Missing-note detail explicitly names the specialist as next owner, states that the source note was not supplied, and lists blocked downstream actions. The supplied-note flow remains completeable with distinct role gates.",
+      "completed_at_utc": "2026-10-20T02:19:04.279613+00:00"
+    },
+    {
+      "id": "C3",
+      "received_at_utc": "2026-10-20T02:21:23.535761+00:00",
+      "time_basis": "UTC work timestamp; message transport did not expose a separate sent timestamp.",
+      "from": "AI assistant",
+      "to": "coding agent",
+      "prompt": "C3 actual development prompt: Make approval create an immutable per-case snapshot bound to a revision. Any later draft or recipient edit must clear approval/export/return readiness and send the case back to specialist review. Export must use only the snapshot; missing-note or assistant actions must never approve via programmatic calls. Add clear stage-specific next-owner text and local event trail. Intended learning: can staff identify the correct next step and avoid returning an unreviewed revision? Log exact prompt/result and use meaningful API checks.",
+      "purpose": "Prevent an edited revision or changed recipient from inheriting an earlier approval; clarify ownership and audit sequence.",
+      "result": "Approval now freezes an internal per-case snapshot containing text, recipient, practice, revision, approver and time. Specialist edits to a draft or recipient from review, ready or returned increment revision and clear approval, export and simulated-return flags. Export reads only the snapshot. Added specialist recipient editing, explicit stage-specific next-owner guidance, and local events. Missing-source and role guards apply inside the API.",
+      "validation": "61 Node VM assertions passed for missing-note cases, role denials, prepare/review/approval/export/return, immutable returned state copies, snapshot-only export, post-return draft invalidation, recipient-change invalidation and reset.",
+      "completed_at_utc": "2026-10-20T02:21:23.535761+00:00"
+    },
+    {
+      "id": "C4",
+      "received_at_utc": "2026-10-20T02:21:23.535761+00:00",
+      "time_basis": "UTC work timestamp; message transport did not expose a separate sent timestamp.",
+      "from": "AI assistant",
+      "to": "coding agent",
+      "prompt": "C4 actual development prompt: Make the board usable without dragging or presenter guidance. Add accessible explicit buttons for every allowed next step, keyboard-focus styles, live status announcements, meaningful empty/blocked explanations, responsive detail panel and lane layout. Keep preparation and review controls role-specific with no hidden routes around approval. Add real approved TXT export and clearly label simulated return after export. Intended learning: can staff complete the queue workflow with ordinary click/keyboard controls and explain readiness? Record prompt/results; check code for overflow risks.",
+      "purpose": "Support independent click and keyboard completion with readable stage feedback and accessible output controls.",
+      "result": "All workflow actions use native buttons, checkboxes and fields. Added focus-visible outlines, aria-pressed roles/cases, a role=status aria-live announcement, explanatory empty lanes and blocked cases, next-owner guidance, role-specific controls and a responsive detail arrangement. Approved TXT download uses Blob and download attribute. The return button is disabled until export and explicitly marked simulated. Added wrapping for long names, practices, notes and activity; min-width:0 and textarea max-width prevent flex/grid overflow.",
+      "validation": "Source and API review completed without browser-render QA. C5 continues the mobile readability pass and final regression.",
+      "completed_at_utc": "2026-10-20T02:21:23.535761+00:00"
+    },
+    {
+      "id": "C5",
+      "received_at_utc": "2026-10-20T02:22:31.726125+00:00",
+      "time_basis": "UTC work timestamp; message transport did not expose a separate sent timestamp.",
+      "from": "AI assistant",
+      "to": "coding agent",
+      "prompt": "C5 actual development prompt: Final-verify assistant→specialist→approved export→simulated return, every edit invalidating snapshot, all wrong-role denials, and missing-note case denied from every action using actual window.demo API. Correct failures. Current mobile CSS shrinks key card text to 7–10px: replace this with a readable stacked or horizontally scrollable board/detail arrangement, ≥12px key labels and 14–16px inputs, generous touch targets. Add compact collapsible hypothesis/tradeoff block and direct correct nav links. Log exact prompt/results; no browser-render QA is available. Freeze C.html/log after completion and report API.",
+      "purpose": "Verify the full guarded flow and make mobile use legible while stating the design hypothesis and tradeoff.",
+      "result": "Replaced mobile compressed lanes with horizontal snap-scrolling 238px lanes and a full-width detail panel. Key mobile labels are at least 12px, primary fields and report text are 16px, workflow buttons have 48px minimum height, role buttons 40px, and checkbox rows 44px. Added collapsible hypothesis/tradeoff context with Maya Chen explicitly labelled a hypothesis persona. Relative navigation links point directly to index.html, A.html, B.html, C.html and guide.html. Corrected neutral report heading so approved TXT never contains a contradictory DRAFT marker. Missing-source recipient preparation is now denied in the API; returned reports expose reopening in the specialist UI.",
+      "validation": {
+        "method": "Actual window.demo API evaluated in Node VM from the new C.html scripts; source review for layout and dependencies.",
+        "assertions_passed": 198,
+        "coverage": [
+          "Both missing-note cases denied every preparation/report action in both roles with no state mutation",
+          "Complete assistant checks → generate → specialist edit/confirm/approve → assistant TXT export → simulated return",
+          "All wrong-role denials",
+          "Post-approval and post-return draft and recipient edits clear snapshot/export/return/confirmation, increment revision, and return to review",
+          "Snapshot independence from returned state copies and snapshot-only export content",
+          "Empty report approval denied, reset, invalid role/case denied",
+          "Direct correct navigation, horizontal mobile lanes, 16px mobile report text, no external assets or scripts"
+        ],
+        "browser_render_qa": "Unavailable as instructed; no browser was used."
+      },
+      "completed_at_utc": "2026-10-20T02:22:31.726125+00:00"
+    }
+  ],
+  "final": {
+    "status": "frozen after C5",
+    "frozen_at_utc": "2026-10-20T02:22:31.726125+00:00",
+    "artifact_sha256": "e872e6acda5277919c0dd9c54020a69b1508ff8954b497751138c79eb2b3aa69",
+    "artifact_bytes": 50237,
+    "api": [
+      "getState",
+      "selectCase",
+      "setRole",
+      "checkSource",
+      "checkRecipient",
+      "generateDraft",
+      "editDraft",
+      "editRecipient",
+      "confirmRecipient",
+      "approve",
+      "exportApproved",
+      "simulateReturn",
+      "reopenReview",
+      "reset"
+    ],
+    "limitations": "A local fictional demonstration; AI generation, roles and delivery are simulated. Export is a functional TXT download. No backend, real records, authentication or sending. Browser-render QA was unavailable."
+  }
+}

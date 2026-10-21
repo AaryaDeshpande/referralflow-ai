@@ -1,0 +1,43 @@
+{
+  "prototype": "B · Referral Brief",
+  "product": "ReferralFlow AI",
+  "attribution": "AI assistant → coding agent",
+  "origin": "Actual AI development exchanges. No student authorship is attributed or invented.",
+  "exchanges": [
+    {
+      "id": "B1",
+      "time": "2026-10-20T02:17:48.501Z",
+      "prompt": "Build entirely NEW from blank standalone /workspace/scratch/511edc76527a/referralflow-fresh/dist/B.html. Do not read any prior html, prototypes, site or backup anywhere. User expressly forbids existing prototypes influencing this build. This is prompt B1 of 5 actual AI development exchanges; log exact text with purpose/result/time in /workspace/scratch/511edc76527a/referralflow-fresh/logs/B.json; attribute AI assistant → coding agent, no invented student authorship. Product ReferralFlow AI, Dental Demand Labs MENG570. 3 distinct hypothesis prototypes. B persona Dr. Elena Ruiz, referring general dentist (persona hypothesis). Fixed concept: existing specialist notes → draft report → specialist review/edit/recipient confirm/approve → approved info back to general dentist via practice channel. Build professional recipient-first 'Referral Brief' portal: warm ivory, charcoal, terracotta accent, elegant editorial type, concise approved handoff cards 'Visit summary / What your office needs to do / What specialist does next / Unresolved information'. Specialist preparation tab lets user generate structured draft from fictional existing notes, edit fields/owners, approve. Recipient portal unavailable until specialist approval and simulate handoff explicit button. Recipient sees ONLY approved snapshot, can inspect full letter, download report and record local comprehension response clearly simulated. All content fictional. Use consultation case with image requested, plan deferred, no date set; avoid clinical advice. Generation deterministic template/fixture, labelled demo not real AI. No sending, no production auth. Include clear first-use task but keep app UI concise. Whole workflow in one prototype. Distinct from A document composer and C coordinator route board built separately. Navigation direct links index.html A.html B.html C.html guide.html. No external dependencies/browser/deploy. Expose window.demo API for Node VM meaningful tests. First build core high-quality flow and wait for next prompt.",
+      "purpose": "Build the recipient-first specialist-to-referring-practice handoff prototype entirely from blank.",
+      "result": "Created standalone B.html from a blank file without reading previous prototypes. Includes fictional deterministic generation, editable fields and owners, recipient confirmation, specialist approval, immutable approved snapshot, explicit simulated handoff gate, four recipient cards, full letter/download, local comprehension check and reset. Core Node VM workflow assertions passed."
+    },
+    {
+      "id": "B2",
+      "time": "2026-10-20T02:18:32.013Z",
+      "prompt": "B2 actual development prompt: Add a recipient comprehension exercise with three concrete inputs: who must act next, what they must do, and whether follow-up is scheduled. Keep answers blank until entered, allow saving/exporting local response JSON tied to approved snapshot version, show no prefilled test result, and provide a clearly marked facilitator reference answer in collapsed details. Intended learning: does recipient extract action/owner/uncertainty from approved content? Record exact prompt/result in NEW B log. Run after B1 core.",
+      "purpose": "Test whether a recipient extracts the action, owner, and scheduling uncertainty from approved content.",
+      "result": "Replaced the two-question scored check with three blank response inputs, explicit local-only save, version-bound JSON export, no automatic correctness result, and a collapsed facilitator reference derived from the approved snapshot. Node VM assertions verified blank state, validation, version binding, JSON fields, no score field, and collapsed reference markup."
+    },
+    {
+      "id": "B3",
+      "time": "2026-10-20T02:19:24.439Z",
+      "prompt": "B3 actual development prompt: Strengthen the review-to-recipient boundary: incomplete required fields or unchecked recipient block approval; edits invalidate current approval/handoff visibility until reapproved, while preserving an immutable earlier snapshot separately if history shown. Recipient action owner and timing must be consistent with approved fields, and reset clears portal and response state. Add concise visible reasons when unavailable. Intended learning: can participants distinguish draft work from the approved information available to the recipient? Log actual prompt/results and run meaningful API assertions.",
+      "purpose": "Make draft work distinguishable from the approved information available to the referring dentist.",
+      "result": "Required fields and recipient confirmation gate approval. Editing an approved field, creating a revision, or unchecking confirmation invalidates current approval, recipient access, and local response. Earlier approved snapshots are cloned to separate internal history and never shown as the current brief. Added explicit unavailable reasons and dynamic approved owner rendering. Node assertions verified approval validation, version progression, invalidation, immutable history, empty report while locked, updated approved owner, and complete reset."
+    },
+    {
+      "id": "B4",
+      "time": "2026-10-20T02:20:12.508Z",
+      "prompt": "B4 actual development prompt: Improve practical first-use and output: add clear short specialist and recipient tasks, a persistent workflow state badge, accessible status announcements, and a real TXT or standalone printable HTML download from the approved snapshot available to recipient after simulated handoff. Preserve approved fields exactly, escape all edited content, and avoid hardcoded facts contradicting edited report fields. Intended learning: can a new reviewer complete and explain the handoff using the artifact alone? Log exact prompt/results and check narrow/mobile layout CSS without browser.",
+      "purpose": "Enable a new reviewer to complete and explain the workflow using only the prototype.",
+      "result": "Added concise specialist/recipient tasks, persistent four-stage state badge and polite live announcements. Added editable image, plan, and timing status fields so recipient badges, facilitator reference and TXT report use approved values rather than hardcoded status facts. TXT download uses the exact recipient snapshot and is unavailable before simulated handoff. All edited UI content is assigned through textContent or input value; report is text/plain. Node assertions checked edited timing/plan preservation, malicious-looking input as inert text, gate, unique IDs, complete field mapping, download path and live status. Narrow CSS statically checked at 650px: single-column source/form, status fields, cards, metadata and response panel, flexible actions and navigation."
+    },
+    {
+      "id": "B5",
+      "time": "2026-10-20T02:21:16.322Z",
+      "prompt": "B5 actual development prompt: Final-verify source→draft→approval→handoff→recipient and revision/reset paths through actual window.demo APIs. Assert blocked recipient before approval/handoff, export uses snapshot, edited owners/timing stay consistent, response JSON version binding, and escaped edited HTML. Correct observed failures. Keep mobile text inputs/buttons readable and all nav direct links. Add compact collapsible 'Why this design' hypothesis/tradeoff block. Log exact prompt and truthful checks/results; no browser-render QA is available. Freeze B.html/log after completion and report APIs.",
+      "purpose": "Verify the complete workflow and its information boundary, and make the design hypothesis inspectable.",
+      "result": "54 final assertions passed through actual window.demo APIs plus a minimal DOM event harness. Verified deterministic generation; required/confirmation gates; approval alone stays locked; explicit handoff; snapshot clone integrity; exact TXT content; approved owner/timing; response JSON snapshot binding; edit/uncheck/revision invalidation; internal immutable history; complete reset; textContent handling of HTML-like edits; blank response state; collapsed reference; live workflow state; direct navigation; standalone source. Removed repeated fixed date/plan claims from default unresolved text so timing/status are sourced only from editable approved fields. Added collapsed hypothesis/tradeoff block and 16px mobile inputs with 42px minimum buttons. Static narrow CSS check and DOM harness only; no browser-render or visual QA was performed."
+    }
+  ]
+}

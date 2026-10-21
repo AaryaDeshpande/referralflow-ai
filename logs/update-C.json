@@ -1,0 +1,107 @@
+{
+  "prototype": "C · Practice Relay",
+  "artifact": "dist/C.html",
+  "authorship": "AI assistant → coding agent. No prompts are attributed to students.",
+  "date": "2026-10-20",
+  "prompt": "Implement bounded page C only in /workspace/scratch/905a0515b0da/referralflow-lab/dist/C.html. Root owns other files/publication. Preservewindow.demo API. Improve existing Practice Relay with autosave or guaranteed preserve specialist edits on case/role navigation (auditedbug unsavedtextarea disappears), separate completed/returned from ready counts, make next owner/state explicit; simpleteamqueue no sprawlingdashboard. Standard RF brandnavy/blue. MAIN CASE same across A/B/C: fictionalpatientAlex Morgan DOB12March1984 visit20October2026 caseRF-1042 (you mayretainAPIkeyRF-104 internally foroldtests); specialistDr.Arjun Patel; GPDr.Elena Ruiz Cedar Grove Dental referrals@cedargrove.example; Referralperiodontalassessment; Assessment 'Localized gum inflammation was recorded around tooth #19.'; Treatment 'Periodontal assessment completed. Findings were discussed with the patient.'; Follow-up 'Specialist review in six weeks.'; Requested action 'Please share the prior radiograph before the follow-up visit.'; Unresolved 'The earlier radiograph was not included.' Keep coordinatorMaya Chen (notpatient). Retain blockedmissing-note example and anotherreviewcase. Staffcannotapprove, requirecorrectspecialistcheck/currentrecipient; editinvalidatesapproval; frozenexports; exportandlocalmarkreturnDISTINCT (nothingreal sent). Add two-minute primarytask and resetdemo, keyboard/mobile polish, unintrusive evidence.html link. KeepHTMLselfcontained, noexternaldependencies, no browser/server/publication. Actualprompthistory old5 preserved; log thisnewinstruction+outcome to logs/update-C.json authorAIassistant→codingagent date. Readdocsourcefirst and checkspecificstatefailures; no inventedclinicalfacts/metrics. Finaltell rootAPIchanges/testingneeds and ownvalidation.",
+  "from": "AI assistant",
+  "to": "coding agent",
+  "source_review_recorded_at_utc": "2026-10-20T07:12:31Z",
+  "time_basis": "UTC clock reading during source review; message transport did not expose a separate prompt receipt timestamp.",
+  "sources_read_before_editing": [
+    "dist/C.html",
+    "logs/C.json",
+    "qa/verify.mjs",
+    "qa/result.json",
+    "/workspace/scratch/905a0515b0da/audit_previous_site/START_HERE.md",
+    "/workspace/scratch/905a0515b0da/audit_previous_site/HANDOFF_CONTEXT.md",
+    "/workspace/scratch/905a0515b0da/prototype_market_evidence.md"
+  ],
+  "history_preservation": "Original logs/C.json and its five actual C1–C5 exchanges were not modified. This is a separate later update; the historical freeze/hash still describes that earlier version.",
+  "purpose": "Correct lost specialist edits during navigation, clarify ownership and local completion, and align the shared fictional case without changing the agreed product concept.",
+  "outcome": [
+    "Main displayed case is RF-1042, Alex Morgan, DOB 12 March 1984, visit 20 October 2026, specialist Dr. Arjun Patel, GP Dr. Elena Ruiz at Cedar Grove Dental, referrals@cedargrove.example. Clinical statements match the supplied prompt. RF-104 remains the internal API key and RF-1042 is also accepted for selection.",
+    "Specialist report input saves to local in-memory state without re-rendering the textarea. Case/role navigation and approval flush pending text and recipient edits. Invalid pending recipient fields remain visible and block navigation until corrected or explicitly reverted.",
+    "Completed cases have a separate local-completion count and section; ready contains only approved cases still awaiting local completion. Next owner and next action appear on cards and the selected case.",
+    "Specialist identity/content review and current-recipient confirmation are distinct revision-bound approval checks. Coordinator cannot approve; changing report or recipient clears checks, approval, export and completion state.",
+    "Exports use the immutable approved snapshot. TXT export and marking completion are distinct actions and explicitly do not send anything.",
+    "Retained both missing-note examples and the seeded additional review case. Added two-minute task, reset, navy/blue branding, readable responsive queue/detail controls, focus preservation, and evidence.html link."
+  ],
+  "api": {
+    "preserved_methods": [
+      "getState",
+      "selectCase",
+      "setRole",
+      "checkSource",
+      "checkRecipient",
+      "generateDraft",
+      "editDraft",
+      "editRecipient",
+      "confirmRecipient",
+      "approve",
+      "exportApproved",
+      "simulateReturn",
+      "reopenReview",
+      "reset"
+    ],
+    "added_methods": [
+      "confirmSpecialist(checked)",
+      "getCounts()"
+    ],
+    "compatible_extensions": [
+      "selectCase accepts RF-1042 as alias for RF-104",
+      "editDraft(text, options) accepts optional {render:false} for synchronous in-tab autosave",
+      "editRecipient(name, practice, email, options) adds optional destination and render options; old two-argument calls retain current destination"
+    ],
+    "approval_test_change": "Call confirmSpecialist(true) and confirmRecipient(true) after the last edit. Merely confirming the recipient now correctly fails approval.",
+    "state_additions": [
+      "displayId",
+      "dob on main case",
+      "specialist",
+      "recipientEmail",
+      "specialistReviewed",
+      "reviewConfirmedRevision",
+      "recipientConfirmedRevision"
+    ],
+    "snapshot_additions": [
+      "caseId",
+      "patient",
+      "dob",
+      "recipientEmail",
+      "approvedBy now named specialist"
+    ]
+  },
+  "validation": {
+    "method": "Node VM execution of actual inline scripts, domain-state assertions, and a DOM stub that recreates input/textarea buffers on rendering. No browser or server.",
+    "assertions_passed": 183,
+    "initial_regression_groups_passed": 14,
+    "additional_checks": "Pending UI changes flushed before direct API approval; prior checks invalidated; renewed checks permit approval; focus-preservation hook present.",
+    "coverage": [
+      "Exact shared fixture and ID alias",
+      "Preparation and wrong-role gates",
+      "Both specialist/recipient checks bound to revision",
+      "All missing-source actions denied without case mutation",
+      "Frozen export, local completion and separate ready/completed counts",
+      "Caller copy cannot mutate approval",
+      "Draft and recipient changes invalidate approval/export/completion",
+      "Unsaved textarea preserved on both case and role navigation, including without input event",
+      "Autosave keeps textarea element intact",
+      "Pending recipient saved or invalid fields retained",
+      "UI check states and completed section rendering",
+      "Script parsing, no external resources, two-minute task/reset/evidence link"
+    ],
+    "not_claimed": [
+      "Browser rendering or actual mobile visual inspection",
+      "Real authentication",
+      "Real AI model generation",
+      "Email or GP delivery",
+      "Customer testing or validated value"
+    ],
+    "root_follow_up": "Run root integration tests with the new confirmSpecialist gate; browser-render QA only if root chooses/has authorized capability. evidence.html is a root-owned relative destination."
+  },
+  "before_sha256": "e872e6acda5277919c0dd9c54020a69b1508ff8954b497751138c79eb2b3aa69",
+  "after_sha256": "12d20d853bce2e6b3326a0900c38754d1a65d18b09ce0b05e3292d65a60f8270",
+  "artifact_bytes": 64476,
+  "completed_at_utc": "2026-10-20T07:17:34.995281+00:00",
+  "scope": "Only dist/C.html and this new logs/update-C.json were written. No publication, browser, server, or modification to A/B/root-owned pages."
+}

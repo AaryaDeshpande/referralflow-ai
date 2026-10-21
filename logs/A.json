@@ -1,0 +1,115 @@
+{
+  "prototype": "A \u00b7 Letter Studio",
+  "attribution": "AI assistant \u2192 coding agent",
+  "exchanges": [
+    {
+      "exchange": "A1",
+      "timestamp_utc": "2026-10-20T02:17:15.387006+00:00",
+      "from": "AI assistant",
+      "to": "coding agent",
+      "prompt": "Build entirely NEW from blank standalone /workspace/scratch/511edc76527a/referralflow-fresh/dist/A.html. Do not read any other prior html, prototypes, site or backup anywhere. User expressly forbids existing prototypes influencing this build. This is prompt A1 of 5 actual AI development exchanges; log exact text with purpose/result/time in /workspace/scratch/511edc76527a/referralflow-fresh/logs/A.json; attribute AI assistant \u2192 coding agent, no invented student authorship. Product ReferralFlow AI, team Dental Demand Labs, MENG570 assignment requires 3 distinct functional interactive prototypes each testing hypothesis & prior persona. A persona Dr. Arjun Patel owner-periodontist. Fixed concept: existing specialist notes \u2192 draft referral report \u2192 specialist edits/reviews/confirms recipient/approves \u2192 export to existing authorized channel. No autonomous sending. Use ONLY fictional data and label demo. Build professional document-first 'Letter Studio': sophisticated navy/blue left slim sidebar, spacious white report canvas with readable typography, patient case row, note source drawer or right pane. Meaningful controls: load fictional note, generate local deterministic letter from structured labeled notes (not real AI), edit letter, confirm review and recipient, approve then TXT export frozen snapshot, edit again invalidates approval. Empty source blocks generation. No actual messages. One clear first task, polished responsive design, controls without walls of assignment text. Footer demo generation/delivery simulation status. Small page nav direct relative links index.html A.html B.html C.html guide.html. Distinct from B action-focused recipient portal and C coordinator route board (built separately). First implement coherent full flow plus foundational UI, then report API and wait for next refinement prompt. No external dependencies, browser, deploy or sharing. Expose clean window.demo API for Node VM state tests. All app code self-contained. Need top-tier usable functional UI.",
+      "purpose": "Build a new document-first specialist letter prototype from blank and establish its complete review-and-export workflow.",
+      "result": "Created standalone A.html with a responsive navy workspace, fictional structured note, deterministic local drafting, editable report, recipient controls, review confirmations, frozen approved TXT export, and edit/source/recipient invalidation. No previous prototype files were read.",
+      "verification": "Node VM checks passed for empty-source block, generation, approval gates, TXT simulation status, invalidation, and reset.",
+      "api": [
+        "getState",
+        "loadSample",
+        "setSource",
+        "generateDraft",
+        "editLetter",
+        "setRecipient",
+        "confirmReview",
+        "confirmRecipient",
+        "approve",
+        "exportText",
+        "reset",
+        "getSampleNote"
+      ]
+    },
+    {
+      "exchange": "A2",
+      "timestamp_utc": "2026-10-20T02:18:23.371616+00:00",
+      "from": "AI assistant",
+      "to": "coding agent",
+      "prompt": "A2 actual development prompt: Add a second fictional note scenario with intentionally missing follow-up details, selectable alongside the main case. Generation must preserve 'Not provided in source notes' without inventing dates or next steps; approval must require explicit specialist acknowledgement of unresolved information or filling it from the supplied note. Keep source notes and letter independently editable, source changes invalidate draft approval and require regeneration. Intended learning: can specialist recognize and handle incomplete source information? Record exact prompt/results in your NEW A log. Complete after A1 core.",
+      "purpose": "Test whether a specialist recognizes and handles incomplete source information.",
+      "result": "Added selectable Sofia Bennett fictional case with omitted follow-up, exact missing-information wording, an explicit unresolved-information acknowledgement gate, preserved missing data in export, and regeneration after source edits. Removed fallback dates.",
+      "verification": "Node VM checks passed for missing-follow-up marking, approval rejection without acknowledgement, successful acknowledged approval, source-edit invalidation, follow-up addition and regeneration, and complete-case path."
+    },
+    {
+      "exchange": "A3",
+      "timestamp_utc": "2026-10-20T02:19:12.794556+00:00",
+      "from": "AI assistant",
+      "to": "coding agent",
+      "prompt": "A3 actual development prompt: Make the specialist review task self-explanatory and accessible. Add concise inline approval blockers, visible letter/source revision status and an accessible live status region. Confirm review checkboxes reset after any source/letter/recipient change. Ensure text inputs retain focus during editing and mobile layout stacks cleanly without fixed-width overflow. Intended learning: can a first-time specialist understand readiness and recover from a revision without presenter help? Log exact prompt/results; no external dependencies.",
+      "purpose": "Test first-time specialist readiness comprehension and recovery after revisions.",
+      "result": "Added current source revision and draft-source revision labels, contextual approval blockers, a persistent polite live region, and explicit outdated-source status. Editing uses stable DOM inputs rather than replacement. Existing responsive grid stacks source, report, and review on narrow screens.",
+      "verification": "Node VM checks passed for readiness blockers, source revision tracking, outdated-source status, live-region updates, and resetting confirmations after letter, source, and recipient changes. Static responsive rules reviewed; no browser used."
+    },
+    {
+      "exchange": "A4",
+      "timestamp_utc": "2026-10-20T02:20:16.937215+00:00",
+      "from": "AI assistant",
+      "to": "coding agent",
+      "prompt": "A4 actual development prompt: Add a real downloadable, print-friendly HTML report alongside TXT, generated only from the immutable approved snapshot. Escape all user-entered text, include fictional demo label, recipient, revision and explicit unresolved-information status, and exclude internal source notes / private UI state. A standalone HTML file should open locally and print cleanly. Intended learning: can the approved document fit the existing copy/export workflow in a presentable format? Log exact prompt/result and validate export blocks before approval and respects frozen snapshot.",
+      "purpose": "Test whether an approved document fits an existing export workflow in a presentable format.",
+      "result": "Added a real downloadable standalone HTML report beside TXT. HTML uses only the frozen approved snapshot, escapes text, includes recipient/revision/approval and unresolved-information status, excludes the source notes and UI state, and includes local-print styling.",
+      "verification": "Node VM checks passed for denied preapproval HTML export, HTML escaping of script-like draft and recipient text, source sentinel exclusion, unresolved-status inclusion, print CSS, edit invalidation, and unchanged prior exported snapshot."
+    },
+    {
+      "exchange": "A5",
+      "timestamp_utc": "2026-10-20T02:22:01.288992+00:00",
+      "from": "AI assistant",
+      "to": "coding agent",
+      "prompt": "A5 actual development prompt: Perform final code/API verification of full main and incomplete-note flows, source-change regeneration, every edit invalidating approval, denied preapproval exports, frozen TXT/HTML export and HTML escaping. Correct failures. Increase mobile input/button/label readability where tiny (aim 14\u201316px inputs, \u226512px meaningful labels; generous touch targets), ensure all nav uses direct correct page links, and add a compact collapsible 'Why this design' hypothesis/tradeoff block for class review. Record exact prompt and truthful checks/results; browser rendering is unavailable. Freeze A.html/log after completion and report API.",
+      "purpose": "Verify the full prototype and improve mobile usability and class-review clarity.",
+      "result": "Added a compact collapsible hypothesis/tradeoff block and mobile 16px inputs, 14px note/report text, 12px meaningful labels, 44px buttons, and larger checkbox targets. Updated export wording for both formats. Strengthened source revision checks so even reverted source edits require regeneration, and recognized explicit not-provided values as unresolved. Final A.html and this five-exchange log are frozen for handoff.",
+      "verification": {
+        "method": "Node VM execution with DOM/event/download stubs and static HTML/CSS assertions; browser rendering unavailable.",
+        "passed": [
+          "Complete-case generation/review/approval/export",
+          "Incomplete follow-up preserved without inferred date or next step",
+          "Explicit unresolved-information acknowledgement gate",
+          "Follow-up addition to source and regeneration",
+          "Deterministic local generation",
+          "Source regeneration required after edits and reverts",
+          "Letter/source/recipient edits reset review confirmations and approval",
+          "Preapproval TXT and HTML export rejected",
+          "Snapshot mutation through cloned state cannot alter exports",
+          "Actual TXT and HTML download handlers invoke correct Blob MIME types",
+          "HTML escaping of script-like draft and recipient text",
+          "Private source sentinel excluded from exported HTML",
+          "Frozen prior exported content remains unchanged after edits",
+          "Stable input element and focus during input handling",
+          "Reset clears state",
+          "All navigation uses direct index.html/A.html/B.html/C.html/guide.html links",
+          "No external script or stylesheet dependency",
+          "Responsive/mobile and accessible live-region rules present"
+        ],
+        "not_performed": [
+          "Browser rendering, viewport screenshot inspection, and real clinical validation"
+        ]
+      }
+    }
+  ],
+  "final_api": [
+    "getState",
+    "loadSample",
+    "loadScenario",
+    "getScenarios",
+    "acknowledgeUnresolved",
+    "setSource",
+    "generateDraft",
+    "editLetter",
+    "setRecipient",
+    "confirmReview",
+    "confirmRecipient",
+    "approve",
+    "exportText",
+    "exportHtml",
+    "reset",
+    "getSampleNote"
+  ],
+  "artifact_sha256": "d7eee2ed24713ae58111a3ae19c00efa654f47e065f9a1d8cf514a9737ecc326",
+  "frozen_after_exchange": "A5"
+}

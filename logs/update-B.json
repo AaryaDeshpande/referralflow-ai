@@ -1,0 +1,36 @@
+{
+  "prototype": "B · Referral Brief",
+  "product": "ReferralFlow AI",
+  "attribution": "AI assistant → coding agent",
+  "origin": "Actual follow-up development exchange. Original five exchanges in logs/B.json are preserved unchanged.",
+  "exchanges": [
+    {
+      "id": "B6",
+      "time": "2026-10-20 07:19:12 UTC",
+      "prompt": "Implement bounded pageB only at /workspace/scratch/905a0515b0da/referralflow-lab/dist/B.html and logs/update-B.json. Finishmemo thenproceedwithoutwaiting. Preservewindow.demo APIswherepossible. CurrentB ReferralBrief needs clinicianstructuredreview plus recipientactioncards withfullapprovedreport, export. MAIN CASE identical across A/B/C: fictionalAlex Morgan DOB12March1984 date20October2026 caseRF-1042; specialistDr.Arjun Patel; GPDr.Elena Ruiz Cedar Grove Dental referrals@cedargrove.example; Referralperiodontalassessment; Assessment 'Localized gum inflammation was recorded around tooth #19.'; Treatment 'Periodontal assessment completed. Findings were discussed with the patient.'; Follow-up 'Specialist review in six weeks.'; Requested action 'Please share the prior radiograph before the follow-up visit.'; Unresolved 'The earlier radiograph was not included.' Nextownerreferringpractice sendspriorradiograph, specialistreview6weeks (allsourcebacked). Simplefirst-use 'Open approved sample' givesexplicitlyseededfictional approvedsampletoGPso intelligiblewithoutcomplexprep; also'Prepare a brief' keepsdraftreviewapprove simulatedhandoffflow. This seededfixture must belabeledexample notactualuserapproval/send. Fixauditedsemantics: whenrevisiondraftstarts, previouslyhandedoffversionremainsreadable; newapprovedrevisionreplacesitonlyonexplicitnew simulatedhandoff, showearlierversion/currentrevisionstatuses accurately. NeverpublishunapproveddrafttoGP. Structuredfieldsfindings/treatment/action/owner/timing/unresolved andfullreportallapprovedfromsameversion. NoPDFattachmentsornewportal requirement;exportTXT. Approvalsrequireclinicianandrecipientchecks; modificationsinvalidatereview. ConsistentRFnavy/bluebrand, cleanresponsive/mobilereadability, keyboard/focus, resetdemo andevidence.html link. Noexternaldeps,no browser/server/publication. Old5promptsB.jsonpreserved; log thisactualprompt+outcome inupdate-B.jsonauthorAIassistant→codingagent. Noinventedcustomer/savings/clinicalclaims. ReturnnewAPIchangesforroottests. OwnBonly rootownsrest.",
+      "purpose": "Align the same fictional case across prototypes; add immediate seeded recipient sample and two review checks; preserve handed-off approved information during revisions.",
+      "result": "Updated B.html only. The recipient view shows four cards and the exact approved report with TXT export. The shared case is Alex Morgan, RF-1042, with the specified source facts. Open approved sample creates explicitly labelled fictional seeded approval and handoff without marking the user's checks complete. Clinician review and recipient confirmation are separately required for every user approval. Edits and revisions invalidate current approval but retain the previously handed-off snapshot and its version-bound local response; a newer approval replaces it only after explicit simulated handoff. Follow-up timing and the legacy specialistNext field are synchronized. Added navy/blue branding, evidence link, keyboard tabs, mobile overrides, reset, local response export, and current-versus-recipient version notices. Passed 53 targeted Node VM API/markup assertions. No browser, server, publication, or live sending was performed. Original logs/B.json was not modified.",
+      "validation": {
+        "passed": 53,
+        "mode": "Node VM executing actual window.demo API plus markup checks",
+        "visualQA": "Not performed; no browser was used."
+      },
+      "apiChanges": {
+        "new": [
+          "confirmReview(value)",
+          "openApprovedSample()",
+          "loadApprovedSample() alias",
+          "prepareBrief()",
+          "getApprovedReportText()",
+          "getDraftText()",
+          "exportText()",
+          "getCase()"
+        ],
+        "approval": "confirmReview(true) and confirmRecipient(true) are both mandatory before approve().",
+        "revision": "delivered stays readable during edits, unchecking, and revisions, and while a new approval awaits handoff; handoff() is the replacement boundary.",
+        "fields": "treatment added. specialistNext aliases timing and stays synchronized. imageStatus and planStatus removed because the shared source does not support the former deferred-plan scenario.",
+        "response": "schemaVersion 2.0; caseId RF-1042; followup records free text rather than fixed legacy scheduling labels; remains tied to delivered version."
+      }
+    }
+  ]
+}

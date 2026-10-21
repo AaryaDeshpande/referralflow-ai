@@ -1,0 +1,52 @@
+{
+  "prototype": "A · Letter Studio",
+  "attribution": "AI assistant → coding agent",
+  "author": "AI assistant → coding agent",
+  "timestamp_utc": "2026-10-20T07:15:39.014126+00:00",
+  "scope": {
+    "modified": [
+      "dist/A.html"
+    ],
+    "new_log": "logs/update-A.json",
+    "original_prompt_history": "logs/A.json preserved unchanged",
+    "execution": "Local source edit and bounded Node VM verification only; no browser, server, installation, publishing, or external sending"
+  },
+  "exchanges": [
+    {
+      "exchange": "A-update-1",
+      "from": "AI assistant",
+      "to": "coding agent",
+      "prompt": "Implement bounded page A only in live checkout /workspace/scratch/905a0515b0da/referralflow-lab/dist/A.html. Root owns other files/publication. Preserve test API window.demo. Read existing page then fix audited recipient carryover, add actual source-linked review aids (click supplied Assessment/Treatment/Follow-up to focus/highlight source; no semantic accuracy claims), improve concise first-use task guidance and keyboard/mobile readability, add Reset demo. Preserve approval invalidation/frozen exports, missing info gate, no real send or AI. Normalize brand RF navy/blue. MAIN CASE identical across A/B/C: fictional patient Alex Morgan, DOB12 March1984, visit20October2026, caseRF-1042; specialistDr.Arjun Patel; GPDr.Elena Ruiz; Cedar Grove Dental; referrals@cedargrove.example. Referral periodontal assessment; Assessment 'Localized gum inflammation was recorded around tooth #19.'; Treatment 'Periodontal assessment completed. Findings were discussed with the patient.'; Follow-up 'Specialist review in six weeks.'; Requested action 'Please share the prior radiograph before the follow-up visit.'; Unresolved 'The earlier radiograph was not included.' Retain incomplete case Sofia Bennett with missingfollow-up (same variant available in B/C as applicable). A guided task: review source, create/reportedit, confirmrecipient, approve/export. All modelgeneration localdeterministic and simulationclearlyshortlabel. Keep name Letter Studio, specialistpersona. Add responsive unintrusive headerlink to evidence.html. No fabricated value/usageclaims. Log this actual instruction plus implementation outcome to logs/update-A.json with author AI assistant→coding agent,date and scope (preserveprior5logsinA.json). Do NOT run browser, startserver, installbrowser, publish, or edit QA/rootguide. Return own codevalidation and main changes. Need robust polished productpage, avoid giant academicdisclaimers.",
+      "purpose": "Improve the existing document-first specialist prototype within the shared notes-to-approved-report workflow.",
+      "result": "Implemented the shared Alex Morgan case; retained Sofia Bennett missing-follow-up scenario; cleared case and recipient state to prevent recipient carryover; added source section buttons selecting exact supplied Assessment/Treatment/Follow-up ranges with focus, visual emphasis and live text; surfaced recorded source gaps separately from absent fields and required acknowledgement; preserved approval invalidation, immutable snapshots and escaped TXT/HTML exports; added a real Reset demo action, concise task guidance, keyboard skip link, evidence link, larger mobile controls and consistent RF navy/blue branding."
+    }
+  ],
+  "validation": {
+    "assertions": 50,
+    "failures": 0,
+    "method": "Own Node VM execution with explicit DOM stubs and actual updated window.demo functions; static HTML checks. No browser rendering or visual verification.",
+    "coverage": [
+      "Exact shared case and recorded radiograph gap",
+      "Assessment/Treatment/Follow-up source selection and focus, missing-section feedback, CRLF span correctness",
+      "Recipient fields and salutation cannot inherit from the preceding case",
+      "Missing destination prevents approval",
+      "Recorded gap and absent follow-up require explicit acknowledgement",
+      "Letter, source and recipient changes invalidate approval",
+      "Earlier exports and internal approved snapshots remain frozen",
+      "HTML export escapes edited text",
+      "Reset button clears source, draft, recipient and approval and restores task focus",
+      "No external script, network API or sending code added"
+    ]
+  },
+  "files": {
+    "dist/A.html": {
+      "sha256": "ce4afc076a6e542b9774c94f30b8592b880f30166bf0d79fde1c72a371a13f55"
+    }
+  },
+  "limitations": [
+    "AI drafting remains a local deterministic demonstration.",
+    "Source links locate labeled note text and do not validate clinical accuracy.",
+    "Roles, approval identity and delivery remain simulated.",
+    "Root is responsible for browser QA and publication."
+  ]
+}
