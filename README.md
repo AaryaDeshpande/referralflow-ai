@@ -6,11 +6,11 @@ Dental Demand Labs - Duke MENG 570. Three working interactive alternatives aroun
 
 | Demo | Persona and hypothesis | Published link |
 | --- | --- | --- |
-| A - Letter Studio | Owner-specialist: source-visible document review | [Open A](https://referralflow-class-lab.ad277.chatgpt.site/A.html) |
-| B - Referral Brief | Referring general dentist: understand actions, ownership and open items | [Open B](https://referralflow-class-lab.ad277.chatgpt.site/B.html) |
-| C - Practice Relay | Coordinator: prepare, route, approve and complete a handoff | [Open C](https://referralflow-class-lab.ad277.chatgpt.site/C.html) |
+| A - Letter Studio | Owner-specialist: source-visible document review | [Open A](https://aaryadeshpande.github.io/referralflow-ai/A.html) |
+| B - Referral Brief | Referring general dentist: understand actions, ownership and open items | [Open B](https://aaryadeshpande.github.io/referralflow-ai/B.html) |
+| C - Practice Relay | Coordinator: prepare, route, approve and complete a handoff | [Open C](https://aaryadeshpande.github.io/referralflow-ai/C.html) |
 
-[Demo hub](https://referralflow-class-lab.ad277.chatgpt.site/) · [Presentation guide](https://referralflow-class-lab.ad277.chatgpt.site/guide.html) · [Evidence](https://referralflow-class-lab.ad277.chatgpt.site/evidence.html)
+[Demo hub](https://aaryadeshpande.github.io/referralflow-ai/) · [Presentation guide](https://aaryadeshpande.github.io/referralflow-ai/guide.html) · [Evidence](https://aaryadeshpande.github.io/referralflow-ai/evidence.html)
 
 ## Run locally
 
@@ -46,7 +46,7 @@ npm test
 
 The checks use Node VM and DOM stubs. They do not verify real browser rendering, customer usability, clinical accuracy or real delivery. `qa/result.json` and `qa/rehearsal.json` are generated records. The scripted walkthroughs do not count as actual team presentation rehearsals.
 
-GitHub Actions runs the same checks on pushes and pull requests once this project is uploaded. Each teammate can work on a branch and open a pull request; the intended collaborator role is **Write**, which permits pushes. Aarya owns the repository and manages access.
+GitHub Actions checks pushes and pull requests. Updates to `main` also run verification and automatically publish `dist/` to GitHub Pages after checks pass. Each teammate can work on a branch and open a pull request; the intended collaborator role is **Write**, which permits pushes. Aarya owns the repository and manages access.
 
 See [CONTRIBUTING.md](CONTRIBUTING.md) for the collaboration workflow and [docs/DEPLOYMENT.md](docs/DEPLOYMENT.md) for publishing.
 
