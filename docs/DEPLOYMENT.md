@@ -7,7 +7,7 @@ The team website is https://aaryadeshpande.github.io/referralflow-ai/.
 1. Edit the relevant files in `dist/`.
 2. Run `npm test` and try the affected flow locally with `npm start`.
 3. Push the changes to `main`, or merge a reviewed pull request into `main`.
-4. GitHub Actions runs verification, then publishes `dist/` through the **Publish prototype website** workflow. The public link stays the same.
+4. GitHub Actions runs verification, then publishes `dist/` through the **Check prototypes** (verify, then deploy) workflow. The public link stays the same.
 
 A failed verification prevents that workflow from publishing. Check the Actions tab for the outcome. Branches and open pull requests do not publish changes to the public site. You can also start the publishing workflow manually from Actions.
 
