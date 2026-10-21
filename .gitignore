@@ -1,0 +1,5 @@
+docs/*.png
+docs/*contact*
+__pycache__/
+*.tar.gz
+*.zip
