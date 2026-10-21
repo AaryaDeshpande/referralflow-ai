@@ -10,7 +10,7 @@ from reportlab.pdfbase.ttfonts import TTFont
 
 ROOT=Path(__file__).resolve().parents[1]
 OUT=ROOT/'dist'/'ReferralFlow_Presentation_Guide.pdf'
-BASE='https://referralflow-class-lab.ad277.chatgpt.site'
+BASE='https://aaryadeshpande.github.io/referralflow-ai'
 FONT='/usr/share/fonts/truetype/dejavu'
 pdfmetrics.registerFont(TTFont('DejaVu',FONT+'/DejaVuSans.ttf'))
 pdfmetrics.registerFont(TTFont('DejaVuBold',FONT+'/DejaVuSans-Bold.ttf'))

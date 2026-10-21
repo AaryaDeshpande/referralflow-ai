@@ -1,25 +1,22 @@
-# Source collaboration and deployment
+# Website publishing
 
-The current public site is https://referralflow-class-lab.ad277.chatgpt.site/.
+The team website is https://aaryadeshpande.github.io/referralflow-ai/.
 
-This team copy is based on published Site version 2, source commit `87f840f87e4ee2e68db165d2552479d4b32be142`, retrieved on October 20, 2026 (Chicago). App source and supporting course files are copied without changing the published application. The repository adds team instructions, a local development server and GitHub Actions checks.
+## Update the website
 
-## What a GitHub push does
+1. Edit the relevant files in `dist/`.
+2. Run `npm test` and try the affected flow locally with `npm start`.
+3. Push the changes to `main`, or merge a reviewed pull request into `main`.
+4. GitHub Actions runs verification, then publishes `dist/` through the **Publish prototype website** workflow. The public link stays the same.
 
-A push saves the source for the team and triggers the included verification workflow. It does **not** automatically update the current hosted Site. There is no GitHub-to-Sites deployment automation in this repository.
+A failed verification prevents that workflow from publishing. Check the Actions tab for the outcome. Branches and open pull requests do not publish changes to the public site. You can also start the publishing workflow manually from Actions.
 
-## Publish an update
+Only `dist/` is published. The repository stays private; the website is public. There are no live AI calls, patient records, external sending, database, or secrets.
 
-For the existing Site, Aarya can request publication of the selected GitHub commit through ChatGPT Sites. The publishing workflow must fetch that commit, validate the static `dist/` output, and publish through the original Site project. Keep the same live Site when continuing this project.
+## Presentation PDF
 
-Alternatively, the team can later choose another static host and deploy the `dist/` directory. The app needs static-file hosting only. It currently has no server, database or cloud credentials to provision.
+If editing the presentation source, regenerate `dist/ReferralFlow_Presentation_Guide.pdf` using `python3 docs/build_presentation_pdf.py`, then commit the generated PDF. The deployment workflow publishes committed static files without regenerating the PDF.
 
-The Site-specific hosting manifest is intentionally excluded from this portable team copy. No credential, token or account session is included. The original source checkout keeps its Site identity separately.
+## Before class
 
-## Checks before class
-
-1. Open the actual published links without signing in and verify A/B/C load.
-2. Run the intended demo paths on desktop and a phone.
-3. Test approval, revision, missing information and downloads.
-4. Complete two actual team presentation rehearsals.
-5. Submit the verified links, presentation and prompt record required by Canvas.
+Open the published hub, all three prototypes, the guide and downloads on desktop and a phone. Complete the two team rehearsals and submit the materials required by Canvas.
