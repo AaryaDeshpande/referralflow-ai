@@ -1,7 +1,7 @@
 {
-  "timestamp": "2026-10-21T02:40:42.888Z",
+  "timestamp": "2026-10-22T02:11:52.230Z",
   "mode": "Node VM state-transition tests with explicit DOM stubs; no browser rendering, human usability test, team rehearsal or real delivery verified",
-  "assertions": 422,
+  "assertions": 487,
   "totalTests": 65,
   "passed": 65,
   "failed": 0,
@@ -289,13 +289,13 @@
     "humanOrTeamRehearsal": false
   },
   "sha256": {
-    "A.html": "ce4afc076a6e542b9774c94f30b8592b880f30166bf0d79fde1c72a371a13f55",
-    "B.html": "2946f67c186aa547289a81b895a400f748c85471fddb6385f30edd2141b8f6b1",
-    "C.html": "12d20d853bce2e6b3326a0900c38754d1a65d18b09ce0b05e3292d65a60f8270",
-    "development-log.html": "7c62a1fcb108b1d5349158704a0e641743acfb6e312d06eeeb958f43fef9c9bd",
-    "evaluate.html": "9db402f8434157505af5f322dc2c247e9f48cf3320f79a6f6d6e136d9ec51918",
-    "evidence.html": "7bfbac63392fed2aa31b22f436de81b9b91faa27ba9002a1708ffc2dcb71a387",
-    "guide.html": "9f4ceb0c2bda8a37cabec599e600fbb25e039beb8cccf60d6de58fcf2648e1ff",
-    "index.html": "6e5aa82e98eaf3ec4ce33514f0f487a13eb992f67a52dbf2ade4edc2d92363e0"
+    "A.html": "b98eee6a9fca61224a92f8e21c96ee676b0466d0d7068a4b52a02b0bdd50274f",
+    "B.html": "28d422b6b96895011f5aeb71c3d88bdf15e7f459ba3a45c22dd836d9610e7c6a",
+    "C.html": "cf8b9ef18d2f065cd1f2f94fe9b6f59954ed4d9734bd3de4e4d5fa1743468361",
+    "development-log.html": "2d85603c04fc7bd039fa08304fda5e140a180ed59f2a5a6a47e2933fa9688318",
+    "evaluate.html": "e1cb396dc1cacb7f7d8417e3744086f5d8a895d79779c4fe4598ec23730c0986",
+    "evidence.html": "da2158400f0df2b312975a9071a602f77f1d4a3fc62d8d206ec89bb6b7519eae",
+    "guide.html": "19ef562cc49a300850e659e695314f487484c2d072af48cc3381c39701f2b2a6",
+    "index.html": "f19a802a20e537d638eb062e3dcf2c5586474a2c6f8f6d68a444982bd0fd7da2"
   }
 }

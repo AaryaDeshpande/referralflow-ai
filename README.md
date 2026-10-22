@@ -32,6 +32,7 @@ You can also open `dist/index.html` directly after downloading and extracting th
 | `dist/B.html` | Referral Brief interface and inline JavaScript |
 | `dist/C.html` | Practice Relay interface and inline JavaScript |
 | `dist/site.css` | Shared visual styling; changes can affect every page |
+| `dist/nav.css` | Shared left icon rail and footer link styling used by every page |
 | `dist/index.html` | Navigation hub |
 | `dist/guide.html`, `dist/evidence.html` | Assignment, scope, demonstration and evidence material |
 | `dist/evaluate.html` | Blank observation record |
