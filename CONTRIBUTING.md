@@ -41,7 +41,7 @@ Open a pull request on GitHub. Write access permits direct pushes, but branches 
 - Preserve unknown source information and fictional-data labels.
 - Retain the distinction between demonstrated local behavior and simulated AI/roles/delivery.
 - Preserve an already delivered snapshot when editing a later draft, as the current design implements.
-- Check shared `dist/site.css` changes in A, B, C and the hub.
+- Check shared `dist/site.css` and `dist/nav.css` changes in A, B, C and the hub. The left rail markup is repeated in each page (and in `build-log.py` for the prompt log), so update every copy when adding a rail link.
 - Record new development prompts honestly. Do not fabricate customer findings or team rehearsals.
 - Agree on changes to the product direction before restructuring the concept.
 
