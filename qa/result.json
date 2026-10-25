@@ -1,9 +1,9 @@
 {
-  "timestamp": "2026-10-22T02:11:52.230Z",
+  "timestamp": "2026-10-25T23:25:15.719Z",
   "mode": "Node VM state-transition tests with explicit DOM stubs; no browser rendering, human usability test, team rehearsal or real delivery verified",
-  "assertions": 487,
-  "totalTests": 65,
-  "passed": 65,
+  "assertions": 507,
+  "totalTests": 70,
+  "passed": 70,
   "failed": 0,
   "results": [
     {
@@ -179,6 +179,18 @@
       "status": "passed"
     },
     {
+      "name": "Voice example requires permission, generates a reviewable report and revokes approval after transcript edits",
+      "status": "passed"
+    },
+    {
+      "name": "Voice AI errors preserve the transcript and a new AI result still needs review",
+      "status": "passed"
+    },
+    {
+      "name": "Pages links to hosted AI and keeps hosted TypeScript out of static pages",
+      "status": "passed"
+    },
+    {
       "name": "A.html: all inline scripts parse",
       "status": "passed"
     },
@@ -243,6 +255,14 @@
       "status": "passed"
     },
     {
+      "name": "overview.html: all inline scripts parse",
+      "status": "passed"
+    },
+    {
+      "name": "overview.html: literal local links resolve",
+      "status": "passed"
+    },
+    {
       "name": "Scripted walkthrough 1: A completes notes → reviewed report → approved local handoff",
       "status": "passed"
     },
@@ -289,13 +309,14 @@
     "humanOrTeamRehearsal": false
   },
   "sha256": {
-    "A.html": "b98eee6a9fca61224a92f8e21c96ee676b0466d0d7068a4b52a02b0bdd50274f",
-    "B.html": "28d422b6b96895011f5aeb71c3d88bdf15e7f459ba3a45c22dd836d9610e7c6a",
-    "C.html": "cf8b9ef18d2f065cd1f2f94fe9b6f59954ed4d9734bd3de4e4d5fa1743468361",
-    "development-log.html": "2d85603c04fc7bd039fa08304fda5e140a180ed59f2a5a6a47e2933fa9688318",
-    "evaluate.html": "e1cb396dc1cacb7f7d8417e3744086f5d8a895d79779c4fe4598ec23730c0986",
-    "evidence.html": "da2158400f0df2b312975a9071a602f77f1d4a3fc62d8d206ec89bb6b7519eae",
-    "guide.html": "19ef562cc49a300850e659e695314f487484c2d072af48cc3381c39701f2b2a6",
-    "index.html": "f19a802a20e537d638eb062e3dcf2c5586474a2c6f8f6d68a444982bd0fd7da2"
+    "A.html": "66e5dd51ebf13a6641e203fbb4587258b98782ff7c7edd7d9678e71bcec2df8e",
+    "B.html": "4452d344a557cae72e0591e4c7117fa831ddbce9c1a995473aacf14d03b7e2e0",
+    "C.html": "dc7181dd0a0371b2338b9307c72f33420be61a37ae1448217f81f493a05cf2b3",
+    "development-log.html": "4c09c96f49a14611cda0eb0b537a53851c5fb87cf357e89e74a614fd02fe62dc",
+    "evaluate.html": "f24ed7648fcdc2caa05d054a16745c58584bc9bb0519f9512dc526817cf4ef3c",
+    "evidence.html": "777bee2c99f0eb5233a2dd4bae20a7c31bb313382f8fefad4f6afd6509f0b1c5",
+    "guide.html": "86270a4791337cdf360b4680410ac4fa1bf2fb4859dbfed04a8c5f211419758e",
+    "index.html": "d9af539c4b9522618ddc17ed4c7ff38665dfbbb9696c5b3a83f36b3c65daaaa9",
+    "overview.html": "d9af539c4b9522618ddc17ed4c7ff38665dfbbb9696c5b3a83f36b3c65daaaa9"
   }
 }

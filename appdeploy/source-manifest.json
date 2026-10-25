@@ -1,0 +1,37 @@
+{
+  "app_id": "referralflow-ai-voice-and-three-prototypes-zstv8f",
+  "source_version": "1792969136135",
+  "source_archive": "ReferralFlow_Source_Backup.zip from supplied ReferralFlow_Submission_Package.zip",
+  "deployed_content_comparisons": [
+    "backend/index.ts",
+    "public/voice.js",
+    "index.html"
+  ],
+  "files": {
+    "backend/index.ts": "737676c00a61b2e6b2b17896fb538de92c8f3f9c724f75234ab8c03f0077659a",
+    "index.html": "117ccd7b65623073ab497a31ea9ae1748ebc6095759dcac98e84045a95a34614",
+    "package.json": "62f8f64749796b56b1e1d9bbf24e7933239437dc62e2ef9996f9170a7449d002",
+    "postcss.config.js": "e32657baf631d7c5f4dc67b4b2ee0ec8e7d5b3c41860e09cddce7c0377cd80bc",
+    "public/A.html": "6f7073b2353ff4ff486062509331f7381849dda9bf1dc68614167c5ce39c7ac9",
+    "public/B.html": "4452d344a557cae72e0591e4c7117fa831ddbce9c1a995473aacf14d03b7e2e0",
+    "public/C.html": "dc7181dd0a0371b2338b9307c72f33420be61a37ae1448217f81f493a05cf2b3",
+    "public/development-log.html": "4c09c96f49a14611cda0eb0b537a53851c5fb87cf357e89e74a614fd02fe62dc",
+    "public/development-log.json": "2543b7203644d8f5a9eab46c3f12410cf9ee6f93178b9d8e4a18fdd3fe0209e3",
+    "public/evaluate.html": "f24ed7648fcdc2caa05d054a16745c58584bc9bb0519f9512dc526817cf4ef3c",
+    "public/evidence.html": "777bee2c99f0eb5233a2dd4bae20a7c31bb313382f8fefad4f6afd6509f0b1c5",
+    "public/guide.html": "54386637b3c411d98d3e99d16ea81d0afa4e33543fb51132f4d0e04f44f8b408",
+    "public/nav.css": "bc53a6262ab70c3691cc2cef873f373d13e64aacb598212715a1b30876e7dcf1",
+    "public/overview.html": "3c98ce3d72d3a0f3662a2861295f0a608c2fa56405c67ec78d6ce9535ce02d04",
+    "public/resources/fictional-visit.mp3": "3477a229f49330d8e6e2e89642649b29439c94eee5c3674e9672e79f21937f01",
+    "public/site.css": "e6d7712f4fe9ed87ce81a81f424d0521d23d4d581f0cf85caae6ab58bfdc48a3",
+    "public/voice-implementation-record.json": "4edc3ce7a9cf9fcd200b6bb4394eff413c1af0e44eed09311ba626cb9321523d",
+    "public/voice.css": "362eac0695469ea3e015435856a4de2b7643290ac3ff9a5c45e76033ec80f028",
+    "public/voice.js": "89dea5fd3a4cb98b23aff2d2d9ab59e89681d88bbcd3799e2268bdae025e7043",
+    "src/main.ts": "18065eb6e160a6e165e483db80fac77f585a5fe786d13a7cc707dca41a6b0824",
+    "src/styles.css": "fb9e2b0698c210817ae27c89b0638e47fb265ab8dfd05cfd82a143df9b937dc3",
+    "tailwind.config.js": "0dbb175063f49e76762cafb4b72a3be22ec69e2e0909af2d6d370ffe67cf02ee",
+    "tests/tests.json": "fa6435d8728f1abf51508941504e73f220e95d37340bb8538d09f911aa37dcc5",
+    "tsconfig.json": "c3df7d9e7ce2ec1fbfb3884f3b091ec1f3d57a814a29c354e03700e31a3834ff",
+    "vite.config.ts": "3c262a3268477dada7bb158e592a8e14f28acf74ae1471915def8230d57fa079"
+  }
+}

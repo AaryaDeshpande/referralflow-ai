@@ -11,6 +11,7 @@ const results=[];let assertions=0;
 function expect(condition,message){assertions++;if(!condition)throw new Error(message);}
 function same(a,b){return JSON.stringify(a)===JSON.stringify(b);}
 function test(name,fn){try{fn();results.push({name,status:'passed'});}catch(error){results.push({name,status:'failed',error:error.message});}}
+async function testAsync(name,fn){try{await fn();results.push({name,status:'passed'});}catch(error){results.push({name,status:'failed',error:error.message});}}
 function makeDocument(html){
  const els=new Map();let activeElement=null;
  const decode=value=>String(value).replace(/&(amp|lt|gt|quot|#39|#x27);/g,(_,x)=>({amp:'&',lt:'<',gt:'>',quot:'"','#39':"'",'#x27':"'"}[x]));
@@ -19,7 +20,7 @@ function makeDocument(html){
   const values=new Set(),listeners={};const el={id,tagName:tag.toUpperCase(),value:'',textContent:'',hidden:false,disabled:false,checked:false,style:{},dataset:{},attributes:{},firstChild:{textContent:''},clientHeight:230,scrollTop:0,ownedIds:new Set(),listeners,
    classList:{add:(...v)=>v.forEach(x=>values.add(x)),remove:(...v)=>v.forEach(x=>values.delete(x)),contains:x=>values.has(x),toggle(x,on){const yes=on===undefined?!values.has(x):on;yes?values.add(x):values.delete(x);return yes;}},
    setAttribute(k,v){this.attributes[k]=String(v);},getAttribute(k){return this.attributes[k]??null;},addEventListener(k,fn){(listeners[k]??=[]).push(fn);},
-   dispatch(k,extra={}){for(const fn of listeners[k]||[])fn({target:this,preventDefault(){},...extra});},focus(){activeElement=this;},setSelectionRange(a,b){this.selectionStart=a;this.selectionEnd=b;},scrollIntoView(){this.scrolled=true;},reset(){},showModal(){this.open=true;},close(){this.open=false;},appendChild(){},remove(){},click(){this.dispatch('click');}};
+   dispatch(k,extra={}){let result;for(const fn of listeners[k]||[])result=fn({target:this,preventDefault(){},...extra});return result;},focus(){activeElement=this;},setSelectionRange(a,b){this.selectionStart=a;this.selectionEnd=b;},scrollIntoView(){this.scrolled=true;},reset(){},showModal(){this.open=true;},close(){this.open=false;},appendChild(){},children:[],append(...nodes){this.children.push(...nodes);},replaceChildren(...nodes){this.children=[...nodes];},remove(){},click(){return this.dispatch('click');}};
   let inner='';Object.defineProperty(el,'className',{get:()=>[...values].join(' '),set:value=>{values.clear();String(value).split(/\s+/).filter(Boolean).forEach(x=>values.add(x));}});
   Object.defineProperty(el,'innerHTML',{get:()=>inner,set:value=>{inner=String(value);for(const childId of el.ownedIds)els.delete(childId);el.ownedIds=scan(inner);}});
   return el;
@@ -29,10 +30,10 @@ function makeDocument(html){
  const document={getElementById:id=>els.get(id)||null,createElement:tag=>make(tag,tag),querySelector:()=>make('query'),querySelectorAll:()=>[],body:make('body'),elements:els};
  Object.defineProperty(document,'activeElement',{get:()=>activeElement});return document;
 }
-function load(file,{dom=false}={}){
+function load(file,{dom=false,transport}={}){
  const html=fs.readFileSync(path.join(root,file),'utf8');
- const scripts=[...html.matchAll(/<script(?:\s[^>]*)?>([\s\S]*?)<\/script>/gi)].map(m=>m[1]);
- const window={};const context={window,console,setTimeout:()=>0,clearTimeout(){},Blob,URL,Date};
+ const scripts=[...html.matchAll(/<script\b([^>]*)>([\s\S]*?)<\/script>/gi)].filter(m=>!m[1].includes('type="module"')).map(m=>{const src=m[1].match(/\bsrc=["']([^"']+)["']/);return src?(dom?fs.readFileSync(path.join(root,src[1]),'utf8'):''):m[2];});
+ const window={addEventListener(){},referralVoiceTransport:transport};const context={window,console,setTimeout:()=>0,clearTimeout(){},setInterval:()=>0,clearInterval(){},navigator:{},Blob,URL,Date,fetch:async url=>({ok:true,blob:async()=>new Blob([fs.readFileSync(path.join(root,url))],{type:'audio/mpeg'})})};
  if(dom)context.document=makeDocument(html);
  vm.createContext(context);for(const [i,script]of scripts.entries())new vm.Script(script,{filename:`${file}:script${i}`}).runInContext(context);
  return {api:window.demo,window,html,document:context.document};
@@ -113,6 +114,39 @@ test('C clinical review and recipient confirmation are independently mandatory f
 test('C completed cases leave ready queue and counts match state',()=>{prepareC();expect(C.getCounts().ready===1&&C.getCounts().completed===0,'C ready counts incorrect');C.setRole('assistant');C.exportApproved();C.simulateReturn();expect(C.getCounts().ready===0&&C.getCounts().completed===1,'C completed case remains ready');expect(C.getCounts().prepare+C.getCounts().review+C.getCounts().ready+C.getCounts().completed===C.getState().cases.length,'C cases counted twice or lost');});
 test('C UI input and navigation retain specialist edits across case and role changes',()=>{
  const h=load('C.html',{dom:true}),d=h.api,w=h.window;d.checkSource(true);d.checkRecipient(true);d.generateDraft();w.uiRole('specialist');const original=d.getState().cases.find(c=>c.id==='RF-104').draft;let editor=h.document.getElementById('draft-editor');editor.value=original+'\nSaved while typing.';w.uiDraftInput(editor.value);expect(d.getState().cases.find(c=>c.id==='RF-104').draft.endsWith('Saved while typing.'),'C input handler did not autosave');editor=h.document.getElementById('draft-editor');editor.value+='\nSaved before case navigation.';expect(w.uiSelect('RF-106').ok,'C case navigation failed');expect(d.getState().cases.find(c=>c.id==='RF-104').draft.endsWith('Saved before case navigation.'),'C navigation discarded pending textarea value');w.uiSelect('RF-104');editor=h.document.getElementById('draft-editor');expect(editor.value.endsWith('Saved before case navigation.'),'C rendered stale draft on return');editor.value+='\nSaved before role switch.';expect(w.uiRole('assistant').ok,'C role navigation failed');expect(d.getState().cases.find(c=>c.id==='RF-104').draft.endsWith('Saved before role switch.'),'C role change discarded edits');expect(h.document.getElementById('draft-editor').value.endsWith('Saved before role switch.'),'C coordinator sees stale report');
+});
+
+await testAsync('Voice example requires permission, generates a reviewable report and revokes approval after transcript edits',async()=>{
+ const h=load('A.html',{dom:true}),el=id=>h.document.getElementById(id),v=h.window.voiceDemo,d=h.api;
+ expect(!!v,'Voice script failed to initialize');
+ expect(el('voice-record').disabled&&el('voice-process').disabled&&el('voice-fixture').disabled,'Voice controls permit processing without permission');
+ await el('voice-example').click();
+ expect(!el('voice-audio').hidden&&el('voice-audio').src.startsWith('blob:'),'Fictional audio is unavailable');
+ expect(el('voice-fixture').disabled,'Loading example bypassed permission');
+ el('voice-consent').checked=true;el('voice-consent').dispatch('change');el('voice-fixture').click();
+ expect(el('voice-status').textContent.includes('fixed transcript and fixed fields'),'Prepared example is not disclosed');
+ expect(d.getState().draft.includes('six weeks')&&d.getState().draft.includes('Alex Morgan'),'Voice fields did not reach letter');
+ expect(!d.approve().ok&&!d.exportText().ok,'Voice bypassed specialist review');
+ d.confirmReview(true);d.confirmRecipient(true);d.acknowledgeUnresolved(true);expect(d.approve().ok&&d.exportText().ok,'Reviewed voice letter could not be exported');
+ el('voice-transcript').value+='\nSpecialist: Changed fictional follow-up.';el('voice-transcript').dispatch('input');
+ expect(!d.exportText().ok&&!d.getState().approval,'Transcript edit retained an approved export');
+ el('reset-demo').click();expect(el('voice-transcript').value===''&&el('voice-audio').hidden&&!d.getState().draft,'Reset retained voice or report content');
+});
+await testAsync('Voice AI errors preserve the transcript and a new AI result still needs review',async()=>{
+ let input;const transport={extract:async value=>{input=value;throw new Error('simulated outage');}};
+ const h=load('A.html',{dom:true,transport}),el=id=>h.document.getElementById(id),v=h.window.voiceDemo,d=h.api;
+ await el('voice-example').click();el('voice-consent').checked=true;el('voice-consent').dispatch('change');
+ const transcript=v.getSampleTranscript();el('voice-transcript').value=transcript;await v.process('text');
+ expect(input.consent===true&&input.transcript===transcript,'AI request lost consent or transcript');
+ expect(el('voice-status').textContent.includes('unavailable')&&el('voice-transcript').value===transcript,'AI error lost source or recovery guidance');
+ transport.extract=async()=>({result:v.getPreparedFields(),mode:'Stubbed AI response'});await v.process('text');
+ expect(d.getState().draft.includes('six weeks')&&!d.approve().ok,'AI response failed to draft or skipped approval');
+});
+test('Pages links to hosted AI and keeps hosted TypeScript out of static pages',()=>{
+ const html=fs.readFileSync(path.join(root,'A.html'),'utf8');
+ expect(html.includes('Open live AI voice workspace')&&html.includes('https://referralflow-ai-voice-and-three-prototypes-zstv8f.v2.appdeploy.ai/'),'Missing live AI link');
+ expect(!html.includes('src="./src/main.ts"'),'Static page attempts to load uncompiled host SDK');
+ expect(/id="voice-process" hidden disabled/.test(html)&&/id="voice-extract" hidden disabled/.test(html),'Static preview exposes unavailable AI controls');
 });
 
 const htmlFiles=fs.readdirSync(root).filter(f=>f.endsWith('.html'));

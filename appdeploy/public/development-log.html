@@ -1,0 +1,1168 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>Prompt history & revisions | ReferralFlow</title>
+    <link rel="stylesheet" href="site.css" />
+    <style>
+      .log-counts {
+        display: grid;
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+        gap: 16px;
+        margin: 26px 0;
+      }
+      .log-counts .card {
+        margin: 0;
+        padding: 20px;
+      }
+      .count-number {
+        font-size: 32px;
+        font-weight: 750;
+        letter-spacing: -1px;
+        line-height: 1.1;
+      }
+      .count-label {
+        font-size: 13px;
+        color: var(--muted);
+        margin-top: 8px;
+      }
+      .jump-links {
+        display: flex;
+        gap: 10px 20px;
+        flex-wrap: wrap;
+        margin: 20px 0 30px;
+        font-size: 13px;
+      }
+      .section-intro {
+        max-width: 900px;
+        color: var(--muted);
+      }
+      .revision-heading {
+        display: flex;
+        gap: 14px;
+        align-items: center;
+        justify-content: space-between;
+        flex-wrap: wrap;
+      }
+      .revision-heading h3 {
+        margin: 0;
+      }
+      .source-record {
+        margin: 10px 0 19px;
+        line-height: 1.8;
+      }
+      .exchange {
+        padding-top: 22px;
+        margin-top: 22px;
+        border-top: 1px solid var(--line);
+      }
+      .exchange h3 {
+        font-size: 16px;
+        margin-bottom: 6px;
+      }
+      .metadata {
+        margin: 0 0 12px;
+        overflow-wrap: anywhere;
+      }
+      .exchange h4 {
+        font-size: 11px;
+        letter-spacing: 1px;
+        text-transform: uppercase;
+        color: #52647e;
+        margin: 20px 0 8px;
+      }
+      .record-text {
+        white-space: pre-wrap;
+        overflow-wrap: anywhere;
+        font:
+          14px/1.75 system-ui,
+          sans-serif;
+        margin: 0 0 14px;
+        color: #344b66;
+      }
+      .outcomes {
+        font-size: 14px;
+        line-height: 1.75;
+        color: #344b66;
+        margin: 0;
+        padding-left: 20px;
+      }
+      .prompt,
+      .checks {
+        border: 1px solid var(--line);
+        border-radius: 8px;
+        background: #fafcff;
+        padding: 0 14px;
+        margin: 17px 0 0;
+      }
+      .prompt summary,
+      .checks summary {
+        font-size: 13px;
+        min-height: 44px;
+        display: list-item;
+        align-content: center;
+      }
+      .prompt[open] summary,
+      .checks[open] summary {
+        margin-bottom: 8px;
+      }
+      .prompt-text {
+        padding: 12px 0 15px;
+        border-top: 1px solid #e4eaf3;
+        margin: 0;
+        white-space: pre-wrap;
+        overflow-wrap: anywhere;
+        font:
+          13px/1.8 system-ui,
+          sans-serif;
+        color: #334d6e;
+      }
+      .checks .record-text {
+        font-size: 12px;
+        line-height: 1.8;
+      }
+      .checks {
+        padding-bottom: 4px;
+      }
+      .history-group > summary {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 14px;
+        list-style: none;
+      }
+      .history-group > summary::before {
+        content: '+';
+        font-size: 21px;
+        font-weight: 500;
+        color: var(--blue);
+      }
+      .history-group[open] > summary::before {
+        content: '−';
+      }
+      .history-group > summary > span:first-child {
+        margin-right: auto;
+      }
+      .history-group .exchange:first-of-type {
+        margin-top: 15px;
+      }
+      .limit-note {
+        font-size: 13px;
+        line-height: 1.8;
+        color: var(--muted);
+        max-width: 930px;
+      }
+      .label-current {
+        font-weight: 750;
+        text-decoration: underline;
+        text-underline-offset: 5px;
+      }
+      .section-divider {
+        border: 0;
+        border-top: 1px solid var(--line);
+        margin: 45px 0 0;
+      }
+      @media (max-width: 700px) {
+        .log-counts {
+          gap: 9px;
+        }
+        .log-counts .card {
+          padding: 16px 12px;
+        }
+        .count-number {
+          font-size: 27px;
+        }
+        .count-label {
+          font-size: 12px;
+        }
+        .history-group > summary {
+          flex-wrap: wrap;
+          gap: 8px;
+        }
+        .history-group > summary .pill {
+          margin-left: 24px;
+        }
+        .record-text,
+        .outcomes {
+          font-size: 14px;
+        }
+        .prompt-text {
+          font-size: 13px;
+        }
+        .revision-group,
+        .history-group {
+          padding: 18px;
+        }
+        .jump-links {
+          gap: 14px 20px;
+        }
+      }
+      @media print {
+        .jump-links,
+        .download-link {
+          display: none;
+        }
+        .prompt-text,
+        .record-text,
+        .outcomes {
+          font-size: 10px;
+        }
+        .exchange {
+          break-inside: avoid;
+        }
+        .card {
+          break-inside: auto;
+        }
+        .log-counts {
+          grid-template-columns: repeat(3, 1fr);
+        }
+      }
+    </style>
+    <link rel="stylesheet" href="nav.css" />
+  </head>
+  <body>
+    <aside style="max-width:1000px;margin:24px auto;padding:18px 24px;background:#eaf0ff;color:#17324b;font:15px/1.6 system-ui;"><strong>Historical build record:</strong> These attributed prompts describe the initial prototypes and earlier revisions. The October 25 voice addition is documented in the <a href="voice-implementation-record.json">implementation record</a> and <a href="guide.html">current guide</a>.</aside>
+    <a class="skip" href="#main">Skip to content</a>
+    <aside class="rf-rail" aria-label="Site navigation">
+      <a
+        class="rf-rail-brand"
+        href="overview.html"
+        aria-label="Overview"
+        data-label="Overview"
+        >RF</a
+      >
+      <a
+        class="rf-rail-link"
+        href="A.html"
+        aria-label="A · Letter Studio"
+        data-label="A · Letter Studio"
+        ><svg viewBox="0 0 24 24">
+          <path d="M7 3H4v18h16V7l-4-4H7Z" />
+          <path d="M15 3v5h5M8 12h8M8 16h6" /></svg
+      ></a>
+      <a
+        class="rf-rail-link"
+        href="B.html"
+        aria-label="B · Referral Brief"
+        data-label="B · Referral Brief"
+        ><svg viewBox="0 0 24 24">
+          <rect x="3" y="5" width="18" height="14" rx="2" />
+          <path d="m3 7 9 6 9-6" /></svg
+      ></a>
+      <a
+        class="rf-rail-link"
+        href="C.html"
+        aria-label="C · Practice Relay"
+        data-label="C · Practice Relay"
+        ><svg viewBox="0 0 24 24">
+          <rect x="3" y="4" width="5" height="16" rx="1" />
+          <rect x="10" y="4" width="5" height="10" rx="1" />
+          <rect x="17" y="4" width="4" height="13" rx="1" /></svg
+      ></a>
+      <a
+        class="rf-rail-link"
+        href="guide.html"
+        aria-label="Presentation guide"
+        data-label="Presentation guide"
+        ><svg viewBox="0 0 24 24">
+          <circle cx="12" cy="12" r="9" />
+          <path d="M9.5 9a2.5 2.5 0 1 1 4 2c-1 .7-1.5 1-1.5 3M12 17h.01" /></svg
+      ></a>
+      <div class="rf-rail-bottom">DENTAL DEMAND LABS</div>
+    </aside>
+    <header><a class="brand" href="overview.html">ReferralFlow</a></header>
+    <main id="main">
+      <div class="eyebrow">Development record · 20 October 2026</div>
+      <h1>Initial prompts.<br />Current revisions.</h1>
+      <p class="lede">
+        The actual requests, purposes and recorded outcomes behind Letter
+        Studio, Referral Brief and Practice Relay.
+      </p>
+      <div class="notice">
+        <strong>Authorship: AI assistant → coding agent.</strong> These are real
+        development exchanges recorded during the user-authorized work. They are
+        not attributed to students. Initial build history and later revisions
+        are shown separately; timestamps and exact prompt wording remain as
+        recorded.
+      </div>
+      <div class="log-counts" aria-label="Recorded exchange counts">
+        <div class="card">
+          <div class="count-number">15</div>
+          <div class="count-label">Initial exchanges<br />5 per prototype</div>
+        </div>
+        <div class="card">
+          <div class="count-number">3</div>
+          <div class="count-label">
+            Current revision exchanges<br />Recorded separately
+          </div>
+        </div>
+        <div class="card">
+          <div class="count-number">18</div>
+          <div class="count-label">
+            Total actual exchanges<br />Across 3 prototypes
+          </div>
+        </div>
+      </div>
+      <div class="row download-link">
+        <a class="button" href="development-log.json" download
+          >Download complete JSON record</a
+        ><span class="small"
+          >Includes the original source text and hashes.</span
+        >
+      </div>
+      <nav class="jump-links" aria-label="Prompt log sections">
+        <a href="#current-revisions">Current revisions</a
+        ><a href="#initial-history">Initial history</a
+        ><a href="#revision-A">A update</a><a href="#revision-B">B update</a
+        ><a href="#revision-C">C update</a>
+      </nav>
+      <section id="current-revisions">
+        <h2>Current revisions</h2>
+        <p class="section-intro">
+          These follow-up records describe the latest bounded updates to the
+          three prototype pages. The purpose and outcome below come from each
+          builder’s source record. Differing source schemas are normalized only
+          for display; the complete raw records are preserved in the download.
+        </p>
+        <section class="card revision-group" id="revision-A">
+          <div class="revision-heading">
+            <h3>A · Letter Studio</h3>
+            <span class="pill">Current revision</span>
+          </div>
+          <p class="small source-record">
+            Source: <code>logs/update-A.json</code> · 1 actual exchange.
+            Original source record is preserved in the JSON download.
+          </p>
+          <article class="exchange">
+            <h3>A-update-1</h3>
+            <p class="small metadata">
+              AI assistant → coding agent · 2026-10-20T07:15:39.014126+00:00
+            </p>
+            <h4>Recorded purpose</h4>
+            <p class="record-text">
+              Improve the existing document-first specialist prototype within
+              the shared notes-to-approved-report workflow.
+            </p>
+            <h4>Recorded outcome</h4>
+            <p class="record-text">
+              Implemented the shared Alex Morgan case; retained Sofia Bennett
+              missing-follow-up scenario; cleared case and recipient state to
+              prevent recipient carryover; added source section buttons
+              selecting exact supplied Assessment/Treatment/Follow-up ranges
+              with focus, visual emphasis and live text; surfaced recorded
+              source gaps separately from absent fields and required
+              acknowledgement; preserved approval invalidation, immutable
+              snapshots and escaped TXT/HTML exports; added a real Reset demo
+              action, concise task guidance, keyboard skip link, evidence link,
+              larger mobile controls and consistent RF navy/blue branding.
+            </p>
+            <details class="prompt">
+              <summary>Read the exact prompt</summary>
+              <pre class="prompt-text">
+Implement bounded page A only in live checkout /workspace/scratch/905a0515b0da/referralflow-lab/dist/A.html. Root owns other files/publication. Preserve test API window.demo. Read existing page then fix audited recipient carryover, add actual source-linked review aids (click supplied Assessment/Treatment/Follow-up to focus/highlight source; no semantic accuracy claims), improve concise first-use task guidance and keyboard/mobile readability, add Reset demo. Preserve approval invalidation/frozen exports, missing info gate, no real send or AI. Normalize brand RF navy/blue. MAIN CASE identical across A/B/C: fictional patient Alex Morgan, DOB12 March1984, visit20October2026, caseRF-1042; specialistDr.Arjun Patel; GPDr.Elena Ruiz; Cedar Grove Dental; referrals@cedargrove.example. Referral periodontal assessment; Assessment &#x27;Localized gum inflammation was recorded around tooth #19.&#x27;; Treatment &#x27;Periodontal assessment completed. Findings were discussed with the patient.&#x27;; Follow-up &#x27;Specialist review in six weeks.&#x27;; Requested action &#x27;Please share the prior radiograph before the follow-up visit.&#x27;; Unresolved &#x27;The earlier radiograph was not included.&#x27; Retain incomplete case Sofia Bennett with missingfollow-up (same variant available in B/C as applicable). A guided task: review source, create/reportedit, confirmrecipient, approve/export. All modelgeneration localdeterministic and simulationclearlyshortlabel. Keep name Letter Studio, specialistpersona. Add responsive unintrusive headerlink to evidence.html. No fabricated value/usageclaims. Log this actual instruction plus implementation outcome to logs/update-A.json with author AI assistant→coding agent,date and scope (preserveprior5logsinA.json). Do NOT run browser, startserver, installbrowser, publish, or edit QA/rootguide. Return own codevalidation and main changes. Need robust polished productpage, avoid giant academicdisclaimers.</pre
+              >
+            </details>
+            <details class="checks">
+              <summary>Builder-reported checks for this revision</summary>
+              <pre class="record-text">
+{
+  &quot;assertions&quot;: 50,
+  &quot;failures&quot;: 0,
+  &quot;method&quot;: &quot;Own Node VM execution with explicit DOM stubs and actual updated window.demo functions; static HTML checks. No browser rendering or visual verification.&quot;,
+  &quot;coverage&quot;: [
+    &quot;Exact shared case and recorded radiograph gap&quot;,
+    &quot;Assessment/Treatment/Follow-up source selection and focus, missing-section feedback, CRLF span correctness&quot;,
+    &quot;Recipient fields and salutation cannot inherit from the preceding case&quot;,
+    &quot;Missing destination prevents approval&quot;,
+    &quot;Recorded gap and absent follow-up require explicit acknowledgement&quot;,
+    &quot;Letter, source and recipient changes invalidate approval&quot;,
+    &quot;Earlier exports and internal approved snapshots remain frozen&quot;,
+    &quot;HTML export escapes edited text&quot;,
+    &quot;Reset button clears source, draft, recipient and approval and restores task focus&quot;,
+    &quot;No external script, network API or sending code added&quot;
+  ]
+}</pre
+              >
+            </details>
+          </article>
+        </section>
+        <section class="card revision-group" id="revision-B">
+          <div class="revision-heading">
+            <h3>B · Referral Brief</h3>
+            <span class="pill">Current revision</span>
+          </div>
+          <p class="small source-record">
+            Source: <code>logs/update-B.json</code> · 1 actual exchange.
+            Original source record is preserved in the JSON download.
+          </p>
+          <article class="exchange">
+            <h3>B6</h3>
+            <p class="small metadata">
+              AI assistant → coding agent · 2026-10-20 07:19:12 UTC
+            </p>
+            <h4>Recorded purpose</h4>
+            <p class="record-text">
+              Align the same fictional case across prototypes; add immediate
+              seeded recipient sample and two review checks; preserve handed-off
+              approved information during revisions.
+            </p>
+            <h4>Recorded outcome</h4>
+            <p class="record-text">
+              Updated B.html only. The recipient view shows four cards and the
+              exact approved report with TXT export. The shared case is Alex
+              Morgan, RF-1042, with the specified source facts. Open approved
+              sample creates explicitly labelled fictional seeded approval and
+              handoff without marking the user&#x27;s checks complete. Clinician
+              review and recipient confirmation are separately required for
+              every user approval. Edits and revisions invalidate current
+              approval but retain the previously handed-off snapshot and its
+              version-bound local response; a newer approval replaces it only
+              after explicit simulated handoff. Follow-up timing and the legacy
+              specialistNext field are synchronized. Added navy/blue branding,
+              evidence link, keyboard tabs, mobile overrides, reset, local
+              response export, and current-versus-recipient version notices.
+              Passed 53 targeted Node VM API/markup assertions. No browser,
+              server, publication, or live sending was performed. Original
+              logs/B.json was not modified.
+            </p>
+            <details class="prompt">
+              <summary>Read the exact prompt</summary>
+              <pre class="prompt-text">
+Implement bounded pageB only at /workspace/scratch/905a0515b0da/referralflow-lab/dist/B.html and logs/update-B.json. Finishmemo thenproceedwithoutwaiting. Preservewindow.demo APIswherepossible. CurrentB ReferralBrief needs clinicianstructuredreview plus recipientactioncards withfullapprovedreport, export. MAIN CASE identical across A/B/C: fictionalAlex Morgan DOB12March1984 date20October2026 caseRF-1042; specialistDr.Arjun Patel; GPDr.Elena Ruiz Cedar Grove Dental referrals@cedargrove.example; Referralperiodontalassessment; Assessment &#x27;Localized gum inflammation was recorded around tooth #19.&#x27;; Treatment &#x27;Periodontal assessment completed. Findings were discussed with the patient.&#x27;; Follow-up &#x27;Specialist review in six weeks.&#x27;; Requested action &#x27;Please share the prior radiograph before the follow-up visit.&#x27;; Unresolved &#x27;The earlier radiograph was not included.&#x27; Nextownerreferringpractice sendspriorradiograph, specialistreview6weeks (allsourcebacked). Simplefirst-use &#x27;Open approved sample&#x27; givesexplicitlyseededfictional approvedsampletoGPso intelligiblewithoutcomplexprep; also&#x27;Prepare a brief&#x27; keepsdraftreviewapprove simulatedhandoffflow. This seededfixture must belabeledexample notactualuserapproval/send. Fixauditedsemantics: whenrevisiondraftstarts, previouslyhandedoffversionremainsreadable; newapprovedrevisionreplacesitonlyonexplicitnew simulatedhandoff, showearlierversion/currentrevisionstatuses accurately. NeverpublishunapproveddrafttoGP. Structuredfieldsfindings/treatment/action/owner/timing/unresolved andfullreportallapprovedfromsameversion. NoPDFattachmentsornewportal requirement;exportTXT. Approvalsrequireclinicianandrecipientchecks; modificationsinvalidatereview. ConsistentRFnavy/bluebrand, cleanresponsive/mobilereadability, keyboard/focus, resetdemo andevidence.html link. Noexternaldeps,no browser/server/publication. Old5promptsB.jsonpreserved; log thisactualprompt+outcome inupdate-B.jsonauthorAIassistant→codingagent. Noinventedcustomer/savings/clinicalclaims. ReturnnewAPIchangesforroottests. OwnBonly rootownsrest.</pre
+              >
+            </details>
+            <details class="checks">
+              <summary>Builder-reported checks for this revision</summary>
+              <pre class="record-text">
+{
+  &quot;passed&quot;: 53,
+  &quot;mode&quot;: &quot;Node VM executing actual window.demo API plus markup checks&quot;,
+  &quot;visualQA&quot;: &quot;Not performed; no browser was used.&quot;
+}</pre
+              >
+            </details>
+          </article>
+        </section>
+        <section class="card revision-group" id="revision-C">
+          <div class="revision-heading">
+            <h3>C · Practice Relay</h3>
+            <span class="pill">Current revision</span>
+          </div>
+          <p class="small source-record">
+            Source: <code>logs/update-C.json</code> · 1 actual exchange.
+            Original source record is preserved in the JSON download.
+          </p>
+          <article class="exchange">
+            <h3>C current update 1</h3>
+            <p class="small metadata">
+              AI assistant → coding agent · 2026-10-20T07:12:31Z
+            </p>
+            <p class="small">
+              Time basis: UTC clock reading during source review; message
+              transport did not expose a separate prompt receipt timestamp.
+            </p>
+            <h4>Recorded purpose</h4>
+            <p class="record-text">
+              Correct lost specialist edits during navigation, clarify ownership
+              and local completion, and align the shared fictional case without
+              changing the agreed product concept.
+            </p>
+            <h4>Recorded outcome</h4>
+            <ul class="outcomes">
+              <li>
+                Main displayed case is RF-1042, Alex Morgan, DOB 12 March 1984,
+                visit 20 October 2026, specialist Dr. Arjun Patel, GP Dr. Elena
+                Ruiz at Cedar Grove Dental, referrals@cedargrove.example.
+                Clinical statements match the supplied prompt. RF-104 remains
+                the internal API key and RF-1042 is also accepted for selection.
+              </li>
+              <li>
+                Specialist report input saves to local in-memory state without
+                re-rendering the textarea. Case/role navigation and approval
+                flush pending text and recipient edits. Invalid pending
+                recipient fields remain visible and block navigation until
+                corrected or explicitly reverted.
+              </li>
+              <li>
+                Completed cases have a separate local-completion count and
+                section; ready contains only approved cases still awaiting local
+                completion. Next owner and next action appear on cards and the
+                selected case.
+              </li>
+              <li>
+                Specialist identity/content review and current-recipient
+                confirmation are distinct revision-bound approval checks.
+                Coordinator cannot approve; changing report or recipient clears
+                checks, approval, export and completion state.
+              </li>
+              <li>
+                Exports use the immutable approved snapshot. TXT export and
+                marking completion are distinct actions and explicitly do not
+                send anything.
+              </li>
+              <li>
+                Retained both missing-note examples and the seeded additional
+                review case. Added two-minute task, reset, navy/blue branding,
+                readable responsive queue/detail controls, focus preservation,
+                and evidence.html link.
+              </li>
+            </ul>
+            <details class="prompt">
+              <summary>Read the exact prompt</summary>
+              <pre class="prompt-text">
+Implement bounded page C only in /workspace/scratch/905a0515b0da/referralflow-lab/dist/C.html. Root owns other files/publication. Preservewindow.demo API. Improve existing Practice Relay with autosave or guaranteed preserve specialist edits on case/role navigation (auditedbug unsavedtextarea disappears), separate completed/returned from ready counts, make next owner/state explicit; simpleteamqueue no sprawlingdashboard. Standard RF brandnavy/blue. MAIN CASE same across A/B/C: fictionalpatientAlex Morgan DOB12March1984 visit20October2026 caseRF-1042 (you mayretainAPIkeyRF-104 internally foroldtests); specialistDr.Arjun Patel; GPDr.Elena Ruiz Cedar Grove Dental referrals@cedargrove.example; Referralperiodontalassessment; Assessment &#x27;Localized gum inflammation was recorded around tooth #19.&#x27;; Treatment &#x27;Periodontal assessment completed. Findings were discussed with the patient.&#x27;; Follow-up &#x27;Specialist review in six weeks.&#x27;; Requested action &#x27;Please share the prior radiograph before the follow-up visit.&#x27;; Unresolved &#x27;The earlier radiograph was not included.&#x27; Keep coordinatorMaya Chen (notpatient). Retain blockedmissing-note example and anotherreviewcase. Staffcannotapprove, requirecorrectspecialistcheck/currentrecipient; editinvalidatesapproval; frozenexports; exportandlocalmarkreturnDISTINCT (nothingreal sent). Add two-minute primarytask and resetdemo, keyboard/mobile polish, unintrusive evidence.html link. KeepHTMLselfcontained, noexternaldependencies, no browser/server/publication. Actualprompthistory old5 preserved; log thisnewinstruction+outcome to logs/update-C.json authorAIassistant→codingagent date. Readdocsourcefirst and checkspecificstatefailures; no inventedclinicalfacts/metrics. Finaltell rootAPIchanges/testingneeds and ownvalidation.</pre
+              >
+            </details>
+            <details class="checks">
+              <summary>Builder-reported checks for this revision</summary>
+              <pre class="record-text">
+{
+  &quot;method&quot;: &quot;Node VM execution of actual inline scripts, domain-state assertions, and a DOM stub that recreates input/textarea buffers on rendering. No browser or server.&quot;,
+  &quot;assertions_passed&quot;: 183,
+  &quot;initial_regression_groups_passed&quot;: 14,
+  &quot;additional_checks&quot;: &quot;Pending UI changes flushed before direct API approval; prior checks invalidated; renewed checks permit approval; focus-preservation hook present.&quot;,
+  &quot;coverage&quot;: [
+    &quot;Exact shared fixture and ID alias&quot;,
+    &quot;Preparation and wrong-role gates&quot;,
+    &quot;Both specialist/recipient checks bound to revision&quot;,
+    &quot;All missing-source actions denied without case mutation&quot;,
+    &quot;Frozen export, local completion and separate ready/completed counts&quot;,
+    &quot;Caller copy cannot mutate approval&quot;,
+    &quot;Draft and recipient changes invalidate approval/export/completion&quot;,
+    &quot;Unsaved textarea preserved on both case and role navigation, including without input event&quot;,
+    &quot;Autosave keeps textarea element intact&quot;,
+    &quot;Pending recipient saved or invalid fields retained&quot;,
+    &quot;UI check states and completed section rendering&quot;,
+    &quot;Script parsing, no external resources, two-minute task/reset/evidence link&quot;
+  ],
+  &quot;not_claimed&quot;: [
+    &quot;Browser rendering or actual mobile visual inspection&quot;,
+    &quot;Real authentication&quot;,
+    &quot;Real AI model generation&quot;,
+    &quot;Email or GP delivery&quot;,
+    &quot;Customer testing or validated value&quot;
+  ],
+  &quot;root_follow_up&quot;: &quot;Run root integration tests with the new confirmSpecialist gate; browser-render QA only if root chooses/has authorized capability. evidence.html is a root-owned relative destination.&quot;
+}</pre
+              >
+            </details>
+          </article>
+        </section>
+      </section>
+      <hr class="section-divider" />
+      <section id="initial-history">
+        <h2>Initial build history</h2>
+        <p class="section-intro">
+          Five original exchanges are retained for each prototype. Expand a
+          prototype, then an exact prompt, to inspect the request and recorded
+          result.
+        </p>
+        <div class="notice">
+          <strong>Historical context, not current instructions.</strong>
+          Requirements in these earlier prompts—including instructions to build
+          from a blank file—describe the initial build. They do not govern the
+          present revision. Earlier “frozen” hashes and checks apply to that
+          earlier version, not automatically to the current files.
+        </div>
+        <details class="card history-group" id="history-A">
+          <summary>
+            <span>A · Letter Studio</span
+            ><span class="pill">5 historical exchanges</span>
+          </summary>
+          <p class="small source-record">
+            Source: <code>logs/A.json</code> · 5 actual exchanges. Original
+            source record is preserved in the JSON download.
+          </p>
+          <article class="exchange">
+            <h3>A1</h3>
+            <p class="small metadata">
+              AI assistant → coding agent · 2026-10-20T02:17:15.387006+00:00
+            </p>
+            <h4>Recorded purpose</h4>
+            <p class="record-text">
+              Build a new document-first specialist letter prototype from blank
+              and establish its complete review-and-export workflow.
+            </p>
+            <h4>Recorded outcome</h4>
+            <p class="record-text">
+              Created standalone A.html with a responsive navy workspace,
+              fictional structured note, deterministic local drafting, editable
+              report, recipient controls, review confirmations, frozen approved
+              TXT export, and edit/source/recipient invalidation. No previous
+              prototype files were read.
+            </p>
+            <details class="prompt">
+              <summary>Read the exact prompt</summary>
+              <pre class="prompt-text">
+Build entirely NEW from blank standalone /workspace/scratch/511edc76527a/referralflow-fresh/dist/A.html. Do not read any other prior html, prototypes, site or backup anywhere. User expressly forbids existing prototypes influencing this build. This is prompt A1 of 5 actual AI development exchanges; log exact text with purpose/result/time in /workspace/scratch/511edc76527a/referralflow-fresh/logs/A.json; attribute AI assistant → coding agent, no invented student authorship. Product ReferralFlow AI, team Dental Demand Labs, MENG570 assignment requires 3 distinct functional interactive prototypes each testing hypothesis &amp; prior persona. A persona Dr. Arjun Patel owner-periodontist. Fixed concept: existing specialist notes → draft referral report → specialist edits/reviews/confirms recipient/approves → export to existing authorized channel. No autonomous sending. Use ONLY fictional data and label demo. Build professional document-first &#x27;Letter Studio&#x27;: sophisticated navy/blue left slim sidebar, spacious white report canvas with readable typography, patient case row, note source drawer or right pane. Meaningful controls: load fictional note, generate local deterministic letter from structured labeled notes (not real AI), edit letter, confirm review and recipient, approve then TXT export frozen snapshot, edit again invalidates approval. Empty source blocks generation. No actual messages. One clear first task, polished responsive design, controls without walls of assignment text. Footer demo generation/delivery simulation status. Small page nav direct relative links index.html A.html B.html C.html guide.html. Distinct from B action-focused recipient portal and C coordinator route board (built separately). First implement coherent full flow plus foundational UI, then report API and wait for next refinement prompt. No external dependencies, browser, deploy or sharing. Expose clean window.demo API for Node VM state tests. All app code self-contained. Need top-tier usable functional UI.</pre
+              >
+            </details>
+            <details class="checks">
+              <summary>Historical builder checks — earlier version</summary>
+              <p class="record-text">
+                Node VM checks passed for empty-source block, generation,
+                approval gates, TXT simulation status, invalidation, and reset.
+              </p>
+            </details>
+          </article>
+          <article class="exchange">
+            <h3>A2</h3>
+            <p class="small metadata">
+              AI assistant → coding agent · 2026-10-20T02:18:23.371616+00:00
+            </p>
+            <h4>Recorded purpose</h4>
+            <p class="record-text">
+              Test whether a specialist recognizes and handles incomplete source
+              information.
+            </p>
+            <h4>Recorded outcome</h4>
+            <p class="record-text">
+              Added selectable Sofia Bennett fictional case with omitted
+              follow-up, exact missing-information wording, an explicit
+              unresolved-information acknowledgement gate, preserved missing
+              data in export, and regeneration after source edits. Removed
+              fallback dates.
+            </p>
+            <details class="prompt">
+              <summary>Read the exact prompt</summary>
+              <pre class="prompt-text">
+A2 actual development prompt: Add a second fictional note scenario with intentionally missing follow-up details, selectable alongside the main case. Generation must preserve &#x27;Not provided in source notes&#x27; without inventing dates or next steps; approval must require explicit specialist acknowledgement of unresolved information or filling it from the supplied note. Keep source notes and letter independently editable, source changes invalidate draft approval and require regeneration. Intended learning: can specialist recognize and handle incomplete source information? Record exact prompt/results in your NEW A log. Complete after A1 core.</pre
+              >
+            </details>
+            <details class="checks">
+              <summary>Historical builder checks — earlier version</summary>
+              <p class="record-text">
+                Node VM checks passed for missing-follow-up marking, approval
+                rejection without acknowledgement, successful acknowledged
+                approval, source-edit invalidation, follow-up addition and
+                regeneration, and complete-case path.
+              </p>
+            </details>
+          </article>
+          <article class="exchange">
+            <h3>A3</h3>
+            <p class="small metadata">
+              AI assistant → coding agent · 2026-10-20T02:19:12.794556+00:00
+            </p>
+            <h4>Recorded purpose</h4>
+            <p class="record-text">
+              Test first-time specialist readiness comprehension and recovery
+              after revisions.
+            </p>
+            <h4>Recorded outcome</h4>
+            <p class="record-text">
+              Added current source revision and draft-source revision labels,
+              contextual approval blockers, a persistent polite live region, and
+              explicit outdated-source status. Editing uses stable DOM inputs
+              rather than replacement. Existing responsive grid stacks source,
+              report, and review on narrow screens.
+            </p>
+            <details class="prompt">
+              <summary>Read the exact prompt</summary>
+              <pre class="prompt-text">
+A3 actual development prompt: Make the specialist review task self-explanatory and accessible. Add concise inline approval blockers, visible letter/source revision status and an accessible live status region. Confirm review checkboxes reset after any source/letter/recipient change. Ensure text inputs retain focus during editing and mobile layout stacks cleanly without fixed-width overflow. Intended learning: can a first-time specialist understand readiness and recover from a revision without presenter help? Log exact prompt/results; no external dependencies.</pre
+              >
+            </details>
+            <details class="checks">
+              <summary>Historical builder checks — earlier version</summary>
+              <p class="record-text">
+                Node VM checks passed for readiness blockers, source revision
+                tracking, outdated-source status, live-region updates, and
+                resetting confirmations after letter, source, and recipient
+                changes. Static responsive rules reviewed; no browser used.
+              </p>
+            </details>
+          </article>
+          <article class="exchange">
+            <h3>A4</h3>
+            <p class="small metadata">
+              AI assistant → coding agent · 2026-10-20T02:20:16.937215+00:00
+            </p>
+            <h4>Recorded purpose</h4>
+            <p class="record-text">
+              Test whether an approved document fits an existing export workflow
+              in a presentable format.
+            </p>
+            <h4>Recorded outcome</h4>
+            <p class="record-text">
+              Added a real downloadable standalone HTML report beside TXT. HTML
+              uses only the frozen approved snapshot, escapes text, includes
+              recipient/revision/approval and unresolved-information status,
+              excludes the source notes and UI state, and includes local-print
+              styling.
+            </p>
+            <details class="prompt">
+              <summary>Read the exact prompt</summary>
+              <pre class="prompt-text">
+A4 actual development prompt: Add a real downloadable, print-friendly HTML report alongside TXT, generated only from the immutable approved snapshot. Escape all user-entered text, include fictional demo label, recipient, revision and explicit unresolved-information status, and exclude internal source notes / private UI state. A standalone HTML file should open locally and print cleanly. Intended learning: can the approved document fit the existing copy/export workflow in a presentable format? Log exact prompt/result and validate export blocks before approval and respects frozen snapshot.</pre
+              >
+            </details>
+            <details class="checks">
+              <summary>Historical builder checks — earlier version</summary>
+              <p class="record-text">
+                Node VM checks passed for denied preapproval HTML export, HTML
+                escaping of script-like draft and recipient text, source
+                sentinel exclusion, unresolved-status inclusion, print CSS, edit
+                invalidation, and unchanged prior exported snapshot.
+              </p>
+            </details>
+          </article>
+          <article class="exchange">
+            <h3>A5</h3>
+            <p class="small metadata">
+              AI assistant → coding agent · 2026-10-20T02:22:01.288992+00:00
+            </p>
+            <h4>Recorded purpose</h4>
+            <p class="record-text">
+              Verify the full prototype and improve mobile usability and
+              class-review clarity.
+            </p>
+            <h4>Recorded outcome</h4>
+            <p class="record-text">
+              Added a compact collapsible hypothesis/tradeoff block and mobile
+              16px inputs, 14px note/report text, 12px meaningful labels, 44px
+              buttons, and larger checkbox targets. Updated export wording for
+              both formats. Strengthened source revision checks so even reverted
+              source edits require regeneration, and recognized explicit
+              not-provided values as unresolved. Final A.html and this
+              five-exchange log are frozen for handoff.
+            </p>
+            <details class="prompt">
+              <summary>Read the exact prompt</summary>
+              <pre class="prompt-text">
+A5 actual development prompt: Perform final code/API verification of full main and incomplete-note flows, source-change regeneration, every edit invalidating approval, denied preapproval exports, frozen TXT/HTML export and HTML escaping. Correct failures. Increase mobile input/button/label readability where tiny (aim 14–16px inputs, ≥12px meaningful labels; generous touch targets), ensure all nav uses direct correct page links, and add a compact collapsible &#x27;Why this design&#x27; hypothesis/tradeoff block for class review. Record exact prompt and truthful checks/results; browser rendering is unavailable. Freeze A.html/log after completion and report API.</pre
+              >
+            </details>
+            <details class="checks">
+              <summary>Historical builder checks — earlier version</summary>
+              <pre class="record-text">
+{
+  &quot;method&quot;: &quot;Node VM execution with DOM/event/download stubs and static HTML/CSS assertions; browser rendering unavailable.&quot;,
+  &quot;passed&quot;: [
+    &quot;Complete-case generation/review/approval/export&quot;,
+    &quot;Incomplete follow-up preserved without inferred date or next step&quot;,
+    &quot;Explicit unresolved-information acknowledgement gate&quot;,
+    &quot;Follow-up addition to source and regeneration&quot;,
+    &quot;Deterministic local generation&quot;,
+    &quot;Source regeneration required after edits and reverts&quot;,
+    &quot;Letter/source/recipient edits reset review confirmations and approval&quot;,
+    &quot;Preapproval TXT and HTML export rejected&quot;,
+    &quot;Snapshot mutation through cloned state cannot alter exports&quot;,
+    &quot;Actual TXT and HTML download handlers invoke correct Blob MIME types&quot;,
+    &quot;HTML escaping of script-like draft and recipient text&quot;,
+    &quot;Private source sentinel excluded from exported HTML&quot;,
+    &quot;Frozen prior exported content remains unchanged after edits&quot;,
+    &quot;Stable input element and focus during input handling&quot;,
+    &quot;Reset clears state&quot;,
+    &quot;All navigation uses direct index.html/A.html/B.html/C.html/guide.html links&quot;,
+    &quot;No external script or stylesheet dependency&quot;,
+    &quot;Responsive/mobile and accessible live-region rules present&quot;
+  ],
+  &quot;not_performed&quot;: [
+    &quot;Browser rendering, viewport screenshot inspection, and real clinical validation&quot;
+  ]
+}</pre
+              >
+            </details>
+          </article>
+        </details>
+        <details class="card history-group" id="history-B">
+          <summary>
+            <span>B · Referral Brief</span
+            ><span class="pill">5 historical exchanges</span>
+          </summary>
+          <p class="small source-record">
+            Source: <code>logs/B.json</code> · 5 actual exchanges. Original
+            source record is preserved in the JSON download.
+          </p>
+          <article class="exchange">
+            <h3>B1</h3>
+            <p class="small metadata">
+              AI assistant → coding agent · 2026-10-20T02:17:48.501Z
+            </p>
+            <h4>Recorded purpose</h4>
+            <p class="record-text">
+              Build the recipient-first specialist-to-referring-practice handoff
+              prototype entirely from blank.
+            </p>
+            <h4>Recorded outcome</h4>
+            <p class="record-text">
+              Created standalone B.html from a blank file without reading
+              previous prototypes. Includes fictional deterministic generation,
+              editable fields and owners, recipient confirmation, specialist
+              approval, immutable approved snapshot, explicit simulated handoff
+              gate, four recipient cards, full letter/download, local
+              comprehension check and reset. Core Node VM workflow assertions
+              passed.
+            </p>
+            <details class="prompt">
+              <summary>Read the exact prompt</summary>
+              <pre class="prompt-text">
+Build entirely NEW from blank standalone /workspace/scratch/511edc76527a/referralflow-fresh/dist/B.html. Do not read any prior html, prototypes, site or backup anywhere. User expressly forbids existing prototypes influencing this build. This is prompt B1 of 5 actual AI development exchanges; log exact text with purpose/result/time in /workspace/scratch/511edc76527a/referralflow-fresh/logs/B.json; attribute AI assistant → coding agent, no invented student authorship. Product ReferralFlow AI, Dental Demand Labs MENG570. 3 distinct hypothesis prototypes. B persona Dr. Elena Ruiz, referring general dentist (persona hypothesis). Fixed concept: existing specialist notes → draft report → specialist review/edit/recipient confirm/approve → approved info back to general dentist via practice channel. Build professional recipient-first &#x27;Referral Brief&#x27; portal: warm ivory, charcoal, terracotta accent, elegant editorial type, concise approved handoff cards &#x27;Visit summary / What your office needs to do / What specialist does next / Unresolved information&#x27;. Specialist preparation tab lets user generate structured draft from fictional existing notes, edit fields/owners, approve. Recipient portal unavailable until specialist approval and simulate handoff explicit button. Recipient sees ONLY approved snapshot, can inspect full letter, download report and record local comprehension response clearly simulated. All content fictional. Use consultation case with image requested, plan deferred, no date set; avoid clinical advice. Generation deterministic template/fixture, labelled demo not real AI. No sending, no production auth. Include clear first-use task but keep app UI concise. Whole workflow in one prototype. Distinct from A document composer and C coordinator route board built separately. Navigation direct links index.html A.html B.html C.html guide.html. No external dependencies/browser/deploy. Expose window.demo API for Node VM meaningful tests. First build core high-quality flow and wait for next prompt.</pre
+              >
+            </details>
+          </article>
+          <article class="exchange">
+            <h3>B2</h3>
+            <p class="small metadata">
+              AI assistant → coding agent · 2026-10-20T02:18:32.013Z
+            </p>
+            <h4>Recorded purpose</h4>
+            <p class="record-text">
+              Test whether a recipient extracts the action, owner, and
+              scheduling uncertainty from approved content.
+            </p>
+            <h4>Recorded outcome</h4>
+            <p class="record-text">
+              Replaced the two-question scored check with three blank response
+              inputs, explicit local-only save, version-bound JSON export, no
+              automatic correctness result, and a collapsed facilitator
+              reference derived from the approved snapshot. Node VM assertions
+              verified blank state, validation, version binding, JSON fields, no
+              score field, and collapsed reference markup.
+            </p>
+            <details class="prompt">
+              <summary>Read the exact prompt</summary>
+              <pre class="prompt-text">
+B2 actual development prompt: Add a recipient comprehension exercise with three concrete inputs: who must act next, what they must do, and whether follow-up is scheduled. Keep answers blank until entered, allow saving/exporting local response JSON tied to approved snapshot version, show no prefilled test result, and provide a clearly marked facilitator reference answer in collapsed details. Intended learning: does recipient extract action/owner/uncertainty from approved content? Record exact prompt/result in NEW B log. Run after B1 core.</pre
+              >
+            </details>
+          </article>
+          <article class="exchange">
+            <h3>B3</h3>
+            <p class="small metadata">
+              AI assistant → coding agent · 2026-10-20T02:19:24.439Z
+            </p>
+            <h4>Recorded purpose</h4>
+            <p class="record-text">
+              Make draft work distinguishable from the approved information
+              available to the referring dentist.
+            </p>
+            <h4>Recorded outcome</h4>
+            <p class="record-text">
+              Required fields and recipient confirmation gate approval. Editing
+              an approved field, creating a revision, or unchecking confirmation
+              invalidates current approval, recipient access, and local
+              response. Earlier approved snapshots are cloned to separate
+              internal history and never shown as the current brief. Added
+              explicit unavailable reasons and dynamic approved owner rendering.
+              Node assertions verified approval validation, version progression,
+              invalidation, immutable history, empty report while locked,
+              updated approved owner, and complete reset.
+            </p>
+            <details class="prompt">
+              <summary>Read the exact prompt</summary>
+              <pre class="prompt-text">
+B3 actual development prompt: Strengthen the review-to-recipient boundary: incomplete required fields or unchecked recipient block approval; edits invalidate current approval/handoff visibility until reapproved, while preserving an immutable earlier snapshot separately if history shown. Recipient action owner and timing must be consistent with approved fields, and reset clears portal and response state. Add concise visible reasons when unavailable. Intended learning: can participants distinguish draft work from the approved information available to the recipient? Log actual prompt/results and run meaningful API assertions.</pre
+              >
+            </details>
+          </article>
+          <article class="exchange">
+            <h3>B4</h3>
+            <p class="small metadata">
+              AI assistant → coding agent · 2026-10-20T02:20:12.508Z
+            </p>
+            <h4>Recorded purpose</h4>
+            <p class="record-text">
+              Enable a new reviewer to complete and explain the workflow using
+              only the prototype.
+            </p>
+            <h4>Recorded outcome</h4>
+            <p class="record-text">
+              Added concise specialist/recipient tasks, persistent four-stage
+              state badge and polite live announcements. Added editable image,
+              plan, and timing status fields so recipient badges, facilitator
+              reference and TXT report use approved values rather than hardcoded
+              status facts. TXT download uses the exact recipient snapshot and
+              is unavailable before simulated handoff. All edited UI content is
+              assigned through textContent or input value; report is text/plain.
+              Node assertions checked edited timing/plan preservation,
+              malicious-looking input as inert text, gate, unique IDs, complete
+              field mapping, download path and live status. Narrow CSS
+              statically checked at 650px: single-column source/form, status
+              fields, cards, metadata and response panel, flexible actions and
+              navigation.
+            </p>
+            <details class="prompt">
+              <summary>Read the exact prompt</summary>
+              <pre class="prompt-text">
+B4 actual development prompt: Improve practical first-use and output: add clear short specialist and recipient tasks, a persistent workflow state badge, accessible status announcements, and a real TXT or standalone printable HTML download from the approved snapshot available to recipient after simulated handoff. Preserve approved fields exactly, escape all edited content, and avoid hardcoded facts contradicting edited report fields. Intended learning: can a new reviewer complete and explain the handoff using the artifact alone? Log exact prompt/results and check narrow/mobile layout CSS without browser.</pre
+              >
+            </details>
+          </article>
+          <article class="exchange">
+            <h3>B5</h3>
+            <p class="small metadata">
+              AI assistant → coding agent · 2026-10-20T02:21:16.322Z
+            </p>
+            <h4>Recorded purpose</h4>
+            <p class="record-text">
+              Verify the complete workflow and its information boundary, and
+              make the design hypothesis inspectable.
+            </p>
+            <h4>Recorded outcome</h4>
+            <p class="record-text">
+              54 final assertions passed through actual window.demo APIs plus a
+              minimal DOM event harness. Verified deterministic generation;
+              required/confirmation gates; approval alone stays locked; explicit
+              handoff; snapshot clone integrity; exact TXT content; approved
+              owner/timing; response JSON snapshot binding;
+              edit/uncheck/revision invalidation; internal immutable history;
+              complete reset; textContent handling of HTML-like edits; blank
+              response state; collapsed reference; live workflow state; direct
+              navigation; standalone source. Removed repeated fixed date/plan
+              claims from default unresolved text so timing/status are sourced
+              only from editable approved fields. Added collapsed
+              hypothesis/tradeoff block and 16px mobile inputs with 42px minimum
+              buttons. Static narrow CSS check and DOM harness only; no
+              browser-render or visual QA was performed.
+            </p>
+            <details class="prompt">
+              <summary>Read the exact prompt</summary>
+              <pre class="prompt-text">
+B5 actual development prompt: Final-verify source→draft→approval→handoff→recipient and revision/reset paths through actual window.demo APIs. Assert blocked recipient before approval/handoff, export uses snapshot, edited owners/timing stay consistent, response JSON version binding, and escaped edited HTML. Correct observed failures. Keep mobile text inputs/buttons readable and all nav direct links. Add compact collapsible &#x27;Why this design&#x27; hypothesis/tradeoff block. Log exact prompt and truthful checks/results; no browser-render QA is available. Freeze B.html/log after completion and report APIs.</pre
+              >
+            </details>
+          </article>
+        </details>
+        <details class="card history-group" id="history-C">
+          <summary>
+            <span>C · Practice Relay</span
+            ><span class="pill">5 historical exchanges</span>
+          </summary>
+          <p class="small source-record">
+            Source: <code>logs/C.json</code> · 5 actual exchanges. Original
+            source record is preserved in the JSON download.
+          </p>
+          <article class="exchange">
+            <h3>C1</h3>
+            <p class="small metadata">
+              AI assistant → coding agent · 2026-10-20T02:14:20Z
+            </p>
+            <p class="small">
+              Time basis: UTC tool timestamp at start of work; message transport
+              did not expose a separate sent timestamp.
+            </p>
+            <h4>Recorded purpose</h4>
+            <p class="record-text">
+              Create a new visual foundation and complete coordinator →
+              specialist → coordinator workflow with source-note and approval
+              gates.
+            </p>
+            <h4>Recorded outcome</h4>
+            <p class="record-text">
+              Created a self-contained C.html from blank. Indigo sidebar, three
+              work lanes, fictional case cards, detail panel, responsive layout,
+              role toggle, source and recipient checks, deterministic local
+              draft, specialist editing and confirmation, approval snapshot,
+              text export, simulated return, reset, activity trail, and
+              navigation are implemented. Source notes and absent fields are
+              explicitly distinguished. No external dependency, service,
+              sending, or browser was used.
+            </p>
+            <details class="prompt">
+              <summary>Read the exact prompt</summary>
+              <pre class="prompt-text">
+Build entirely NEW from blank standalone /workspace/scratch/511edc76527a/referralflow-fresh/dist/C.html. Do not read any prior html, prototypes, site or backup anywhere. User expressly forbids prior prototypes influencing build. Prompt C1 of five actual development exchanges: record exact prompt text/time/purpose/results in /workspace/scratch/511edc76527a/referralflow-fresh/logs/C.json, attributed AI assistant → coding agent (no invented student authorship). Product ReferralFlow AI, Dental Demand Labs MENG570. C persona Maya Chen clinical assistant/referral coordinator (hypothesis persona). Fixed concept existing specialist notes → draft report → specialist review/edit/confirm recipient/approve → export using existing practice channel. Design &#x27;Practice Relay&#x27;, polished work queue with indigo sidebar, pale cool background, compact case cards, three lanes &#x27;Prepare / Specialist review / Ready to return&#x27;. Assistant selects fictional case, checks note exists and recipient, generates local deterministic sample draft and routes to specialist. Specialist preview lets edit/review/approve; assistant can export approved snapshot and simulate return. Role toggle explicitly demo, approval specialist-only. Include missing-note case blocked in Prepare, no invented clinical facts. Distinguish known source facts from missing fields. Need attractive usable UI with crisp spacing, badges, progress, meaningful detail panel, responsive. No real records or sending. Demo AI generation/roles/delivery simulated; edits, transitions/gates/snapshot export functional. Relative nav index.html A.html B.html C.html guide.html. Self-contained no dependencies/browser/deploy. Expose clean window.demo API for Node VM state testing. First full coherent flow &amp; foundation then report API/wait next prompt.</pre
+              >
+            </details>
+          </article>
+          <article class="exchange">
+            <h3>C2</h3>
+            <p class="small metadata">
+              AI assistant → coding agent · 2026-10-20T02:19:04.279602+00:00
+            </p>
+            <p class="small">
+              Time basis: UTC work timestamp; message transport did not expose a
+              separate sent timestamp.
+            </p>
+            <h4>Recorded purpose</h4>
+            <p class="record-text">
+              Test whether the coordinator can identify the missing source note
+              and the specialist who must supply it.
+            </p>
+            <h4>Recorded outcome</h4>
+            <p class="record-text">
+              Added inspectable RF-107 Taylor Jordan alongside RF-105 Sam
+              Rivera, both permanently blocked in Prepare without source notes.
+              Missing-note detail explicitly names the specialist as next owner,
+              states that the source note was not supplied, and lists blocked
+              downstream actions. The supplied-note flow remains completeable
+              with distinct role gates.
+            </p>
+            <details class="prompt">
+              <summary>Read the exact prompt</summary>
+              <pre class="prompt-text">
+C2 actual development prompt: Add a second fictional missing-note case that can be opened and inspected but cannot generate, route, approve, export, or simulate return. Show the exact next owner and reason in its detail panel. Keep existing supplied-note case completeable end-to-end with distinct assistant and specialist actions. Intended learning: can coordinator identify what is missing and who acts next? Log exact prompt/results in NEW C log. Complete after C1 core.</pre
+              >
+            </details>
+          </article>
+          <article class="exchange">
+            <h3>C3</h3>
+            <p class="small metadata">
+              AI assistant → coding agent · 2026-10-20T02:21:23.535761+00:00
+            </p>
+            <p class="small">
+              Time basis: UTC work timestamp; message transport did not expose a
+              separate sent timestamp.
+            </p>
+            <h4>Recorded purpose</h4>
+            <p class="record-text">
+              Prevent an edited revision or changed recipient from inheriting an
+              earlier approval; clarify ownership and audit sequence.
+            </p>
+            <h4>Recorded outcome</h4>
+            <p class="record-text">
+              Approval now freezes an internal per-case snapshot containing
+              text, recipient, practice, revision, approver and time. Specialist
+              edits to a draft or recipient from review, ready or returned
+              increment revision and clear approval, export and simulated-return
+              flags. Export reads only the snapshot. Added specialist recipient
+              editing, explicit stage-specific next-owner guidance, and local
+              events. Missing-source and role guards apply inside the API.
+            </p>
+            <details class="prompt">
+              <summary>Read the exact prompt</summary>
+              <pre class="prompt-text">
+C3 actual development prompt: Make approval create an immutable per-case snapshot bound to a revision. Any later draft or recipient edit must clear approval/export/return readiness and send the case back to specialist review. Export must use only the snapshot; missing-note or assistant actions must never approve via programmatic calls. Add clear stage-specific next-owner text and local event trail. Intended learning: can staff identify the correct next step and avoid returning an unreviewed revision? Log exact prompt/result and use meaningful API checks.</pre
+              >
+            </details>
+            <details class="checks">
+              <summary>Historical builder checks — earlier version</summary>
+              <p class="record-text">
+                61 Node VM assertions passed for missing-note cases, role
+                denials, prepare/review/approval/export/return, immutable
+                returned state copies, snapshot-only export, post-return draft
+                invalidation, recipient-change invalidation and reset.
+              </p>
+            </details>
+          </article>
+          <article class="exchange">
+            <h3>C4</h3>
+            <p class="small metadata">
+              AI assistant → coding agent · 2026-10-20T02:21:23.535761+00:00
+            </p>
+            <p class="small">
+              Time basis: UTC work timestamp; message transport did not expose a
+              separate sent timestamp.
+            </p>
+            <h4>Recorded purpose</h4>
+            <p class="record-text">
+              Support independent click and keyboard completion with readable
+              stage feedback and accessible output controls.
+            </p>
+            <h4>Recorded outcome</h4>
+            <p class="record-text">
+              All workflow actions use native buttons, checkboxes and fields.
+              Added focus-visible outlines, aria-pressed roles/cases, a
+              role=status aria-live announcement, explanatory empty lanes and
+              blocked cases, next-owner guidance, role-specific controls and a
+              responsive detail arrangement. Approved TXT download uses Blob and
+              download attribute. The return button is disabled until export and
+              explicitly marked simulated. Added wrapping for long names,
+              practices, notes and activity; min-width:0 and textarea max-width
+              prevent flex/grid overflow.
+            </p>
+            <details class="prompt">
+              <summary>Read the exact prompt</summary>
+              <pre class="prompt-text">
+C4 actual development prompt: Make the board usable without dragging or presenter guidance. Add accessible explicit buttons for every allowed next step, keyboard-focus styles, live status announcements, meaningful empty/blocked explanations, responsive detail panel and lane layout. Keep preparation and review controls role-specific with no hidden routes around approval. Add real approved TXT export and clearly label simulated return after export. Intended learning: can staff complete the queue workflow with ordinary click/keyboard controls and explain readiness? Record prompt/results; check code for overflow risks.</pre
+              >
+            </details>
+            <details class="checks">
+              <summary>Historical builder checks — earlier version</summary>
+              <p class="record-text">
+                Source and API review completed without browser-render QA. C5
+                continues the mobile readability pass and final regression.
+              </p>
+            </details>
+          </article>
+          <article class="exchange">
+            <h3>C5</h3>
+            <p class="small metadata">
+              AI assistant → coding agent · 2026-10-20T02:22:31.726125+00:00
+            </p>
+            <p class="small">
+              Time basis: UTC work timestamp; message transport did not expose a
+              separate sent timestamp.
+            </p>
+            <h4>Recorded purpose</h4>
+            <p class="record-text">
+              Verify the full guarded flow and make mobile use legible while
+              stating the design hypothesis and tradeoff.
+            </p>
+            <h4>Recorded outcome</h4>
+            <p class="record-text">
+              Replaced mobile compressed lanes with horizontal snap-scrolling
+              238px lanes and a full-width detail panel. Key mobile labels are
+              at least 12px, primary fields and report text are 16px, workflow
+              buttons have 48px minimum height, role buttons 40px, and checkbox
+              rows 44px. Added collapsible hypothesis/tradeoff context with Maya
+              Chen explicitly labelled a hypothesis persona. Relative navigation
+              links point directly to index.html, A.html, B.html, C.html and
+              guide.html. Corrected neutral report heading so approved TXT never
+              contains a contradictory DRAFT marker. Missing-source recipient
+              preparation is now denied in the API; returned reports expose
+              reopening in the specialist UI.
+            </p>
+            <details class="prompt">
+              <summary>Read the exact prompt</summary>
+              <pre class="prompt-text">
+C5 actual development prompt: Final-verify assistant→specialist→approved export→simulated return, every edit invalidating snapshot, all wrong-role denials, and missing-note case denied from every action using actual window.demo API. Correct failures. Current mobile CSS shrinks key card text to 7–10px: replace this with a readable stacked or horizontally scrollable board/detail arrangement, ≥12px key labels and 14–16px inputs, generous touch targets. Add compact collapsible hypothesis/tradeoff block and direct correct nav links. Log exact prompt/results; no browser-render QA is available. Freeze C.html/log after completion and report API.</pre
+              >
+            </details>
+            <details class="checks">
+              <summary>Historical builder checks — earlier version</summary>
+              <pre class="record-text">
+{
+  &quot;method&quot;: &quot;Actual window.demo API evaluated in Node VM from the new C.html scripts; source review for layout and dependencies.&quot;,
+  &quot;assertions_passed&quot;: 198,
+  &quot;coverage&quot;: [
+    &quot;Both missing-note cases denied every preparation/report action in both roles with no state mutation&quot;,
+    &quot;Complete assistant checks → generate → specialist edit/confirm/approve → assistant TXT export → simulated return&quot;,
+    &quot;All wrong-role denials&quot;,
+    &quot;Post-approval and post-return draft and recipient edits clear snapshot/export/return/confirmation, increment revision, and return to review&quot;,
+    &quot;Snapshot independence from returned state copies and snapshot-only export content&quot;,
+    &quot;Empty report approval denied, reset, invalid role/case denied&quot;,
+    &quot;Direct correct navigation, horizontal mobile lanes, 16px mobile report text, no external assets or scripts&quot;
+  ],
+  &quot;browser_render_qa&quot;: &quot;Unavailable as instructed; no browser was used.&quot;
+}</pre
+              >
+            </details>
+          </article>
+        </details>
+      </section>
+      <h2>What this log establishes</h2>
+      <p class="limit-note">
+        It records development instructions and builder-reported outcomes.
+        Technical assertions and DOM-stub checks are distinct from browser
+        visual QA. The prompt records do not establish real customer use,
+        clinical validity, student or team rehearsals, a class vote, payments or
+        willingness to pay. Private source documents and attachments are not
+        included here.
+      </p>
+      <p class="limit-note">
+        The source log files remain unchanged. No additional prompts,
+        participant identities or observations have been invented. The exact
+        source text in the JSON download allows each original record to be
+        recovered without relying on the display summary.
+      </p>
+    </main>
+    <footer>
+      Dental Demand Labs · ReferralFlow ·
+      <a href="guide.html">Presentation & testing guide</a> ·
+      <a href="evidence.html">Evidence & limits</a>
+      <nav class="rf-footer-nav" aria-label="All pages">
+        <a href="overview.html">Overview</a
+        ><a href="A.html">A · Letter Studio</a
+        ><a href="B.html">B · Referral Brief</a
+        ><a href="C.html">C · Practice Relay</a><a href="guide.html">Guide</a
+        ><a href="evidence.html">Evidence</a
+        ><a href="evaluate.html">Test record</a
+        ><a href="development-log.html" aria-current="page">Prompt log</a>
+      </nav>
+    </footer>
+  </body>
+</html>

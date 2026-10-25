@@ -5,6 +5,7 @@
   "description": "Dental Demand Labs MENG 570 interactive ReferralFlow AI prototypes",
   "scripts": {
     "start": "node scripts/serve.mjs",
+    "sync:pages": "node scripts/sync-appdeploy.mjs",
     "test": "node qa/verify.mjs"
   },
   "engines": { "node": ">=20" }

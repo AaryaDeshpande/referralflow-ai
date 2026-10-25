@@ -639,9 +639,7 @@
         "author": "AI assistant → coding agent",
         "timestamp_utc": "2026-10-20T07:15:39.014126+00:00",
         "scope": {
-          "modified": [
-            "dist/A.html"
-          ],
+          "modified": ["dist/A.html"],
           "new_log": "logs/update-A.json",
           "original_prompt_history": "logs/A.json preserved unchanged",
           "execution": "Local source edit and bounded Node VM verification only; no browser, server, installation, publishing, or external sending"
@@ -861,10 +859,7 @@
             "reopenReview",
             "reset"
           ],
-          "added_methods": [
-            "confirmSpecialist(checked)",
-            "getCounts()"
-          ],
+          "added_methods": ["confirmSpecialist(checked)", "getCounts()"],
           "compatible_extensions": [
             "selectCase accepts RF-1042 as alias for RF-104",
             "editDraft(text, options) accepts optional {render:false} for synchronous in-tab autosave",

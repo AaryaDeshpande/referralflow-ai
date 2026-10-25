@@ -1,21 +1,173 @@
-<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Presentation & test guide | ReferralFlow</title><link rel="stylesheet" href="site.css"><link rel="stylesheet" href="nav.css"></head><body><a class="skip" href="#main">Skip to content</a><aside class="rf-rail" aria-label="Site navigation">
-<a class="rf-rail-brand" href="index.html" aria-label="Overview" data-label="Overview">RF</a>
-<a class="rf-rail-link" href="A.html" aria-label="A · Letter Studio" data-label="A · Letter Studio"><svg viewBox="0 0 24 24"><path d="M7 3H4v18h16V7l-4-4H7Z"/><path d="M15 3v5h5M8 12h8M8 16h6"/></svg></a>
-<a class="rf-rail-link" href="B.html" aria-label="B · Referral Brief" data-label="B · Referral Brief"><svg viewBox="0 0 24 24"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m3 7 9 6 9-6"/></svg></a>
-<a class="rf-rail-link" href="C.html" aria-label="C · Practice Relay" data-label="C · Practice Relay"><svg viewBox="0 0 24 24"><rect x="3" y="4" width="5" height="16" rx="1"/><rect x="10" y="4" width="5" height="10" rx="1"/><rect x="17" y="4" width="4" height="13" rx="1"/></svg></a>
-<a class="rf-rail-link" href="guide.html" aria-label="Presentation guide" data-label="Presentation guide" aria-current="page"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M9.5 9a2.5 2.5 0 1 1 4 2c-1 .7-1.5 1-1.5 3M12 17h.01"/></svg></a>
-<div class="rf-rail-bottom">DENTAL DEMAND LABS</div>
-</aside><header><a class="brand" href="index.html">ReferralFlow</a></header><main id="main"><div class="eyebrow">Dental Demand Labs · MENG 570 · 20 October 2026</div><h1>One committed direction.<br>Three product hypotheses.</h1><p class="lede">A presentation document and facilitator guide for Letter Studio, Referral Brief and Practice Relay.</p><div class="notice"><strong>Submission deadline shown in the supplied assignment screenshot:</strong> Sunday, October 25, 2026, 10:59 p.m. Chicago time. Submit the three shared links and presentation document to Canvas before presenting.</div><div class="row downloads"><a class="button" href="ReferralFlow_Presentation_Guide.pdf" download>Download presentation document</a><a class="button secondary" href="development-log.html">Read actual prompt log</a><a href="evaluate.html">Open blank test record →</a></div>
-<h2>1 · Problem and approach <span class="small">Opening: up to 2 minutes</span></h2><blockquote>Specialists need to return an accurate, useful report to the dentist who referred the patient. ReferralFlow starts with the specialist’s existing notes, creates an editable draft, requires specialist review and approval, and produces an approved copy for the practice’s established delivery process.</blockquote><p>The uploaded prototype preserves this scope from the team’s earlier work. It describes a specialist interview about correspondence effort and fragmented information. The original transcript and original persona sheets were unavailable in this audit, so their conclusions cannot be independently checked here.</p><p><strong>What has changed:</strong> the product direction stays fixed. We now have specific alternatives for how to review a report, how to present the recipient’s next action, and how staff coordinate completion. Current competitor evidence shows that letter generation and report queues already exist. Our experiments therefore examine whether an interaction improves the work.</p><p><strong>What remains unknown:</strong> frequency and severity of the problem in a target practice, total time saved, current software adequacy, purchase authority, price acceptance, retention and profit.</p>
-<div class="table-wrap"><table><thead><tr><th>Working persona</th><th>Task explored</th><th>Provenance</th></tr></thead><tbody><tr><td>Dr. Arjun Patel<br>Owner-periodontist</td><td>Turn existing notes into a checked and approved outgoing report.</td><td>Fictional persona retained from the supplied prototype; task linked to its account of earlier specialist discovery.</td></tr><tr><td>Dr. Elena Ruiz<br>Referring general dentist</td><td>Understand the specialist’s update and identify the next action.</td><td>Fictional working persona; recipient needs require direct testing.</td></tr><tr><td>Maya Chen<br>Coordinator / clinical assistant</td><td>Prepare information, route review and complete the handoff.</td><td>Fictional working persona; actual task ownership varies and requires observation.</td></tr></tbody></table></div><p class="small">Confirm this role mapping against the team’s earlier submission before describing these as its original personas. The assignment also permits functionality-based alternatives. All three prototypes use the same fictional Alex Morgan case to reduce differences caused by case content.</p>
-<h2>2 · Versions and hypotheses <span class="small">About 2 minutes per version</span></h2>
-<div class="card"><span class="pill">A · Letter Studio · Specialist</span><h3>A source-visible letter editor</h3><p><strong>Hypothesis:</strong> keeping the source near an editable letter lets a specialist find, correct and approve the report without a guided tour.</p><p><strong>Feature Scope Card.</strong> Value: direct completion of the specialist’s correspondence task. Scope: source note, editable letter, source-selection buttons, recipient/review checks, explicit unresolved information and approved TXT/HTML export. Effort: medium prototype effort; production complexity depends on note quality and workflow integration. Success signal: completes the task independently, preserves missing information and exports the correct approved version. Effort ratings are design judgments.</p><p><strong>Disconfirming observation:</strong> the specialist repeatedly loses source context, adds unsupported information, needs coaching, or spends more total effort than with the existing report template.</p><p><strong>Tradeoff:</strong> flexible editing still demands careful review of the entire report. This approach does little for an office whose main delay occurs after approval.</p><a class="button" href="A.html">Open A</a></div>
-<div class="card"><span class="pill">B · Referral Brief · Referring dentist</span><h3>An approved brief organized around action</h3><p><strong>Hypothesis:</strong> a concise approved brief with the complete report available helps the referring dentist correctly identify the requested action, its owner and the remaining uncertainty.</p><p><strong>Feature Scope Card.</strong> Value: useful information at the receiving end of the referral. Scope: structured review, approved action cards, full report, local comprehension record and approved export. A seeded approved sample supports testing the recipient directly. Effort: medium prototype effort; production complexity includes keeping the summary consistent with the approved report. Success signal: the recipient names the correct action, office and timing without coaching.</p><p><strong>Disconfirming observation:</strong> the cards omit needed context, suggest an unsupported action, or fail to improve comprehension compared with the practice’s existing letter.</p><p><strong>Tradeoff:</strong> structuring content may add preparation work. A delivered approved version stays visible while a revision is drafted; a new reviewed handoff explicitly replaces it.</p><a class="button" href="B.html">Open B</a></div>
-<div class="card"><span class="pill">C · Practice Relay · Coordinator</span><h3>A queue with clear ownership</h3><p><strong>Hypothesis:</strong> visible work states and a named next owner help staff move a complete case through specialist review and completion while leaving missing-source cases blocked.</p><p><strong>Feature Scope Card.</strong> Value: reduce uncertainty about who needs to act next. Scope: preparation checks, specialist review, saved edits, approval tied to the current recipient and content, approved export, local completion and a separate completed lane. Effort: higher coordination complexity; role permissions and actual delivery are simulated. Success signal: completes the ready case, preserves specialist approval and does not advance the missing-note case.</p><p><strong>Disconfirming observation:</strong> staff misroute work, confuse approval with delivery, or find that the extra handoff takes more effort than their current process.</p><p><strong>Tradeoff:</strong> a queue can help a team with shared work, but adds steps for a solo specialist. Existing TDO report management is a relevant comparison.</p><a class="button" href="C.html">Open C</a></div>
-<h2>3 · Live demo paths <span class="small">About 2 minutes per prototype</span></h2><p>Reset the demo before each run. Let the labels guide the user; avoid explaining every click.</p><div class="grid"><article class="card"><h3>A · Review → export</h3><ol><li>Load Alex Morgan’s note and generate the draft.</li><li>Use a source button, compare the text and make one wording edit.</li><li>Confirm clinical review, recipient and the recorded missing radiograph.</li><li>Approve, then download the HTML or TXT report.</li><li>Edit again to show that a new review is required.</li></ol><p class="small">Optional exception: load Sofia Bennett and show the missing follow-up explicitly.</p></article><article class="card"><h3>B · Understand → inspect</h3><ol><li>Choose <strong>Open approved sample</strong>.</li><li>Read the next-action card as Dr. Ruiz.</li><li>Identify the prior radiograph, referring practice and follow-up timing.</li><li>Open the full report and export the approved copy.</li><li>If time permits: Specialist review → Create a revision → edit → confirm both review checks → Approve this version → Simulate practice handoff.</li></ol><p class="small">The initial sample’s approval is fictional. The ordinary review-and-handoff path also works.</p></article><article class="card"><h3>C · Prepare → complete</h3><ol><li>As coordinator, choose Alex Morgan and complete the preparation checks.</li><li>Prepare the draft for review.</li><li>Switch to specialist, inspect/edit, confirm clinical review and recipient, and approve.</li><li>Switch to coordinator, export, then mark the return complete locally.</li><li>Show the separate completed section and a blocked missing-note case.</li></ol><p class="small">Role switching and return completion are local simulations.</p></article></div>
-<h2>4 · How to test and choose</h2><p><strong>Declare these checks before the session.</strong> This is an exploratory usability comparison; the class vote is additional preference evidence. No customer or vote results have been prefilled.</p><div class="table-wrap"><table><thead><tr><th>Version</th><th>Uncoached task</th><th>Record</th><th>Critical observation</th></tr></thead><tbody><tr><td>A</td><td>Create, check, edit, approve and export Alex’s report.</td><td>Completion, help requests, source checks, corrections and active time.</td><td>Wrong patient/recipient, unsupported statement, ignored missing information or unapproved export.</td></tr><tr><td>B</td><td>Use the approved sample to state what happens next.</td><td>Answer in participant’s words, full-report use, mistakes and comprehension time.</td><td>Wrong action/owner or invented appointment date. Expected: Cedar Grove supplies the prior radiograph before the specialist follow-up; review is in six weeks; no exact calendar appointment was supplied.</td></tr><tr><td>C</td><td>Finish Alex’s report through both roles and inspect a missing-note case.</td><td>Routing errors, owner confusion, saved edits, completion and active time.</td><td>Staff approval, wrong recipient/version, treating export as confirmed delivery or advancing missing-note work.</td></tr></tbody></table></div><p>Rotate order (A–B–C, B–C–A, C–A–B) and record it. The shared case reduces content differences but creates learning effects. Different roles and tasks mean raw total seconds are not a valid cross-version ranking. Compare within the same role/task and against the participant’s current workflow. A small error-free session does not establish clinical safety.</p><p><strong>Decision rule:</strong> use completion, critical errors and observed friction to explain the design preference. Record the class’s winning version and its reasons. Advance that version for the semester, or take a documented, evidence-based disagreement to the teaching team as the assignment allows. A buyer’s payment and repeated use answer different questions from a class vote.</p><p><a class="button secondary" href="evaluate.html">Record a session or class vote</a></p>
-<h2>5 · Justification and strategy</h2><p><a href="evidence.html">The evidence record</a> maps the four books and primary market sources to concrete decisions. Running Lean informs testable tasks and a baseline; $100M Offers informs reducing total effort and qualifying the buyer; The Everywhere Millionaire informs tracking owner labor and profit separately; Think and Grow Rich informs practical planning and revision. The books do not prove demand for this product.</p><p>ToothNote describes the same notes-to-letter task and lists a Solo price of <strong>US$79 per doctor/month billed annually</strong>, including referral letters. DentalEMR and TDO document related functionality. The AAE’s 2026 endodontic referral survey supports testing useful, timely return communication, with sampling limitations. These sources establish competition and a workflow worth investigating; they do not establish ReferralFlow’s adoption or profitability.</p><div class="grid two"><article class="card"><h3>Prioritized</h3><p>Source comparison, editable output, explicit unknowns, correct recipient, reviewed version, real exports, clear next owner and observable test records. Each is directly needed by a hypothesis.</p></article><article class="card"><h3>Cut from this experiment</h3><p>Ambient scribing, diagnosis, image interpretation, scheduling, claims, marketing, broad chart exchange and a new referral network. Live models, patient accounts, delivery, payment and PMS integration are future implementation questions.</p></article></div><p><strong>Commercial next step:</strong> begin with an accessible specialist practice that actually has this task. Observe its current system, compare the relevant version, then ask the budget holder for a bounded pilot at an explicit recurring price. Track paid use, repeat use, renewal and all direct costs, including founder support time. A is the provisional starting interaction because it matches the reported specialist task most closely; it has not won a customer test.</p><p><strong>Stop expanding scope if:</strong> the existing software handles the task adequately, the task is too infrequent, review/reformatting consumes the benefit, or the buyer declines a worthwhile price. Those findings call for revising the workflow or commercial offer within the committed direction before investing further.</p>
-<h2>6 · What actually works, and what is simulated</h2><div class="table-wrap"><table><thead><tr><th>Working prototype behavior</th><th>Simulation / implementation boundary</th></tr></thead><tbody><tr><td>Navigation, editable notes/letters, review gates, versioned snapshots, TXT/HTML downloads, source selection, local work states and observation JSON.</td><td>Draft generation uses local templates. Identities and roles are demo selectors. The sample approval and handoff in B are fictional. Local completion does not establish delivery or receipt.</td></tr><tr><td>New drafts and edits trigger a new approval process. Missing-source cases remain blocked.</td><td>These are interface and state rules, with no production authentication, privacy assurance, clinical validation, live integrations or actual patient processing.</td></tr></tbody></table></div><p class="small">Use fictional examples. State lasts in the current tab until reset/reload; download exports and observation records to keep them. Technical checks use Node VM state and DOM stubs. Browser rendering and the team’s two actual presentation rehearsals still require human verification.</p>
-<h2>7 · Presentation and submission checklist</h2><ol><li><strong>Review the persona mapping</strong> against the earlier team submission. Adjust the explanation if a role’s earlier name differs.</li><li><strong>Rehearsal 1:</strong> each presenter completes the actual clickable flow and checks downloads, reset and exception handling. Record date and issues.</li><li><strong>Rehearsal 2:</strong> run the presentation in speaking order and time each section. Test the three URLs from a separate signed-out browser or device.</li><li><strong>Retain the prompt history:</strong> five actual initial build exchanges per prototype are preserved, with attribution. Current revision instructions are separate. Add future student-led prompts as they occur.</li><li><strong>Submit to Canvas:</strong> links to A, B and C; this presentation PDF or document; and the prompt-log link or JSON as required by the teaching team.</li><li><strong>After voting:</strong> record winner, counts, reasons, objections, chosen changes and the next customer test.</li></ol><p><strong>Rehearsal record:</strong> Run 1 date ___ / issues ___ / fixes ___ · Run 2 date ___ / duration ___ / issues ___.</p><p><strong>Vote response:</strong> A ___ / B ___ / C ___ / abstentions ___ · selected version ___ · reason ___ · changes ___ · next test ___.</p><div class="notice">No Canvas submission, outbound practice contact, customer test, paid pilot, class vote or team rehearsal has been performed for this package.</div>
-<h2>References and supporting materials</h2><p><a href="evidence.html">Complete book/page and primary-source decision record</a> · <a href="development-log.html">Attributed prompt history</a> · <a href="development-log.json" download>Prompt log JSON</a> · <a href="evaluate.html">Blank observation / commercial record</a></p><p class="small">Assignment requirements: user-supplied assignment text and screenshot. Product starting point: user-supplied ReferralFlow site backup. Supporting sources and their limits are listed on the evidence page. Original private chats and book files are not included on this public site.</p>
-</main><footer>Dental Demand Labs · ReferralFlow · <a href="index.html">Return to prototypes</a><nav class="rf-footer-nav" aria-label="All pages"><a href="index.html">Overview</a><a href="A.html">A · Letter Studio</a><a href="B.html">B · Referral Brief</a><a href="C.html">C · Practice Relay</a><a href="guide.html" aria-current="page">Guide</a><a href="evidence.html">Evidence</a><a href="evaluate.html">Test record</a><a href="development-log.html">Prompt log</a></nav></footer></body></html>
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>ReferralFlow | Presentation guide</title>
+    <link rel="stylesheet" href="site.css" />
+    <style>
+      body {
+        max-width: 1000px;
+        margin: 40px auto;
+        padding: 0 24px;
+        color: #17253a;
+        font: 17px/1.65 system-ui;
+      }
+      nav {
+        display: flex;
+        gap: 20px;
+        flex-wrap: wrap;
+      }
+      h1 {
+        font-size: 42px;
+        line-height: 1.15;
+      }
+      h2 {
+        margin-top: 36px;
+      }
+      th,
+      td {
+        padding: 15px;
+        border-bottom: 1px solid #ddd;
+        text-align: left;
+        vertical-align: top;
+      }
+      table {
+        width: 100%;
+        border-collapse: collapse;
+      }
+      a {
+        color: #1647d8;
+      }
+      .notice {
+        padding: 20px;
+        background: #eaf0ff;
+      }
+    </style>
+  </head>
+  <body>
+    <nav>
+      <a href="overview.html">Overview</a
+      ><a href="A.html">A: Letter Studio + voice</a
+      ><a href="B.html">B: Referral Brief</a
+      ><a href="C.html">C: Practice Relay</a>
+    </nav>
+    <div class="notice"><strong>Live AI voice:</strong> <a href="https://referralflow-ai-voice-and-three-prototypes-zstv8f.v2.appdeploy.ai/">Open the hosted Letter Studio</a> for recording transcription and edited-transcript processing.
+  The GitHub Pages A preview uses the labelled prepared example. B and C remain local interaction prototypes.</div><h1>Three hypotheses for closing the referral loop</h1>
+    <p>Dental Demand Labs · MENG 570 · October 25, 2026</p>
+    <h2>Problem and evolution</h2>
+    <p>
+      A specialist needs to return a useful report after treating a referred
+      patient. Our earlier discovery narrowed broad administrative work to
+      drafting, reviewing and returning that report. One periodontist interview
+      directly grounds the specialist task. Recipient and coordinator needs
+      remain hypotheses to test.
+    </p>
+    <h2>Shared approach, different questions</h2>
+    <table>
+      <tr>
+        <th>Prototype / persona</th>
+        <th>Hypothesis and test task</th>
+      </tr>
+      <tr>
+        <td>A · Dr. Arjun Patel, owner-periodontist</td>
+        <td>
+          Recording a consented fictional visit can reduce re-entry. A
+          transcript and source beside an editable letter may support accurate
+          review. Load the audio, confirm permission, prepare fields, check the
+          source, acknowledge the missing radiograph, confirm recipient and
+          approve.
+        </td>
+      </tr>
+      <tr>
+        <td>B · Dr. Elena Ruiz, referring dentist</td>
+        <td>
+          An approved brief organized around action, owner and timing may make
+          the handoff easier to interpret. Identify who shares the earlier
+          radiograph and when, then verify the full approved report.
+        </td>
+      </tr>
+      <tr>
+        <td>C · Maya Chen, assistant / coordinator</td>
+        <td>
+          Visible ownership and approval states may let a coordinator prepare
+          and return a report while retaining specialist approval. Move a case
+          from Prepare through specialist review to approved export; try a
+          missing-note case.
+        </td>
+      </tr>
+    </table>
+    <h2>Voice workflow</h2>
+    <p>
+      Permission → recording → AI transcript and quoted fields → editable letter
+      → specialist review and recipient confirmation → approved export.
+      Microphone capture and audio/text AI work in A. Case identifiers and
+      destination are supplied by the tester, never inferred from speech. Edit
+      the transcript to correct it, then prepare a new report. Changed content
+      clears approval. Unstated information remains visible.
+    </p>
+    <p>
+      The sample is a synthetic fictional conversation. The prepared-example
+      button is a clearly labelled fixed fallback; it does not call AI. Use
+      fictional test data only. A real recording or transcript is sent to the
+      hosted AI service when you request processing. This is a class prototype
+      with no production privacy or clinical validation.
+    </p>
+    <h2>Working and simulated</h2>
+    <p>
+      Working: recording, audio playback, AI transcription and field extraction
+      in A, editable drafts, review and recipient gates, approval invalidation,
+      TXT/HTML export, B/C state transitions and observation records. Simulated:
+      B/C sample drafting, demo role identities, practice handoff, transmission
+      and receipts. Export does not send an email.
+    </p>
+    <h2>Product decisions</h2>
+    <p>
+      We keep voice input in A so B and C can test recipient clarity and team
+      ownership. We retain clinician review, explicit unknowns, and the existing
+      authorized return channel. We defer practice-management integration,
+      autonomous sending, diagnosis and EHR replacement until need, reliability
+      and workflow value are tested.
+    </p>
+    <h2>Testing plan</h2>
+    <p>
+      Observe task completion, missed or invented facts, help required and
+      review time against the current workflow within each role. Use two
+      prototype cases, including incomplete information. Class preference is a
+      signal for the next customer test; it does not establish clinical
+      accuracy, willingness to pay or profitability. No customer outcomes or
+      class votes are claimed here.
+    </p>
+    <h2>Submission and rehearsal</h2>
+    <p>
+      Submit three clickable links, the presentation slides, the recorded
+      explanation/demo, and the attributed prompt log (five actual initial build
+      exchanges per prototype). The source log contains 18 preserved exchanges
+      total. Current implementation notes are separate from that historical
+      record. Do two actual team rehearsals and record timing/issues before
+      submission.
+    </p>
+    <p class="notice">
+      The package does not itself prove a team rehearsal, customer test or
+      Canvas submission. The team must complete those actions.
+    </p>
+    <nav>
+      <a href="development-log.html">Prompt history</a
+      ><a href="development-log.json" download>Prompt JSON</a
+      ><a href="evaluate.html">Observation form</a
+      ><a href="evidence.html">Earlier source record</a>
+    </nav>
+    <h2>Course sources</h2>
+    <p>
+      <a href="https://canvas.duke.edu/courses/83113/assignments/390657"
+        >Prototype assignment</a
+      >
+      ·
+      <a href="https://canvas.duke.edu/courses/83113/announcements/351318"
+        >October 23 clarification</a
+      >. October 15 and 22 Panopto captions informed the explanation of
+      hypotheses, distinct alternatives and concise demonstrations. The existing
+      demo was recorded by Jason Dorman before voice was added.
+    </p>
+  </body>
+</html>

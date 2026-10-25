@@ -1,0 +1,923 @@
+{
+  "schema_version": "2.0",
+  "title": "ReferralFlow AI — development prompt history and current revisions",
+  "generated_at_utc": "2026-10-20T07:23:11.739561+00:00",
+  "provenance": "Actual AI-assistant-to-coding-agent development exchanges. No student authorship is claimed. The initial build records and the later revision records remain separate.",
+  "historical_context": "Earlier prompt constraints and validation results describe the initial build. They are historical records, not instructions governing the current revision or evidence that the current files passed those earlier checks.",
+  "preservation": "Source files were read without modification. Display wrappers normalize differing schemas; raw_record preserves all parsed values and raw_json preserves the original UTF-8 text. Source hashes refer to those unmodified log files.",
+  "evidence_limits": "These records document requests, purposes, outcomes and builder-reported technical checks. They do not establish browser visual QA, real customer use, clinical validity, student/team rehearsals, class votes, payments or willingness to pay.",
+  "counts": {
+    "prototypes": 3,
+    "initial_build_exchanges": 15,
+    "current_revision_exchanges": 3,
+    "total_recorded_exchanges": 18
+  },
+  "initial_build": [
+    {
+      "prototype_key": "A",
+      "prototype_name": "Letter Studio",
+      "phase": "initial_build",
+      "source_file": "logs/A.json",
+      "source_sha256": "0446e003a62c87b39245cd40bbb91777e243f46efe7b3ea70fad81a66653f530",
+      "source_bytes": 10828,
+      "exchange_count": 5,
+      "display_exchanges": [
+        {
+          "display_label": "A1",
+          "display_label_basis": "exchange",
+          "source_entry": 1,
+          "timestamp": "2026-10-20T02:17:15.387006+00:00",
+          "timestamp_source_field": "timestamp_utc",
+          "time_basis": null,
+          "from": "AI assistant",
+          "to": "coding agent",
+          "provenance": "AI assistant → coding agent",
+          "purpose": "Build a new document-first specialist letter prototype from blank and establish its complete review-and-export workflow.",
+          "exact_prompt": "Build entirely NEW from blank standalone /workspace/scratch/511edc76527a/referralflow-fresh/dist/A.html. Do not read any other prior html, prototypes, site or backup anywhere. User expressly forbids existing prototypes influencing this build. This is prompt A1 of 5 actual AI development exchanges; log exact text with purpose/result/time in /workspace/scratch/511edc76527a/referralflow-fresh/logs/A.json; attribute AI assistant → coding agent, no invented student authorship. Product ReferralFlow AI, team Dental Demand Labs, MENG570 assignment requires 3 distinct functional interactive prototypes each testing hypothesis & prior persona. A persona Dr. Arjun Patel owner-periodontist. Fixed concept: existing specialist notes → draft referral report → specialist edits/reviews/confirms recipient/approves → export to existing authorized channel. No autonomous sending. Use ONLY fictional data and label demo. Build professional document-first 'Letter Studio': sophisticated navy/blue left slim sidebar, spacious white report canvas with readable typography, patient case row, note source drawer or right pane. Meaningful controls: load fictional note, generate local deterministic letter from structured labeled notes (not real AI), edit letter, confirm review and recipient, approve then TXT export frozen snapshot, edit again invalidates approval. Empty source blocks generation. No actual messages. One clear first task, polished responsive design, controls without walls of assignment text. Footer demo generation/delivery simulation status. Small page nav direct relative links index.html A.html B.html C.html guide.html. Distinct from B action-focused recipient portal and C coordinator route board (built separately). First implement coherent full flow plus foundational UI, then report API and wait for next refinement prompt. No external dependencies, browser, deploy or sharing. Expose clean window.demo API for Node VM state tests. All app code self-contained. Need top-tier usable functional UI.",
+          "recorded_outcome": "Created standalone A.html with a responsive navy workspace, fictional structured note, deterministic local drafting, editable report, recipient controls, review confirmations, frozen approved TXT export, and edit/source/recipient invalidation. No previous prototype files were read.",
+          "outcome_source_field": "result",
+          "recorded_validation": "Node VM checks passed for empty-source block, generation, approval gates, TXT simulation status, invalidation, and reset."
+        },
+        {
+          "display_label": "A2",
+          "display_label_basis": "exchange",
+          "source_entry": 2,
+          "timestamp": "2026-10-20T02:18:23.371616+00:00",
+          "timestamp_source_field": "timestamp_utc",
+          "time_basis": null,
+          "from": "AI assistant",
+          "to": "coding agent",
+          "provenance": "AI assistant → coding agent",
+          "purpose": "Test whether a specialist recognizes and handles incomplete source information.",
+          "exact_prompt": "A2 actual development prompt: Add a second fictional note scenario with intentionally missing follow-up details, selectable alongside the main case. Generation must preserve 'Not provided in source notes' without inventing dates or next steps; approval must require explicit specialist acknowledgement of unresolved information or filling it from the supplied note. Keep source notes and letter independently editable, source changes invalidate draft approval and require regeneration. Intended learning: can specialist recognize and handle incomplete source information? Record exact prompt/results in your NEW A log. Complete after A1 core.",
+          "recorded_outcome": "Added selectable Sofia Bennett fictional case with omitted follow-up, exact missing-information wording, an explicit unresolved-information acknowledgement gate, preserved missing data in export, and regeneration after source edits. Removed fallback dates.",
+          "outcome_source_field": "result",
+          "recorded_validation": "Node VM checks passed for missing-follow-up marking, approval rejection without acknowledgement, successful acknowledged approval, source-edit invalidation, follow-up addition and regeneration, and complete-case path."
+        },
+        {
+          "display_label": "A3",
+          "display_label_basis": "exchange",
+          "source_entry": 3,
+          "timestamp": "2026-10-20T02:19:12.794556+00:00",
+          "timestamp_source_field": "timestamp_utc",
+          "time_basis": null,
+          "from": "AI assistant",
+          "to": "coding agent",
+          "provenance": "AI assistant → coding agent",
+          "purpose": "Test first-time specialist readiness comprehension and recovery after revisions.",
+          "exact_prompt": "A3 actual development prompt: Make the specialist review task self-explanatory and accessible. Add concise inline approval blockers, visible letter/source revision status and an accessible live status region. Confirm review checkboxes reset after any source/letter/recipient change. Ensure text inputs retain focus during editing and mobile layout stacks cleanly without fixed-width overflow. Intended learning: can a first-time specialist understand readiness and recover from a revision without presenter help? Log exact prompt/results; no external dependencies.",
+          "recorded_outcome": "Added current source revision and draft-source revision labels, contextual approval blockers, a persistent polite live region, and explicit outdated-source status. Editing uses stable DOM inputs rather than replacement. Existing responsive grid stacks source, report, and review on narrow screens.",
+          "outcome_source_field": "result",
+          "recorded_validation": "Node VM checks passed for readiness blockers, source revision tracking, outdated-source status, live-region updates, and resetting confirmations after letter, source, and recipient changes. Static responsive rules reviewed; no browser used."
+        },
+        {
+          "display_label": "A4",
+          "display_label_basis": "exchange",
+          "source_entry": 4,
+          "timestamp": "2026-10-20T02:20:16.937215+00:00",
+          "timestamp_source_field": "timestamp_utc",
+          "time_basis": null,
+          "from": "AI assistant",
+          "to": "coding agent",
+          "provenance": "AI assistant → coding agent",
+          "purpose": "Test whether an approved document fits an existing export workflow in a presentable format.",
+          "exact_prompt": "A4 actual development prompt: Add a real downloadable, print-friendly HTML report alongside TXT, generated only from the immutable approved snapshot. Escape all user-entered text, include fictional demo label, recipient, revision and explicit unresolved-information status, and exclude internal source notes / private UI state. A standalone HTML file should open locally and print cleanly. Intended learning: can the approved document fit the existing copy/export workflow in a presentable format? Log exact prompt/result and validate export blocks before approval and respects frozen snapshot.",
+          "recorded_outcome": "Added a real downloadable standalone HTML report beside TXT. HTML uses only the frozen approved snapshot, escapes text, includes recipient/revision/approval and unresolved-information status, excludes the source notes and UI state, and includes local-print styling.",
+          "outcome_source_field": "result",
+          "recorded_validation": "Node VM checks passed for denied preapproval HTML export, HTML escaping of script-like draft and recipient text, source sentinel exclusion, unresolved-status inclusion, print CSS, edit invalidation, and unchanged prior exported snapshot."
+        },
+        {
+          "display_label": "A5",
+          "display_label_basis": "exchange",
+          "source_entry": 5,
+          "timestamp": "2026-10-20T02:22:01.288992+00:00",
+          "timestamp_source_field": "timestamp_utc",
+          "time_basis": null,
+          "from": "AI assistant",
+          "to": "coding agent",
+          "provenance": "AI assistant → coding agent",
+          "purpose": "Verify the full prototype and improve mobile usability and class-review clarity.",
+          "exact_prompt": "A5 actual development prompt: Perform final code/API verification of full main and incomplete-note flows, source-change regeneration, every edit invalidating approval, denied preapproval exports, frozen TXT/HTML export and HTML escaping. Correct failures. Increase mobile input/button/label readability where tiny (aim 14–16px inputs, ≥12px meaningful labels; generous touch targets), ensure all nav uses direct correct page links, and add a compact collapsible 'Why this design' hypothesis/tradeoff block for class review. Record exact prompt and truthful checks/results; browser rendering is unavailable. Freeze A.html/log after completion and report API.",
+          "recorded_outcome": "Added a compact collapsible hypothesis/tradeoff block and mobile 16px inputs, 14px note/report text, 12px meaningful labels, 44px buttons, and larger checkbox targets. Updated export wording for both formats. Strengthened source revision checks so even reverted source edits require regeneration, and recognized explicit not-provided values as unresolved. Final A.html and this five-exchange log are frozen for handoff.",
+          "outcome_source_field": "result",
+          "recorded_validation": {
+            "method": "Node VM execution with DOM/event/download stubs and static HTML/CSS assertions; browser rendering unavailable.",
+            "passed": [
+              "Complete-case generation/review/approval/export",
+              "Incomplete follow-up preserved without inferred date or next step",
+              "Explicit unresolved-information acknowledgement gate",
+              "Follow-up addition to source and regeneration",
+              "Deterministic local generation",
+              "Source regeneration required after edits and reverts",
+              "Letter/source/recipient edits reset review confirmations and approval",
+              "Preapproval TXT and HTML export rejected",
+              "Snapshot mutation through cloned state cannot alter exports",
+              "Actual TXT and HTML download handlers invoke correct Blob MIME types",
+              "HTML escaping of script-like draft and recipient text",
+              "Private source sentinel excluded from exported HTML",
+              "Frozen prior exported content remains unchanged after edits",
+              "Stable input element and focus during input handling",
+              "Reset clears state",
+              "All navigation uses direct index.html/A.html/B.html/C.html/guide.html links",
+              "No external script or stylesheet dependency",
+              "Responsive/mobile and accessible live-region rules present"
+            ],
+            "not_performed": [
+              "Browser rendering, viewport screenshot inspection, and real clinical validation"
+            ]
+          }
+        }
+      ],
+      "raw_record": {
+        "prototype": "A · Letter Studio",
+        "attribution": "AI assistant → coding agent",
+        "exchanges": [
+          {
+            "exchange": "A1",
+            "timestamp_utc": "2026-10-20T02:17:15.387006+00:00",
+            "from": "AI assistant",
+            "to": "coding agent",
+            "prompt": "Build entirely NEW from blank standalone /workspace/scratch/511edc76527a/referralflow-fresh/dist/A.html. Do not read any other prior html, prototypes, site or backup anywhere. User expressly forbids existing prototypes influencing this build. This is prompt A1 of 5 actual AI development exchanges; log exact text with purpose/result/time in /workspace/scratch/511edc76527a/referralflow-fresh/logs/A.json; attribute AI assistant → coding agent, no invented student authorship. Product ReferralFlow AI, team Dental Demand Labs, MENG570 assignment requires 3 distinct functional interactive prototypes each testing hypothesis & prior persona. A persona Dr. Arjun Patel owner-periodontist. Fixed concept: existing specialist notes → draft referral report → specialist edits/reviews/confirms recipient/approves → export to existing authorized channel. No autonomous sending. Use ONLY fictional data and label demo. Build professional document-first 'Letter Studio': sophisticated navy/blue left slim sidebar, spacious white report canvas with readable typography, patient case row, note source drawer or right pane. Meaningful controls: load fictional note, generate local deterministic letter from structured labeled notes (not real AI), edit letter, confirm review and recipient, approve then TXT export frozen snapshot, edit again invalidates approval. Empty source blocks generation. No actual messages. One clear first task, polished responsive design, controls without walls of assignment text. Footer demo generation/delivery simulation status. Small page nav direct relative links index.html A.html B.html C.html guide.html. Distinct from B action-focused recipient portal and C coordinator route board (built separately). First implement coherent full flow plus foundational UI, then report API and wait for next refinement prompt. No external dependencies, browser, deploy or sharing. Expose clean window.demo API for Node VM state tests. All app code self-contained. Need top-tier usable functional UI.",
+            "purpose": "Build a new document-first specialist letter prototype from blank and establish its complete review-and-export workflow.",
+            "result": "Created standalone A.html with a responsive navy workspace, fictional structured note, deterministic local drafting, editable report, recipient controls, review confirmations, frozen approved TXT export, and edit/source/recipient invalidation. No previous prototype files were read.",
+            "verification": "Node VM checks passed for empty-source block, generation, approval gates, TXT simulation status, invalidation, and reset.",
+            "api": [
+              "getState",
+              "loadSample",
+              "setSource",
+              "generateDraft",
+              "editLetter",
+              "setRecipient",
+              "confirmReview",
+              "confirmRecipient",
+              "approve",
+              "exportText",
+              "reset",
+              "getSampleNote"
+            ]
+          },
+          {
+            "exchange": "A2",
+            "timestamp_utc": "2026-10-20T02:18:23.371616+00:00",
+            "from": "AI assistant",
+            "to": "coding agent",
+            "prompt": "A2 actual development prompt: Add a second fictional note scenario with intentionally missing follow-up details, selectable alongside the main case. Generation must preserve 'Not provided in source notes' without inventing dates or next steps; approval must require explicit specialist acknowledgement of unresolved information or filling it from the supplied note. Keep source notes and letter independently editable, source changes invalidate draft approval and require regeneration. Intended learning: can specialist recognize and handle incomplete source information? Record exact prompt/results in your NEW A log. Complete after A1 core.",
+            "purpose": "Test whether a specialist recognizes and handles incomplete source information.",
+            "result": "Added selectable Sofia Bennett fictional case with omitted follow-up, exact missing-information wording, an explicit unresolved-information acknowledgement gate, preserved missing data in export, and regeneration after source edits. Removed fallback dates.",
+            "verification": "Node VM checks passed for missing-follow-up marking, approval rejection without acknowledgement, successful acknowledged approval, source-edit invalidation, follow-up addition and regeneration, and complete-case path."
+          },
+          {
+            "exchange": "A3",
+            "timestamp_utc": "2026-10-20T02:19:12.794556+00:00",
+            "from": "AI assistant",
+            "to": "coding agent",
+            "prompt": "A3 actual development prompt: Make the specialist review task self-explanatory and accessible. Add concise inline approval blockers, visible letter/source revision status and an accessible live status region. Confirm review checkboxes reset after any source/letter/recipient change. Ensure text inputs retain focus during editing and mobile layout stacks cleanly without fixed-width overflow. Intended learning: can a first-time specialist understand readiness and recover from a revision without presenter help? Log exact prompt/results; no external dependencies.",
+            "purpose": "Test first-time specialist readiness comprehension and recovery after revisions.",
+            "result": "Added current source revision and draft-source revision labels, contextual approval blockers, a persistent polite live region, and explicit outdated-source status. Editing uses stable DOM inputs rather than replacement. Existing responsive grid stacks source, report, and review on narrow screens.",
+            "verification": "Node VM checks passed for readiness blockers, source revision tracking, outdated-source status, live-region updates, and resetting confirmations after letter, source, and recipient changes. Static responsive rules reviewed; no browser used."
+          },
+          {
+            "exchange": "A4",
+            "timestamp_utc": "2026-10-20T02:20:16.937215+00:00",
+            "from": "AI assistant",
+            "to": "coding agent",
+            "prompt": "A4 actual development prompt: Add a real downloadable, print-friendly HTML report alongside TXT, generated only from the immutable approved snapshot. Escape all user-entered text, include fictional demo label, recipient, revision and explicit unresolved-information status, and exclude internal source notes / private UI state. A standalone HTML file should open locally and print cleanly. Intended learning: can the approved document fit the existing copy/export workflow in a presentable format? Log exact prompt/result and validate export blocks before approval and respects frozen snapshot.",
+            "purpose": "Test whether an approved document fits an existing export workflow in a presentable format.",
+            "result": "Added a real downloadable standalone HTML report beside TXT. HTML uses only the frozen approved snapshot, escapes text, includes recipient/revision/approval and unresolved-information status, excludes the source notes and UI state, and includes local-print styling.",
+            "verification": "Node VM checks passed for denied preapproval HTML export, HTML escaping of script-like draft and recipient text, source sentinel exclusion, unresolved-status inclusion, print CSS, edit invalidation, and unchanged prior exported snapshot."
+          },
+          {
+            "exchange": "A5",
+            "timestamp_utc": "2026-10-20T02:22:01.288992+00:00",
+            "from": "AI assistant",
+            "to": "coding agent",
+            "prompt": "A5 actual development prompt: Perform final code/API verification of full main and incomplete-note flows, source-change regeneration, every edit invalidating approval, denied preapproval exports, frozen TXT/HTML export and HTML escaping. Correct failures. Increase mobile input/button/label readability where tiny (aim 14–16px inputs, ≥12px meaningful labels; generous touch targets), ensure all nav uses direct correct page links, and add a compact collapsible 'Why this design' hypothesis/tradeoff block for class review. Record exact prompt and truthful checks/results; browser rendering is unavailable. Freeze A.html/log after completion and report API.",
+            "purpose": "Verify the full prototype and improve mobile usability and class-review clarity.",
+            "result": "Added a compact collapsible hypothesis/tradeoff block and mobile 16px inputs, 14px note/report text, 12px meaningful labels, 44px buttons, and larger checkbox targets. Updated export wording for both formats. Strengthened source revision checks so even reverted source edits require regeneration, and recognized explicit not-provided values as unresolved. Final A.html and this five-exchange log are frozen for handoff.",
+            "verification": {
+              "method": "Node VM execution with DOM/event/download stubs and static HTML/CSS assertions; browser rendering unavailable.",
+              "passed": [
+                "Complete-case generation/review/approval/export",
+                "Incomplete follow-up preserved without inferred date or next step",
+                "Explicit unresolved-information acknowledgement gate",
+                "Follow-up addition to source and regeneration",
+                "Deterministic local generation",
+                "Source regeneration required after edits and reverts",
+                "Letter/source/recipient edits reset review confirmations and approval",
+                "Preapproval TXT and HTML export rejected",
+                "Snapshot mutation through cloned state cannot alter exports",
+                "Actual TXT and HTML download handlers invoke correct Blob MIME types",
+                "HTML escaping of script-like draft and recipient text",
+                "Private source sentinel excluded from exported HTML",
+                "Frozen prior exported content remains unchanged after edits",
+                "Stable input element and focus during input handling",
+                "Reset clears state",
+                "All navigation uses direct index.html/A.html/B.html/C.html/guide.html links",
+                "No external script or stylesheet dependency",
+                "Responsive/mobile and accessible live-region rules present"
+              ],
+              "not_performed": [
+                "Browser rendering, viewport screenshot inspection, and real clinical validation"
+              ]
+            }
+          }
+        ],
+        "final_api": [
+          "getState",
+          "loadSample",
+          "loadScenario",
+          "getScenarios",
+          "acknowledgeUnresolved",
+          "setSource",
+          "generateDraft",
+          "editLetter",
+          "setRecipient",
+          "confirmReview",
+          "confirmRecipient",
+          "approve",
+          "exportText",
+          "exportHtml",
+          "reset",
+          "getSampleNote"
+        ],
+        "artifact_sha256": "d7eee2ed24713ae58111a3ae19c00efa654f47e065f9a1d8cf514a9737ecc326",
+        "frozen_after_exchange": "A5"
+      },
+      "raw_json": "{\n  \"prototype\": \"A \\u00b7 Letter Studio\",\n  \"attribution\": \"AI assistant \\u2192 coding agent\",\n  \"exchanges\": [\n    {\n      \"exchange\": \"A1\",\n      \"timestamp_utc\": \"2026-10-20T02:17:15.387006+00:00\",\n      \"from\": \"AI assistant\",\n      \"to\": \"coding agent\",\n      \"prompt\": \"Build entirely NEW from blank standalone /workspace/scratch/511edc76527a/referralflow-fresh/dist/A.html. Do not read any other prior html, prototypes, site or backup anywhere. User expressly forbids existing prototypes influencing this build. This is prompt A1 of 5 actual AI development exchanges; log exact text with purpose/result/time in /workspace/scratch/511edc76527a/referralflow-fresh/logs/A.json; attribute AI assistant \\u2192 coding agent, no invented student authorship. Product ReferralFlow AI, team Dental Demand Labs, MENG570 assignment requires 3 distinct functional interactive prototypes each testing hypothesis & prior persona. A persona Dr. Arjun Patel owner-periodontist. Fixed concept: existing specialist notes \\u2192 draft referral report \\u2192 specialist edits/reviews/confirms recipient/approves \\u2192 export to existing authorized channel. No autonomous sending. Use ONLY fictional data and label demo. Build professional document-first 'Letter Studio': sophisticated navy/blue left slim sidebar, spacious white report canvas with readable typography, patient case row, note source drawer or right pane. Meaningful controls: load fictional note, generate local deterministic letter from structured labeled notes (not real AI), edit letter, confirm review and recipient, approve then TXT export frozen snapshot, edit again invalidates approval. Empty source blocks generation. No actual messages. One clear first task, polished responsive design, controls without walls of assignment text. Footer demo generation/delivery simulation status. Small page nav direct relative links index.html A.html B.html C.html guide.html. Distinct from B action-focused recipient portal and C coordinator route board (built separately). First implement coherent full flow plus foundational UI, then report API and wait for next refinement prompt. No external dependencies, browser, deploy or sharing. Expose clean window.demo API for Node VM state tests. All app code self-contained. Need top-tier usable functional UI.\",\n      \"purpose\": \"Build a new document-first specialist letter prototype from blank and establish its complete review-and-export workflow.\",\n      \"result\": \"Created standalone A.html with a responsive navy workspace, fictional structured note, deterministic local drafting, editable report, recipient controls, review confirmations, frozen approved TXT export, and edit/source/recipient invalidation. No previous prototype files were read.\",\n      \"verification\": \"Node VM checks passed for empty-source block, generation, approval gates, TXT simulation status, invalidation, and reset.\",\n      \"api\": [\n        \"getState\",\n        \"loadSample\",\n        \"setSource\",\n        \"generateDraft\",\n        \"editLetter\",\n        \"setRecipient\",\n        \"confirmReview\",\n        \"confirmRecipient\",\n        \"approve\",\n        \"exportText\",\n        \"reset\",\n        \"getSampleNote\"\n      ]\n    },\n    {\n      \"exchange\": \"A2\",\n      \"timestamp_utc\": \"2026-10-20T02:18:23.371616+00:00\",\n      \"from\": \"AI assistant\",\n      \"to\": \"coding agent\",\n      \"prompt\": \"A2 actual development prompt: Add a second fictional note scenario with intentionally missing follow-up details, selectable alongside the main case. Generation must preserve 'Not provided in source notes' without inventing dates or next steps; approval must require explicit specialist acknowledgement of unresolved information or filling it from the supplied note. Keep source notes and letter independently editable, source changes invalidate draft approval and require regeneration. Intended learning: can specialist recognize and handle incomplete source information? Record exact prompt/results in your NEW A log. Complete after A1 core.\",\n      \"purpose\": \"Test whether a specialist recognizes and handles incomplete source information.\",\n      \"result\": \"Added selectable Sofia Bennett fictional case with omitted follow-up, exact missing-information wording, an explicit unresolved-information acknowledgement gate, preserved missing data in export, and regeneration after source edits. Removed fallback dates.\",\n      \"verification\": \"Node VM checks passed for missing-follow-up marking, approval rejection without acknowledgement, successful acknowledged approval, source-edit invalidation, follow-up addition and regeneration, and complete-case path.\"\n    },\n    {\n      \"exchange\": \"A3\",\n      \"timestamp_utc\": \"2026-10-20T02:19:12.794556+00:00\",\n      \"from\": \"AI assistant\",\n      \"to\": \"coding agent\",\n      \"prompt\": \"A3 actual development prompt: Make the specialist review task self-explanatory and accessible. Add concise inline approval blockers, visible letter/source revision status and an accessible live status region. Confirm review checkboxes reset after any source/letter/recipient change. Ensure text inputs retain focus during editing and mobile layout stacks cleanly without fixed-width overflow. Intended learning: can a first-time specialist understand readiness and recover from a revision without presenter help? Log exact prompt/results; no external dependencies.\",\n      \"purpose\": \"Test first-time specialist readiness comprehension and recovery after revisions.\",\n      \"result\": \"Added current source revision and draft-source revision labels, contextual approval blockers, a persistent polite live region, and explicit outdated-source status. Editing uses stable DOM inputs rather than replacement. Existing responsive grid stacks source, report, and review on narrow screens.\",\n      \"verification\": \"Node VM checks passed for readiness blockers, source revision tracking, outdated-source status, live-region updates, and resetting confirmations after letter, source, and recipient changes. Static responsive rules reviewed; no browser used.\"\n    },\n    {\n      \"exchange\": \"A4\",\n      \"timestamp_utc\": \"2026-10-20T02:20:16.937215+00:00\",\n      \"from\": \"AI assistant\",\n      \"to\": \"coding agent\",\n      \"prompt\": \"A4 actual development prompt: Add a real downloadable, print-friendly HTML report alongside TXT, generated only from the immutable approved snapshot. Escape all user-entered text, include fictional demo label, recipient, revision and explicit unresolved-information status, and exclude internal source notes / private UI state. A standalone HTML file should open locally and print cleanly. Intended learning: can the approved document fit the existing copy/export workflow in a presentable format? Log exact prompt/result and validate export blocks before approval and respects frozen snapshot.\",\n      \"purpose\": \"Test whether an approved document fits an existing export workflow in a presentable format.\",\n      \"result\": \"Added a real downloadable standalone HTML report beside TXT. HTML uses only the frozen approved snapshot, escapes text, includes recipient/revision/approval and unresolved-information status, excludes the source notes and UI state, and includes local-print styling.\",\n      \"verification\": \"Node VM checks passed for denied preapproval HTML export, HTML escaping of script-like draft and recipient text, source sentinel exclusion, unresolved-status inclusion, print CSS, edit invalidation, and unchanged prior exported snapshot.\"\n    },\n    {\n      \"exchange\": \"A5\",\n      \"timestamp_utc\": \"2026-10-20T02:22:01.288992+00:00\",\n      \"from\": \"AI assistant\",\n      \"to\": \"coding agent\",\n      \"prompt\": \"A5 actual development prompt: Perform final code/API verification of full main and incomplete-note flows, source-change regeneration, every edit invalidating approval, denied preapproval exports, frozen TXT/HTML export and HTML escaping. Correct failures. Increase mobile input/button/label readability where tiny (aim 14\\u201316px inputs, \\u226512px meaningful labels; generous touch targets), ensure all nav uses direct correct page links, and add a compact collapsible 'Why this design' hypothesis/tradeoff block for class review. Record exact prompt and truthful checks/results; browser rendering is unavailable. Freeze A.html/log after completion and report API.\",\n      \"purpose\": \"Verify the full prototype and improve mobile usability and class-review clarity.\",\n      \"result\": \"Added a compact collapsible hypothesis/tradeoff block and mobile 16px inputs, 14px note/report text, 12px meaningful labels, 44px buttons, and larger checkbox targets. Updated export wording for both formats. Strengthened source revision checks so even reverted source edits require regeneration, and recognized explicit not-provided values as unresolved. Final A.html and this five-exchange log are frozen for handoff.\",\n      \"verification\": {\n        \"method\": \"Node VM execution with DOM/event/download stubs and static HTML/CSS assertions; browser rendering unavailable.\",\n        \"passed\": [\n          \"Complete-case generation/review/approval/export\",\n          \"Incomplete follow-up preserved without inferred date or next step\",\n          \"Explicit unresolved-information acknowledgement gate\",\n          \"Follow-up addition to source and regeneration\",\n          \"Deterministic local generation\",\n          \"Source regeneration required after edits and reverts\",\n          \"Letter/source/recipient edits reset review confirmations and approval\",\n          \"Preapproval TXT and HTML export rejected\",\n          \"Snapshot mutation through cloned state cannot alter exports\",\n          \"Actual TXT and HTML download handlers invoke correct Blob MIME types\",\n          \"HTML escaping of script-like draft and recipient text\",\n          \"Private source sentinel excluded from exported HTML\",\n          \"Frozen prior exported content remains unchanged after edits\",\n          \"Stable input element and focus during input handling\",\n          \"Reset clears state\",\n          \"All navigation uses direct index.html/A.html/B.html/C.html/guide.html links\",\n          \"No external script or stylesheet dependency\",\n          \"Responsive/mobile and accessible live-region rules present\"\n        ],\n        \"not_performed\": [\n          \"Browser rendering, viewport screenshot inspection, and real clinical validation\"\n        ]\n      }\n    }\n  ],\n  \"final_api\": [\n    \"getState\",\n    \"loadSample\",\n    \"loadScenario\",\n    \"getScenarios\",\n    \"acknowledgeUnresolved\",\n    \"setSource\",\n    \"generateDraft\",\n    \"editLetter\",\n    \"setRecipient\",\n    \"confirmReview\",\n    \"confirmRecipient\",\n    \"approve\",\n    \"exportText\",\n    \"exportHtml\",\n    \"reset\",\n    \"getSampleNote\"\n  ],\n  \"artifact_sha256\": \"d7eee2ed24713ae58111a3ae19c00efa654f47e065f9a1d8cf514a9737ecc326\",\n  \"frozen_after_exchange\": \"A5\"\n}"
+    },
+    {
+      "prototype_key": "B",
+      "prototype_name": "Referral Brief",
+      "phase": "initial_build",
+      "source_file": "logs/B.json",
+      "source_sha256": "290f74da67dda3b0e72ab47892f89efc53d273924a81581ce37b6a6c254f90f4",
+      "source_bytes": 8728,
+      "exchange_count": 5,
+      "display_exchanges": [
+        {
+          "display_label": "B1",
+          "display_label_basis": "id",
+          "source_entry": 1,
+          "timestamp": "2026-10-20T02:17:48.501Z",
+          "timestamp_source_field": "time",
+          "time_basis": null,
+          "from": "AI assistant",
+          "to": "coding agent",
+          "provenance": "AI assistant → coding agent",
+          "purpose": "Build the recipient-first specialist-to-referring-practice handoff prototype entirely from blank.",
+          "exact_prompt": "Build entirely NEW from blank standalone /workspace/scratch/511edc76527a/referralflow-fresh/dist/B.html. Do not read any prior html, prototypes, site or backup anywhere. User expressly forbids existing prototypes influencing this build. This is prompt B1 of 5 actual AI development exchanges; log exact text with purpose/result/time in /workspace/scratch/511edc76527a/referralflow-fresh/logs/B.json; attribute AI assistant → coding agent, no invented student authorship. Product ReferralFlow AI, Dental Demand Labs MENG570. 3 distinct hypothesis prototypes. B persona Dr. Elena Ruiz, referring general dentist (persona hypothesis). Fixed concept: existing specialist notes → draft report → specialist review/edit/recipient confirm/approve → approved info back to general dentist via practice channel. Build professional recipient-first 'Referral Brief' portal: warm ivory, charcoal, terracotta accent, elegant editorial type, concise approved handoff cards 'Visit summary / What your office needs to do / What specialist does next / Unresolved information'. Specialist preparation tab lets user generate structured draft from fictional existing notes, edit fields/owners, approve. Recipient portal unavailable until specialist approval and simulate handoff explicit button. Recipient sees ONLY approved snapshot, can inspect full letter, download report and record local comprehension response clearly simulated. All content fictional. Use consultation case with image requested, plan deferred, no date set; avoid clinical advice. Generation deterministic template/fixture, labelled demo not real AI. No sending, no production auth. Include clear first-use task but keep app UI concise. Whole workflow in one prototype. Distinct from A document composer and C coordinator route board built separately. Navigation direct links index.html A.html B.html C.html guide.html. No external dependencies/browser/deploy. Expose window.demo API for Node VM meaningful tests. First build core high-quality flow and wait for next prompt.",
+          "recorded_outcome": "Created standalone B.html from a blank file without reading previous prototypes. Includes fictional deterministic generation, editable fields and owners, recipient confirmation, specialist approval, immutable approved snapshot, explicit simulated handoff gate, four recipient cards, full letter/download, local comprehension check and reset. Core Node VM workflow assertions passed.",
+          "outcome_source_field": "result",
+          "recorded_validation": null
+        },
+        {
+          "display_label": "B2",
+          "display_label_basis": "id",
+          "source_entry": 2,
+          "timestamp": "2026-10-20T02:18:32.013Z",
+          "timestamp_source_field": "time",
+          "time_basis": null,
+          "from": "AI assistant",
+          "to": "coding agent",
+          "provenance": "AI assistant → coding agent",
+          "purpose": "Test whether a recipient extracts the action, owner, and scheduling uncertainty from approved content.",
+          "exact_prompt": "B2 actual development prompt: Add a recipient comprehension exercise with three concrete inputs: who must act next, what they must do, and whether follow-up is scheduled. Keep answers blank until entered, allow saving/exporting local response JSON tied to approved snapshot version, show no prefilled test result, and provide a clearly marked facilitator reference answer in collapsed details. Intended learning: does recipient extract action/owner/uncertainty from approved content? Record exact prompt/result in NEW B log. Run after B1 core.",
+          "recorded_outcome": "Replaced the two-question scored check with three blank response inputs, explicit local-only save, version-bound JSON export, no automatic correctness result, and a collapsed facilitator reference derived from the approved snapshot. Node VM assertions verified blank state, validation, version binding, JSON fields, no score field, and collapsed reference markup.",
+          "outcome_source_field": "result",
+          "recorded_validation": null
+        },
+        {
+          "display_label": "B3",
+          "display_label_basis": "id",
+          "source_entry": 3,
+          "timestamp": "2026-10-20T02:19:24.439Z",
+          "timestamp_source_field": "time",
+          "time_basis": null,
+          "from": "AI assistant",
+          "to": "coding agent",
+          "provenance": "AI assistant → coding agent",
+          "purpose": "Make draft work distinguishable from the approved information available to the referring dentist.",
+          "exact_prompt": "B3 actual development prompt: Strengthen the review-to-recipient boundary: incomplete required fields or unchecked recipient block approval; edits invalidate current approval/handoff visibility until reapproved, while preserving an immutable earlier snapshot separately if history shown. Recipient action owner and timing must be consistent with approved fields, and reset clears portal and response state. Add concise visible reasons when unavailable. Intended learning: can participants distinguish draft work from the approved information available to the recipient? Log actual prompt/results and run meaningful API assertions.",
+          "recorded_outcome": "Required fields and recipient confirmation gate approval. Editing an approved field, creating a revision, or unchecking confirmation invalidates current approval, recipient access, and local response. Earlier approved snapshots are cloned to separate internal history and never shown as the current brief. Added explicit unavailable reasons and dynamic approved owner rendering. Node assertions verified approval validation, version progression, invalidation, immutable history, empty report while locked, updated approved owner, and complete reset.",
+          "outcome_source_field": "result",
+          "recorded_validation": null
+        },
+        {
+          "display_label": "B4",
+          "display_label_basis": "id",
+          "source_entry": 4,
+          "timestamp": "2026-10-20T02:20:12.508Z",
+          "timestamp_source_field": "time",
+          "time_basis": null,
+          "from": "AI assistant",
+          "to": "coding agent",
+          "provenance": "AI assistant → coding agent",
+          "purpose": "Enable a new reviewer to complete and explain the workflow using only the prototype.",
+          "exact_prompt": "B4 actual development prompt: Improve practical first-use and output: add clear short specialist and recipient tasks, a persistent workflow state badge, accessible status announcements, and a real TXT or standalone printable HTML download from the approved snapshot available to recipient after simulated handoff. Preserve approved fields exactly, escape all edited content, and avoid hardcoded facts contradicting edited report fields. Intended learning: can a new reviewer complete and explain the handoff using the artifact alone? Log exact prompt/results and check narrow/mobile layout CSS without browser.",
+          "recorded_outcome": "Added concise specialist/recipient tasks, persistent four-stage state badge and polite live announcements. Added editable image, plan, and timing status fields so recipient badges, facilitator reference and TXT report use approved values rather than hardcoded status facts. TXT download uses the exact recipient snapshot and is unavailable before simulated handoff. All edited UI content is assigned through textContent or input value; report is text/plain. Node assertions checked edited timing/plan preservation, malicious-looking input as inert text, gate, unique IDs, complete field mapping, download path and live status. Narrow CSS statically checked at 650px: single-column source/form, status fields, cards, metadata and response panel, flexible actions and navigation.",
+          "outcome_source_field": "result",
+          "recorded_validation": null
+        },
+        {
+          "display_label": "B5",
+          "display_label_basis": "id",
+          "source_entry": 5,
+          "timestamp": "2026-10-20T02:21:16.322Z",
+          "timestamp_source_field": "time",
+          "time_basis": null,
+          "from": "AI assistant",
+          "to": "coding agent",
+          "provenance": "AI assistant → coding agent",
+          "purpose": "Verify the complete workflow and its information boundary, and make the design hypothesis inspectable.",
+          "exact_prompt": "B5 actual development prompt: Final-verify source→draft→approval→handoff→recipient and revision/reset paths through actual window.demo APIs. Assert blocked recipient before approval/handoff, export uses snapshot, edited owners/timing stay consistent, response JSON version binding, and escaped edited HTML. Correct observed failures. Keep mobile text inputs/buttons readable and all nav direct links. Add compact collapsible 'Why this design' hypothesis/tradeoff block. Log exact prompt and truthful checks/results; no browser-render QA is available. Freeze B.html/log after completion and report APIs.",
+          "recorded_outcome": "54 final assertions passed through actual window.demo APIs plus a minimal DOM event harness. Verified deterministic generation; required/confirmation gates; approval alone stays locked; explicit handoff; snapshot clone integrity; exact TXT content; approved owner/timing; response JSON snapshot binding; edit/uncheck/revision invalidation; internal immutable history; complete reset; textContent handling of HTML-like edits; blank response state; collapsed reference; live workflow state; direct navigation; standalone source. Removed repeated fixed date/plan claims from default unresolved text so timing/status are sourced only from editable approved fields. Added collapsed hypothesis/tradeoff block and 16px mobile inputs with 42px minimum buttons. Static narrow CSS check and DOM harness only; no browser-render or visual QA was performed.",
+          "outcome_source_field": "result",
+          "recorded_validation": null
+        }
+      ],
+      "raw_record": {
+        "prototype": "B · Referral Brief",
+        "product": "ReferralFlow AI",
+        "attribution": "AI assistant → coding agent",
+        "origin": "Actual AI development exchanges. No student authorship is attributed or invented.",
+        "exchanges": [
+          {
+            "id": "B1",
+            "time": "2026-10-20T02:17:48.501Z",
+            "prompt": "Build entirely NEW from blank standalone /workspace/scratch/511edc76527a/referralflow-fresh/dist/B.html. Do not read any prior html, prototypes, site or backup anywhere. User expressly forbids existing prototypes influencing this build. This is prompt B1 of 5 actual AI development exchanges; log exact text with purpose/result/time in /workspace/scratch/511edc76527a/referralflow-fresh/logs/B.json; attribute AI assistant → coding agent, no invented student authorship. Product ReferralFlow AI, Dental Demand Labs MENG570. 3 distinct hypothesis prototypes. B persona Dr. Elena Ruiz, referring general dentist (persona hypothesis). Fixed concept: existing specialist notes → draft report → specialist review/edit/recipient confirm/approve → approved info back to general dentist via practice channel. Build professional recipient-first 'Referral Brief' portal: warm ivory, charcoal, terracotta accent, elegant editorial type, concise approved handoff cards 'Visit summary / What your office needs to do / What specialist does next / Unresolved information'. Specialist preparation tab lets user generate structured draft from fictional existing notes, edit fields/owners, approve. Recipient portal unavailable until specialist approval and simulate handoff explicit button. Recipient sees ONLY approved snapshot, can inspect full letter, download report and record local comprehension response clearly simulated. All content fictional. Use consultation case with image requested, plan deferred, no date set; avoid clinical advice. Generation deterministic template/fixture, labelled demo not real AI. No sending, no production auth. Include clear first-use task but keep app UI concise. Whole workflow in one prototype. Distinct from A document composer and C coordinator route board built separately. Navigation direct links index.html A.html B.html C.html guide.html. No external dependencies/browser/deploy. Expose window.demo API for Node VM meaningful tests. First build core high-quality flow and wait for next prompt.",
+            "purpose": "Build the recipient-first specialist-to-referring-practice handoff prototype entirely from blank.",
+            "result": "Created standalone B.html from a blank file without reading previous prototypes. Includes fictional deterministic generation, editable fields and owners, recipient confirmation, specialist approval, immutable approved snapshot, explicit simulated handoff gate, four recipient cards, full letter/download, local comprehension check and reset. Core Node VM workflow assertions passed."
+          },
+          {
+            "id": "B2",
+            "time": "2026-10-20T02:18:32.013Z",
+            "prompt": "B2 actual development prompt: Add a recipient comprehension exercise with three concrete inputs: who must act next, what they must do, and whether follow-up is scheduled. Keep answers blank until entered, allow saving/exporting local response JSON tied to approved snapshot version, show no prefilled test result, and provide a clearly marked facilitator reference answer in collapsed details. Intended learning: does recipient extract action/owner/uncertainty from approved content? Record exact prompt/result in NEW B log. Run after B1 core.",
+            "purpose": "Test whether a recipient extracts the action, owner, and scheduling uncertainty from approved content.",
+            "result": "Replaced the two-question scored check with three blank response inputs, explicit local-only save, version-bound JSON export, no automatic correctness result, and a collapsed facilitator reference derived from the approved snapshot. Node VM assertions verified blank state, validation, version binding, JSON fields, no score field, and collapsed reference markup."
+          },
+          {
+            "id": "B3",
+            "time": "2026-10-20T02:19:24.439Z",
+            "prompt": "B3 actual development prompt: Strengthen the review-to-recipient boundary: incomplete required fields or unchecked recipient block approval; edits invalidate current approval/handoff visibility until reapproved, while preserving an immutable earlier snapshot separately if history shown. Recipient action owner and timing must be consistent with approved fields, and reset clears portal and response state. Add concise visible reasons when unavailable. Intended learning: can participants distinguish draft work from the approved information available to the recipient? Log actual prompt/results and run meaningful API assertions.",
+            "purpose": "Make draft work distinguishable from the approved information available to the referring dentist.",
+            "result": "Required fields and recipient confirmation gate approval. Editing an approved field, creating a revision, or unchecking confirmation invalidates current approval, recipient access, and local response. Earlier approved snapshots are cloned to separate internal history and never shown as the current brief. Added explicit unavailable reasons and dynamic approved owner rendering. Node assertions verified approval validation, version progression, invalidation, immutable history, empty report while locked, updated approved owner, and complete reset."
+          },
+          {
+            "id": "B4",
+            "time": "2026-10-20T02:20:12.508Z",
+            "prompt": "B4 actual development prompt: Improve practical first-use and output: add clear short specialist and recipient tasks, a persistent workflow state badge, accessible status announcements, and a real TXT or standalone printable HTML download from the approved snapshot available to recipient after simulated handoff. Preserve approved fields exactly, escape all edited content, and avoid hardcoded facts contradicting edited report fields. Intended learning: can a new reviewer complete and explain the handoff using the artifact alone? Log exact prompt/results and check narrow/mobile layout CSS without browser.",
+            "purpose": "Enable a new reviewer to complete and explain the workflow using only the prototype.",
+            "result": "Added concise specialist/recipient tasks, persistent four-stage state badge and polite live announcements. Added editable image, plan, and timing status fields so recipient badges, facilitator reference and TXT report use approved values rather than hardcoded status facts. TXT download uses the exact recipient snapshot and is unavailable before simulated handoff. All edited UI content is assigned through textContent or input value; report is text/plain. Node assertions checked edited timing/plan preservation, malicious-looking input as inert text, gate, unique IDs, complete field mapping, download path and live status. Narrow CSS statically checked at 650px: single-column source/form, status fields, cards, metadata and response panel, flexible actions and navigation."
+          },
+          {
+            "id": "B5",
+            "time": "2026-10-20T02:21:16.322Z",
+            "prompt": "B5 actual development prompt: Final-verify source→draft→approval→handoff→recipient and revision/reset paths through actual window.demo APIs. Assert blocked recipient before approval/handoff, export uses snapshot, edited owners/timing stay consistent, response JSON version binding, and escaped edited HTML. Correct observed failures. Keep mobile text inputs/buttons readable and all nav direct links. Add compact collapsible 'Why this design' hypothesis/tradeoff block. Log exact prompt and truthful checks/results; no browser-render QA is available. Freeze B.html/log after completion and report APIs.",
+            "purpose": "Verify the complete workflow and its information boundary, and make the design hypothesis inspectable.",
+            "result": "54 final assertions passed through actual window.demo APIs plus a minimal DOM event harness. Verified deterministic generation; required/confirmation gates; approval alone stays locked; explicit handoff; snapshot clone integrity; exact TXT content; approved owner/timing; response JSON snapshot binding; edit/uncheck/revision invalidation; internal immutable history; complete reset; textContent handling of HTML-like edits; blank response state; collapsed reference; live workflow state; direct navigation; standalone source. Removed repeated fixed date/plan claims from default unresolved text so timing/status are sourced only from editable approved fields. Added collapsed hypothesis/tradeoff block and 16px mobile inputs with 42px minimum buttons. Static narrow CSS check and DOM harness only; no browser-render or visual QA was performed."
+          }
+        ]
+      },
+      "raw_json": "{\n  \"prototype\": \"B · Referral Brief\",\n  \"product\": \"ReferralFlow AI\",\n  \"attribution\": \"AI assistant → coding agent\",\n  \"origin\": \"Actual AI development exchanges. No student authorship is attributed or invented.\",\n  \"exchanges\": [\n    {\n      \"id\": \"B1\",\n      \"time\": \"2026-10-20T02:17:48.501Z\",\n      \"prompt\": \"Build entirely NEW from blank standalone /workspace/scratch/511edc76527a/referralflow-fresh/dist/B.html. Do not read any prior html, prototypes, site or backup anywhere. User expressly forbids existing prototypes influencing this build. This is prompt B1 of 5 actual AI development exchanges; log exact text with purpose/result/time in /workspace/scratch/511edc76527a/referralflow-fresh/logs/B.json; attribute AI assistant → coding agent, no invented student authorship. Product ReferralFlow AI, Dental Demand Labs MENG570. 3 distinct hypothesis prototypes. B persona Dr. Elena Ruiz, referring general dentist (persona hypothesis). Fixed concept: existing specialist notes → draft report → specialist review/edit/recipient confirm/approve → approved info back to general dentist via practice channel. Build professional recipient-first 'Referral Brief' portal: warm ivory, charcoal, terracotta accent, elegant editorial type, concise approved handoff cards 'Visit summary / What your office needs to do / What specialist does next / Unresolved information'. Specialist preparation tab lets user generate structured draft from fictional existing notes, edit fields/owners, approve. Recipient portal unavailable until specialist approval and simulate handoff explicit button. Recipient sees ONLY approved snapshot, can inspect full letter, download report and record local comprehension response clearly simulated. All content fictional. Use consultation case with image requested, plan deferred, no date set; avoid clinical advice. Generation deterministic template/fixture, labelled demo not real AI. No sending, no production auth. Include clear first-use task but keep app UI concise. Whole workflow in one prototype. Distinct from A document composer and C coordinator route board built separately. Navigation direct links index.html A.html B.html C.html guide.html. No external dependencies/browser/deploy. Expose window.demo API for Node VM meaningful tests. First build core high-quality flow and wait for next prompt.\",\n      \"purpose\": \"Build the recipient-first specialist-to-referring-practice handoff prototype entirely from blank.\",\n      \"result\": \"Created standalone B.html from a blank file without reading previous prototypes. Includes fictional deterministic generation, editable fields and owners, recipient confirmation, specialist approval, immutable approved snapshot, explicit simulated handoff gate, four recipient cards, full letter/download, local comprehension check and reset. Core Node VM workflow assertions passed.\"\n    },\n    {\n      \"id\": \"B2\",\n      \"time\": \"2026-10-20T02:18:32.013Z\",\n      \"prompt\": \"B2 actual development prompt: Add a recipient comprehension exercise with three concrete inputs: who must act next, what they must do, and whether follow-up is scheduled. Keep answers blank until entered, allow saving/exporting local response JSON tied to approved snapshot version, show no prefilled test result, and provide a clearly marked facilitator reference answer in collapsed details. Intended learning: does recipient extract action/owner/uncertainty from approved content? Record exact prompt/result in NEW B log. Run after B1 core.\",\n      \"purpose\": \"Test whether a recipient extracts the action, owner, and scheduling uncertainty from approved content.\",\n      \"result\": \"Replaced the two-question scored check with three blank response inputs, explicit local-only save, version-bound JSON export, no automatic correctness result, and a collapsed facilitator reference derived from the approved snapshot. Node VM assertions verified blank state, validation, version binding, JSON fields, no score field, and collapsed reference markup.\"\n    },\n    {\n      \"id\": \"B3\",\n      \"time\": \"2026-10-20T02:19:24.439Z\",\n      \"prompt\": \"B3 actual development prompt: Strengthen the review-to-recipient boundary: incomplete required fields or unchecked recipient block approval; edits invalidate current approval/handoff visibility until reapproved, while preserving an immutable earlier snapshot separately if history shown. Recipient action owner and timing must be consistent with approved fields, and reset clears portal and response state. Add concise visible reasons when unavailable. Intended learning: can participants distinguish draft work from the approved information available to the recipient? Log actual prompt/results and run meaningful API assertions.\",\n      \"purpose\": \"Make draft work distinguishable from the approved information available to the referring dentist.\",\n      \"result\": \"Required fields and recipient confirmation gate approval. Editing an approved field, creating a revision, or unchecking confirmation invalidates current approval, recipient access, and local response. Earlier approved snapshots are cloned to separate internal history and never shown as the current brief. Added explicit unavailable reasons and dynamic approved owner rendering. Node assertions verified approval validation, version progression, invalidation, immutable history, empty report while locked, updated approved owner, and complete reset.\"\n    },\n    {\n      \"id\": \"B4\",\n      \"time\": \"2026-10-20T02:20:12.508Z\",\n      \"prompt\": \"B4 actual development prompt: Improve practical first-use and output: add clear short specialist and recipient tasks, a persistent workflow state badge, accessible status announcements, and a real TXT or standalone printable HTML download from the approved snapshot available to recipient after simulated handoff. Preserve approved fields exactly, escape all edited content, and avoid hardcoded facts contradicting edited report fields. Intended learning: can a new reviewer complete and explain the handoff using the artifact alone? Log exact prompt/results and check narrow/mobile layout CSS without browser.\",\n      \"purpose\": \"Enable a new reviewer to complete and explain the workflow using only the prototype.\",\n      \"result\": \"Added concise specialist/recipient tasks, persistent four-stage state badge and polite live announcements. Added editable image, plan, and timing status fields so recipient badges, facilitator reference and TXT report use approved values rather than hardcoded status facts. TXT download uses the exact recipient snapshot and is unavailable before simulated handoff. All edited UI content is assigned through textContent or input value; report is text/plain. Node assertions checked edited timing/plan preservation, malicious-looking input as inert text, gate, unique IDs, complete field mapping, download path and live status. Narrow CSS statically checked at 650px: single-column source/form, status fields, cards, metadata and response panel, flexible actions and navigation.\"\n    },\n    {\n      \"id\": \"B5\",\n      \"time\": \"2026-10-20T02:21:16.322Z\",\n      \"prompt\": \"B5 actual development prompt: Final-verify source→draft→approval→handoff→recipient and revision/reset paths through actual window.demo APIs. Assert blocked recipient before approval/handoff, export uses snapshot, edited owners/timing stay consistent, response JSON version binding, and escaped edited HTML. Correct observed failures. Keep mobile text inputs/buttons readable and all nav direct links. Add compact collapsible 'Why this design' hypothesis/tradeoff block. Log exact prompt and truthful checks/results; no browser-render QA is available. Freeze B.html/log after completion and report APIs.\",\n      \"purpose\": \"Verify the complete workflow and its information boundary, and make the design hypothesis inspectable.\",\n      \"result\": \"54 final assertions passed through actual window.demo APIs plus a minimal DOM event harness. Verified deterministic generation; required/confirmation gates; approval alone stays locked; explicit handoff; snapshot clone integrity; exact TXT content; approved owner/timing; response JSON snapshot binding; edit/uncheck/revision invalidation; internal immutable history; complete reset; textContent handling of HTML-like edits; blank response state; collapsed reference; live workflow state; direct navigation; standalone source. Removed repeated fixed date/plan claims from default unresolved text so timing/status are sourced only from editable approved fields. Added collapsed hypothesis/tradeoff block and 16px mobile inputs with 42px minimum buttons. Static narrow CSS check and DOM harness only; no browser-render or visual QA was performed.\"\n    }\n  ]\n}\n"
+    },
+    {
+      "prototype_key": "C",
+      "prototype_name": "Practice Relay",
+      "phase": "initial_build",
+      "source_file": "logs/C.json",
+      "source_sha256": "2b7b3eb76ed231334df21663d69b61cc6aa7626bc1f37e706f0e8f837faeebce",
+      "source_bytes": 11803,
+      "exchange_count": 5,
+      "display_exchanges": [
+        {
+          "display_label": "C1",
+          "display_label_basis": "id",
+          "source_entry": 1,
+          "timestamp": "2026-10-20T02:14:20Z",
+          "timestamp_source_field": "received_at_utc",
+          "time_basis": "UTC tool timestamp at start of work; message transport did not expose a separate sent timestamp.",
+          "from": "AI assistant",
+          "to": "coding agent",
+          "provenance": "AI assistant → coding agent. No prompts are attributed to students.",
+          "purpose": "Create a new visual foundation and complete coordinator → specialist → coordinator workflow with source-note and approval gates.",
+          "exact_prompt": "Build entirely NEW from blank standalone /workspace/scratch/511edc76527a/referralflow-fresh/dist/C.html. Do not read any prior html, prototypes, site or backup anywhere. User expressly forbids prior prototypes influencing build. Prompt C1 of five actual development exchanges: record exact prompt text/time/purpose/results in /workspace/scratch/511edc76527a/referralflow-fresh/logs/C.json, attributed AI assistant → coding agent (no invented student authorship). Product ReferralFlow AI, Dental Demand Labs MENG570. C persona Maya Chen clinical assistant/referral coordinator (hypothesis persona). Fixed concept existing specialist notes → draft report → specialist review/edit/confirm recipient/approve → export using existing practice channel. Design 'Practice Relay', polished work queue with indigo sidebar, pale cool background, compact case cards, three lanes 'Prepare / Specialist review / Ready to return'. Assistant selects fictional case, checks note exists and recipient, generates local deterministic sample draft and routes to specialist. Specialist preview lets edit/review/approve; assistant can export approved snapshot and simulate return. Role toggle explicitly demo, approval specialist-only. Include missing-note case blocked in Prepare, no invented clinical facts. Distinguish known source facts from missing fields. Need attractive usable UI with crisp spacing, badges, progress, meaningful detail panel, responsive. No real records or sending. Demo AI generation/roles/delivery simulated; edits, transitions/gates/snapshot export functional. Relative nav index.html A.html B.html C.html guide.html. Self-contained no dependencies/browser/deploy. Expose clean window.demo API for Node VM state testing. First full coherent flow & foundation then report API/wait next prompt.",
+          "recorded_outcome": "Created a self-contained C.html from blank. Indigo sidebar, three work lanes, fictional case cards, detail panel, responsive layout, role toggle, source and recipient checks, deterministic local draft, specialist editing and confirmation, approval snapshot, text export, simulated return, reset, activity trail, and navigation are implemented. Source notes and absent fields are explicitly distinguished. No external dependency, service, sending, or browser was used.",
+          "outcome_source_field": "result",
+          "recorded_validation": null
+        },
+        {
+          "display_label": "C2",
+          "display_label_basis": "id",
+          "source_entry": 2,
+          "timestamp": "2026-10-20T02:19:04.279602+00:00",
+          "timestamp_source_field": "received_at_utc",
+          "time_basis": "UTC work timestamp; message transport did not expose a separate sent timestamp.",
+          "from": "AI assistant",
+          "to": "coding agent",
+          "provenance": "AI assistant → coding agent. No prompts are attributed to students.",
+          "purpose": "Test whether the coordinator can identify the missing source note and the specialist who must supply it.",
+          "exact_prompt": "C2 actual development prompt: Add a second fictional missing-note case that can be opened and inspected but cannot generate, route, approve, export, or simulate return. Show the exact next owner and reason in its detail panel. Keep existing supplied-note case completeable end-to-end with distinct assistant and specialist actions. Intended learning: can coordinator identify what is missing and who acts next? Log exact prompt/results in NEW C log. Complete after C1 core.",
+          "recorded_outcome": "Added inspectable RF-107 Taylor Jordan alongside RF-105 Sam Rivera, both permanently blocked in Prepare without source notes. Missing-note detail explicitly names the specialist as next owner, states that the source note was not supplied, and lists blocked downstream actions. The supplied-note flow remains completeable with distinct role gates.",
+          "outcome_source_field": "result",
+          "recorded_validation": null
+        },
+        {
+          "display_label": "C3",
+          "display_label_basis": "id",
+          "source_entry": 3,
+          "timestamp": "2026-10-20T02:21:23.535761+00:00",
+          "timestamp_source_field": "received_at_utc",
+          "time_basis": "UTC work timestamp; message transport did not expose a separate sent timestamp.",
+          "from": "AI assistant",
+          "to": "coding agent",
+          "provenance": "AI assistant → coding agent. No prompts are attributed to students.",
+          "purpose": "Prevent an edited revision or changed recipient from inheriting an earlier approval; clarify ownership and audit sequence.",
+          "exact_prompt": "C3 actual development prompt: Make approval create an immutable per-case snapshot bound to a revision. Any later draft or recipient edit must clear approval/export/return readiness and send the case back to specialist review. Export must use only the snapshot; missing-note or assistant actions must never approve via programmatic calls. Add clear stage-specific next-owner text and local event trail. Intended learning: can staff identify the correct next step and avoid returning an unreviewed revision? Log exact prompt/result and use meaningful API checks.",
+          "recorded_outcome": "Approval now freezes an internal per-case snapshot containing text, recipient, practice, revision, approver and time. Specialist edits to a draft or recipient from review, ready or returned increment revision and clear approval, export and simulated-return flags. Export reads only the snapshot. Added specialist recipient editing, explicit stage-specific next-owner guidance, and local events. Missing-source and role guards apply inside the API.",
+          "outcome_source_field": "result",
+          "recorded_validation": "61 Node VM assertions passed for missing-note cases, role denials, prepare/review/approval/export/return, immutable returned state copies, snapshot-only export, post-return draft invalidation, recipient-change invalidation and reset."
+        },
+        {
+          "display_label": "C4",
+          "display_label_basis": "id",
+          "source_entry": 4,
+          "timestamp": "2026-10-20T02:21:23.535761+00:00",
+          "timestamp_source_field": "received_at_utc",
+          "time_basis": "UTC work timestamp; message transport did not expose a separate sent timestamp.",
+          "from": "AI assistant",
+          "to": "coding agent",
+          "provenance": "AI assistant → coding agent. No prompts are attributed to students.",
+          "purpose": "Support independent click and keyboard completion with readable stage feedback and accessible output controls.",
+          "exact_prompt": "C4 actual development prompt: Make the board usable without dragging or presenter guidance. Add accessible explicit buttons for every allowed next step, keyboard-focus styles, live status announcements, meaningful empty/blocked explanations, responsive detail panel and lane layout. Keep preparation and review controls role-specific with no hidden routes around approval. Add real approved TXT export and clearly label simulated return after export. Intended learning: can staff complete the queue workflow with ordinary click/keyboard controls and explain readiness? Record prompt/results; check code for overflow risks.",
+          "recorded_outcome": "All workflow actions use native buttons, checkboxes and fields. Added focus-visible outlines, aria-pressed roles/cases, a role=status aria-live announcement, explanatory empty lanes and blocked cases, next-owner guidance, role-specific controls and a responsive detail arrangement. Approved TXT download uses Blob and download attribute. The return button is disabled until export and explicitly marked simulated. Added wrapping for long names, practices, notes and activity; min-width:0 and textarea max-width prevent flex/grid overflow.",
+          "outcome_source_field": "result",
+          "recorded_validation": "Source and API review completed without browser-render QA. C5 continues the mobile readability pass and final regression."
+        },
+        {
+          "display_label": "C5",
+          "display_label_basis": "id",
+          "source_entry": 5,
+          "timestamp": "2026-10-20T02:22:31.726125+00:00",
+          "timestamp_source_field": "received_at_utc",
+          "time_basis": "UTC work timestamp; message transport did not expose a separate sent timestamp.",
+          "from": "AI assistant",
+          "to": "coding agent",
+          "provenance": "AI assistant → coding agent. No prompts are attributed to students.",
+          "purpose": "Verify the full guarded flow and make mobile use legible while stating the design hypothesis and tradeoff.",
+          "exact_prompt": "C5 actual development prompt: Final-verify assistant→specialist→approved export→simulated return, every edit invalidating snapshot, all wrong-role denials, and missing-note case denied from every action using actual window.demo API. Correct failures. Current mobile CSS shrinks key card text to 7–10px: replace this with a readable stacked or horizontally scrollable board/detail arrangement, ≥12px key labels and 14–16px inputs, generous touch targets. Add compact collapsible hypothesis/tradeoff block and direct correct nav links. Log exact prompt/results; no browser-render QA is available. Freeze C.html/log after completion and report API.",
+          "recorded_outcome": "Replaced mobile compressed lanes with horizontal snap-scrolling 238px lanes and a full-width detail panel. Key mobile labels are at least 12px, primary fields and report text are 16px, workflow buttons have 48px minimum height, role buttons 40px, and checkbox rows 44px. Added collapsible hypothesis/tradeoff context with Maya Chen explicitly labelled a hypothesis persona. Relative navigation links point directly to index.html, A.html, B.html, C.html and guide.html. Corrected neutral report heading so approved TXT never contains a contradictory DRAFT marker. Missing-source recipient preparation is now denied in the API; returned reports expose reopening in the specialist UI.",
+          "outcome_source_field": "result",
+          "recorded_validation": {
+            "method": "Actual window.demo API evaluated in Node VM from the new C.html scripts; source review for layout and dependencies.",
+            "assertions_passed": 198,
+            "coverage": [
+              "Both missing-note cases denied every preparation/report action in both roles with no state mutation",
+              "Complete assistant checks → generate → specialist edit/confirm/approve → assistant TXT export → simulated return",
+              "All wrong-role denials",
+              "Post-approval and post-return draft and recipient edits clear snapshot/export/return/confirmation, increment revision, and return to review",
+              "Snapshot independence from returned state copies and snapshot-only export content",
+              "Empty report approval denied, reset, invalid role/case denied",
+              "Direct correct navigation, horizontal mobile lanes, 16px mobile report text, no external assets or scripts"
+            ],
+            "browser_render_qa": "Unavailable as instructed; no browser was used."
+          }
+        }
+      ],
+      "raw_record": {
+        "prototype": "C · Practice Relay",
+        "artifact": "dist/C.html",
+        "project": "ReferralFlow AI · Dental Demand Labs · MENG570",
+        "authorship": "AI assistant → coding agent. No prompts are attributed to students.",
+        "prior_prototype_policy": "Built from a blank file. No prior HTML, prototype, site, or backup was opened or used.",
+        "exchanges": [
+          {
+            "id": "C1",
+            "received_at_utc": "2026-10-20T02:14:20Z",
+            "time_basis": "UTC tool timestamp at start of work; message transport did not expose a separate sent timestamp.",
+            "from": "AI assistant",
+            "to": "coding agent",
+            "prompt": "Build entirely NEW from blank standalone /workspace/scratch/511edc76527a/referralflow-fresh/dist/C.html. Do not read any prior html, prototypes, site or backup anywhere. User expressly forbids prior prototypes influencing build. Prompt C1 of five actual development exchanges: record exact prompt text/time/purpose/results in /workspace/scratch/511edc76527a/referralflow-fresh/logs/C.json, attributed AI assistant → coding agent (no invented student authorship). Product ReferralFlow AI, Dental Demand Labs MENG570. C persona Maya Chen clinical assistant/referral coordinator (hypothesis persona). Fixed concept existing specialist notes → draft report → specialist review/edit/confirm recipient/approve → export using existing practice channel. Design 'Practice Relay', polished work queue with indigo sidebar, pale cool background, compact case cards, three lanes 'Prepare / Specialist review / Ready to return'. Assistant selects fictional case, checks note exists and recipient, generates local deterministic sample draft and routes to specialist. Specialist preview lets edit/review/approve; assistant can export approved snapshot and simulate return. Role toggle explicitly demo, approval specialist-only. Include missing-note case blocked in Prepare, no invented clinical facts. Distinguish known source facts from missing fields. Need attractive usable UI with crisp spacing, badges, progress, meaningful detail panel, responsive. No real records or sending. Demo AI generation/roles/delivery simulated; edits, transitions/gates/snapshot export functional. Relative nav index.html A.html B.html C.html guide.html. Self-contained no dependencies/browser/deploy. Expose clean window.demo API for Node VM state testing. First full coherent flow & foundation then report API/wait next prompt.",
+            "purpose": "Create a new visual foundation and complete coordinator → specialist → coordinator workflow with source-note and approval gates.",
+            "result": "Created a self-contained C.html from blank. Indigo sidebar, three work lanes, fictional case cards, detail panel, responsive layout, role toggle, source and recipient checks, deterministic local draft, specialist editing and confirmation, approval snapshot, text export, simulated return, reset, activity trail, and navigation are implemented. Source notes and absent fields are explicitly distinguished. No external dependency, service, sending, or browser was used.",
+            "api": "window.demo: getState, selectCase, setRole, checkSource, checkRecipient, generateDraft, editDraft, confirmRecipient, approve, exportApproved, simulateReturn, reopenReview, reset",
+            "completed_at_utc": "2026-10-20T02:18:25Z"
+          },
+          {
+            "id": "C2",
+            "received_at_utc": "2026-10-20T02:19:04.279602+00:00",
+            "time_basis": "UTC work timestamp; message transport did not expose a separate sent timestamp.",
+            "from": "AI assistant",
+            "to": "coding agent",
+            "prompt": "C2 actual development prompt: Add a second fictional missing-note case that can be opened and inspected but cannot generate, route, approve, export, or simulate return. Show the exact next owner and reason in its detail panel. Keep existing supplied-note case completeable end-to-end with distinct assistant and specialist actions. Intended learning: can coordinator identify what is missing and who acts next? Log exact prompt/results in NEW C log. Complete after C1 core.",
+            "purpose": "Test whether the coordinator can identify the missing source note and the specialist who must supply it.",
+            "result": "Added inspectable RF-107 Taylor Jordan alongside RF-105 Sam Rivera, both permanently blocked in Prepare without source notes. Missing-note detail explicitly names the specialist as next owner, states that the source note was not supplied, and lists blocked downstream actions. The supplied-note flow remains completeable with distinct role gates.",
+            "completed_at_utc": "2026-10-20T02:19:04.279613+00:00"
+          },
+          {
+            "id": "C3",
+            "received_at_utc": "2026-10-20T02:21:23.535761+00:00",
+            "time_basis": "UTC work timestamp; message transport did not expose a separate sent timestamp.",
+            "from": "AI assistant",
+            "to": "coding agent",
+            "prompt": "C3 actual development prompt: Make approval create an immutable per-case snapshot bound to a revision. Any later draft or recipient edit must clear approval/export/return readiness and send the case back to specialist review. Export must use only the snapshot; missing-note or assistant actions must never approve via programmatic calls. Add clear stage-specific next-owner text and local event trail. Intended learning: can staff identify the correct next step and avoid returning an unreviewed revision? Log exact prompt/result and use meaningful API checks.",
+            "purpose": "Prevent an edited revision or changed recipient from inheriting an earlier approval; clarify ownership and audit sequence.",
+            "result": "Approval now freezes an internal per-case snapshot containing text, recipient, practice, revision, approver and time. Specialist edits to a draft or recipient from review, ready or returned increment revision and clear approval, export and simulated-return flags. Export reads only the snapshot. Added specialist recipient editing, explicit stage-specific next-owner guidance, and local events. Missing-source and role guards apply inside the API.",
+            "validation": "61 Node VM assertions passed for missing-note cases, role denials, prepare/review/approval/export/return, immutable returned state copies, snapshot-only export, post-return draft invalidation, recipient-change invalidation and reset.",
+            "completed_at_utc": "2026-10-20T02:21:23.535761+00:00"
+          },
+          {
+            "id": "C4",
+            "received_at_utc": "2026-10-20T02:21:23.535761+00:00",
+            "time_basis": "UTC work timestamp; message transport did not expose a separate sent timestamp.",
+            "from": "AI assistant",
+            "to": "coding agent",
+            "prompt": "C4 actual development prompt: Make the board usable without dragging or presenter guidance. Add accessible explicit buttons for every allowed next step, keyboard-focus styles, live status announcements, meaningful empty/blocked explanations, responsive detail panel and lane layout. Keep preparation and review controls role-specific with no hidden routes around approval. Add real approved TXT export and clearly label simulated return after export. Intended learning: can staff complete the queue workflow with ordinary click/keyboard controls and explain readiness? Record prompt/results; check code for overflow risks.",
+            "purpose": "Support independent click and keyboard completion with readable stage feedback and accessible output controls.",
+            "result": "All workflow actions use native buttons, checkboxes and fields. Added focus-visible outlines, aria-pressed roles/cases, a role=status aria-live announcement, explanatory empty lanes and blocked cases, next-owner guidance, role-specific controls and a responsive detail arrangement. Approved TXT download uses Blob and download attribute. The return button is disabled until export and explicitly marked simulated. Added wrapping for long names, practices, notes and activity; min-width:0 and textarea max-width prevent flex/grid overflow.",
+            "validation": "Source and API review completed without browser-render QA. C5 continues the mobile readability pass and final regression.",
+            "completed_at_utc": "2026-10-20T02:21:23.535761+00:00"
+          },
+          {
+            "id": "C5",
+            "received_at_utc": "2026-10-20T02:22:31.726125+00:00",
+            "time_basis": "UTC work timestamp; message transport did not expose a separate sent timestamp.",
+            "from": "AI assistant",
+            "to": "coding agent",
+            "prompt": "C5 actual development prompt: Final-verify assistant→specialist→approved export→simulated return, every edit invalidating snapshot, all wrong-role denials, and missing-note case denied from every action using actual window.demo API. Correct failures. Current mobile CSS shrinks key card text to 7–10px: replace this with a readable stacked or horizontally scrollable board/detail arrangement, ≥12px key labels and 14–16px inputs, generous touch targets. Add compact collapsible hypothesis/tradeoff block and direct correct nav links. Log exact prompt/results; no browser-render QA is available. Freeze C.html/log after completion and report API.",
+            "purpose": "Verify the full guarded flow and make mobile use legible while stating the design hypothesis and tradeoff.",
+            "result": "Replaced mobile compressed lanes with horizontal snap-scrolling 238px lanes and a full-width detail panel. Key mobile labels are at least 12px, primary fields and report text are 16px, workflow buttons have 48px minimum height, role buttons 40px, and checkbox rows 44px. Added collapsible hypothesis/tradeoff context with Maya Chen explicitly labelled a hypothesis persona. Relative navigation links point directly to index.html, A.html, B.html, C.html and guide.html. Corrected neutral report heading so approved TXT never contains a contradictory DRAFT marker. Missing-source recipient preparation is now denied in the API; returned reports expose reopening in the specialist UI.",
+            "validation": {
+              "method": "Actual window.demo API evaluated in Node VM from the new C.html scripts; source review for layout and dependencies.",
+              "assertions_passed": 198,
+              "coverage": [
+                "Both missing-note cases denied every preparation/report action in both roles with no state mutation",
+                "Complete assistant checks → generate → specialist edit/confirm/approve → assistant TXT export → simulated return",
+                "All wrong-role denials",
+                "Post-approval and post-return draft and recipient edits clear snapshot/export/return/confirmation, increment revision, and return to review",
+                "Snapshot independence from returned state copies and snapshot-only export content",
+                "Empty report approval denied, reset, invalid role/case denied",
+                "Direct correct navigation, horizontal mobile lanes, 16px mobile report text, no external assets or scripts"
+              ],
+              "browser_render_qa": "Unavailable as instructed; no browser was used."
+            },
+            "completed_at_utc": "2026-10-20T02:22:31.726125+00:00"
+          }
+        ],
+        "final": {
+          "status": "frozen after C5",
+          "frozen_at_utc": "2026-10-20T02:22:31.726125+00:00",
+          "artifact_sha256": "e872e6acda5277919c0dd9c54020a69b1508ff8954b497751138c79eb2b3aa69",
+          "artifact_bytes": 50237,
+          "api": [
+            "getState",
+            "selectCase",
+            "setRole",
+            "checkSource",
+            "checkRecipient",
+            "generateDraft",
+            "editDraft",
+            "editRecipient",
+            "confirmRecipient",
+            "approve",
+            "exportApproved",
+            "simulateReturn",
+            "reopenReview",
+            "reset"
+          ],
+          "limitations": "A local fictional demonstration; AI generation, roles and delivery are simulated. Export is a functional TXT download. No backend, real records, authentication or sending. Browser-render QA was unavailable."
+        }
+      },
+      "raw_json": "{\n  \"prototype\": \"C · Practice Relay\",\n  \"artifact\": \"dist/C.html\",\n  \"project\": \"ReferralFlow AI · Dental Demand Labs · MENG570\",\n  \"authorship\": \"AI assistant → coding agent. No prompts are attributed to students.\",\n  \"prior_prototype_policy\": \"Built from a blank file. No prior HTML, prototype, site, or backup was opened or used.\",\n  \"exchanges\": [\n    {\n      \"id\": \"C1\",\n      \"received_at_utc\": \"2026-10-20T02:14:20Z\",\n      \"time_basis\": \"UTC tool timestamp at start of work; message transport did not expose a separate sent timestamp.\",\n      \"from\": \"AI assistant\",\n      \"to\": \"coding agent\",\n      \"prompt\": \"Build entirely NEW from blank standalone /workspace/scratch/511edc76527a/referralflow-fresh/dist/C.html. Do not read any prior html, prototypes, site or backup anywhere. User expressly forbids prior prototypes influencing build. Prompt C1 of five actual development exchanges: record exact prompt text/time/purpose/results in /workspace/scratch/511edc76527a/referralflow-fresh/logs/C.json, attributed AI assistant → coding agent (no invented student authorship). Product ReferralFlow AI, Dental Demand Labs MENG570. C persona Maya Chen clinical assistant/referral coordinator (hypothesis persona). Fixed concept existing specialist notes → draft report → specialist review/edit/confirm recipient/approve → export using existing practice channel. Design 'Practice Relay', polished work queue with indigo sidebar, pale cool background, compact case cards, three lanes 'Prepare / Specialist review / Ready to return'. Assistant selects fictional case, checks note exists and recipient, generates local deterministic sample draft and routes to specialist. Specialist preview lets edit/review/approve; assistant can export approved snapshot and simulate return. Role toggle explicitly demo, approval specialist-only. Include missing-note case blocked in Prepare, no invented clinical facts. Distinguish known source facts from missing fields. Need attractive usable UI with crisp spacing, badges, progress, meaningful detail panel, responsive. No real records or sending. Demo AI generation/roles/delivery simulated; edits, transitions/gates/snapshot export functional. Relative nav index.html A.html B.html C.html guide.html. Self-contained no dependencies/browser/deploy. Expose clean window.demo API for Node VM state testing. First full coherent flow & foundation then report API/wait next prompt.\",\n      \"purpose\": \"Create a new visual foundation and complete coordinator → specialist → coordinator workflow with source-note and approval gates.\",\n      \"result\": \"Created a self-contained C.html from blank. Indigo sidebar, three work lanes, fictional case cards, detail panel, responsive layout, role toggle, source and recipient checks, deterministic local draft, specialist editing and confirmation, approval snapshot, text export, simulated return, reset, activity trail, and navigation are implemented. Source notes and absent fields are explicitly distinguished. No external dependency, service, sending, or browser was used.\",\n      \"api\": \"window.demo: getState, selectCase, setRole, checkSource, checkRecipient, generateDraft, editDraft, confirmRecipient, approve, exportApproved, simulateReturn, reopenReview, reset\",\n      \"completed_at_utc\": \"2026-10-20T02:18:25Z\"\n    },\n    {\n      \"id\": \"C2\",\n      \"received_at_utc\": \"2026-10-20T02:19:04.279602+00:00\",\n      \"time_basis\": \"UTC work timestamp; message transport did not expose a separate sent timestamp.\",\n      \"from\": \"AI assistant\",\n      \"to\": \"coding agent\",\n      \"prompt\": \"C2 actual development prompt: Add a second fictional missing-note case that can be opened and inspected but cannot generate, route, approve, export, or simulate return. Show the exact next owner and reason in its detail panel. Keep existing supplied-note case completeable end-to-end with distinct assistant and specialist actions. Intended learning: can coordinator identify what is missing and who acts next? Log exact prompt/results in NEW C log. Complete after C1 core.\",\n      \"purpose\": \"Test whether the coordinator can identify the missing source note and the specialist who must supply it.\",\n      \"result\": \"Added inspectable RF-107 Taylor Jordan alongside RF-105 Sam Rivera, both permanently blocked in Prepare without source notes. Missing-note detail explicitly names the specialist as next owner, states that the source note was not supplied, and lists blocked downstream actions. The supplied-note flow remains completeable with distinct role gates.\",\n      \"completed_at_utc\": \"2026-10-20T02:19:04.279613+00:00\"\n    },\n    {\n      \"id\": \"C3\",\n      \"received_at_utc\": \"2026-10-20T02:21:23.535761+00:00\",\n      \"time_basis\": \"UTC work timestamp; message transport did not expose a separate sent timestamp.\",\n      \"from\": \"AI assistant\",\n      \"to\": \"coding agent\",\n      \"prompt\": \"C3 actual development prompt: Make approval create an immutable per-case snapshot bound to a revision. Any later draft or recipient edit must clear approval/export/return readiness and send the case back to specialist review. Export must use only the snapshot; missing-note or assistant actions must never approve via programmatic calls. Add clear stage-specific next-owner text and local event trail. Intended learning: can staff identify the correct next step and avoid returning an unreviewed revision? Log exact prompt/result and use meaningful API checks.\",\n      \"purpose\": \"Prevent an edited revision or changed recipient from inheriting an earlier approval; clarify ownership and audit sequence.\",\n      \"result\": \"Approval now freezes an internal per-case snapshot containing text, recipient, practice, revision, approver and time. Specialist edits to a draft or recipient from review, ready or returned increment revision and clear approval, export and simulated-return flags. Export reads only the snapshot. Added specialist recipient editing, explicit stage-specific next-owner guidance, and local events. Missing-source and role guards apply inside the API.\",\n      \"validation\": \"61 Node VM assertions passed for missing-note cases, role denials, prepare/review/approval/export/return, immutable returned state copies, snapshot-only export, post-return draft invalidation, recipient-change invalidation and reset.\",\n      \"completed_at_utc\": \"2026-10-20T02:21:23.535761+00:00\"\n    },\n    {\n      \"id\": \"C4\",\n      \"received_at_utc\": \"2026-10-20T02:21:23.535761+00:00\",\n      \"time_basis\": \"UTC work timestamp; message transport did not expose a separate sent timestamp.\",\n      \"from\": \"AI assistant\",\n      \"to\": \"coding agent\",\n      \"prompt\": \"C4 actual development prompt: Make the board usable without dragging or presenter guidance. Add accessible explicit buttons for every allowed next step, keyboard-focus styles, live status announcements, meaningful empty/blocked explanations, responsive detail panel and lane layout. Keep preparation and review controls role-specific with no hidden routes around approval. Add real approved TXT export and clearly label simulated return after export. Intended learning: can staff complete the queue workflow with ordinary click/keyboard controls and explain readiness? Record prompt/results; check code for overflow risks.\",\n      \"purpose\": \"Support independent click and keyboard completion with readable stage feedback and accessible output controls.\",\n      \"result\": \"All workflow actions use native buttons, checkboxes and fields. Added focus-visible outlines, aria-pressed roles/cases, a role=status aria-live announcement, explanatory empty lanes and blocked cases, next-owner guidance, role-specific controls and a responsive detail arrangement. Approved TXT download uses Blob and download attribute. The return button is disabled until export and explicitly marked simulated. Added wrapping for long names, practices, notes and activity; min-width:0 and textarea max-width prevent flex/grid overflow.\",\n      \"validation\": \"Source and API review completed without browser-render QA. C5 continues the mobile readability pass and final regression.\",\n      \"completed_at_utc\": \"2026-10-20T02:21:23.535761+00:00\"\n    },\n    {\n      \"id\": \"C5\",\n      \"received_at_utc\": \"2026-10-20T02:22:31.726125+00:00\",\n      \"time_basis\": \"UTC work timestamp; message transport did not expose a separate sent timestamp.\",\n      \"from\": \"AI assistant\",\n      \"to\": \"coding agent\",\n      \"prompt\": \"C5 actual development prompt: Final-verify assistant→specialist→approved export→simulated return, every edit invalidating snapshot, all wrong-role denials, and missing-note case denied from every action using actual window.demo API. Correct failures. Current mobile CSS shrinks key card text to 7–10px: replace this with a readable stacked or horizontally scrollable board/detail arrangement, ≥12px key labels and 14–16px inputs, generous touch targets. Add compact collapsible hypothesis/tradeoff block and direct correct nav links. Log exact prompt/results; no browser-render QA is available. Freeze C.html/log after completion and report API.\",\n      \"purpose\": \"Verify the full guarded flow and make mobile use legible while stating the design hypothesis and tradeoff.\",\n      \"result\": \"Replaced mobile compressed lanes with horizontal snap-scrolling 238px lanes and a full-width detail panel. Key mobile labels are at least 12px, primary fields and report text are 16px, workflow buttons have 48px minimum height, role buttons 40px, and checkbox rows 44px. Added collapsible hypothesis/tradeoff context with Maya Chen explicitly labelled a hypothesis persona. Relative navigation links point directly to index.html, A.html, B.html, C.html and guide.html. Corrected neutral report heading so approved TXT never contains a contradictory DRAFT marker. Missing-source recipient preparation is now denied in the API; returned reports expose reopening in the specialist UI.\",\n      \"validation\": {\n        \"method\": \"Actual window.demo API evaluated in Node VM from the new C.html scripts; source review for layout and dependencies.\",\n        \"assertions_passed\": 198,\n        \"coverage\": [\n          \"Both missing-note cases denied every preparation/report action in both roles with no state mutation\",\n          \"Complete assistant checks → generate → specialist edit/confirm/approve → assistant TXT export → simulated return\",\n          \"All wrong-role denials\",\n          \"Post-approval and post-return draft and recipient edits clear snapshot/export/return/confirmation, increment revision, and return to review\",\n          \"Snapshot independence from returned state copies and snapshot-only export content\",\n          \"Empty report approval denied, reset, invalid role/case denied\",\n          \"Direct correct navigation, horizontal mobile lanes, 16px mobile report text, no external assets or scripts\"\n        ],\n        \"browser_render_qa\": \"Unavailable as instructed; no browser was used.\"\n      },\n      \"completed_at_utc\": \"2026-10-20T02:22:31.726125+00:00\"\n    }\n  ],\n  \"final\": {\n    \"status\": \"frozen after C5\",\n    \"frozen_at_utc\": \"2026-10-20T02:22:31.726125+00:00\",\n    \"artifact_sha256\": \"e872e6acda5277919c0dd9c54020a69b1508ff8954b497751138c79eb2b3aa69\",\n    \"artifact_bytes\": 50237,\n    \"api\": [\n      \"getState\",\n      \"selectCase\",\n      \"setRole\",\n      \"checkSource\",\n      \"checkRecipient\",\n      \"generateDraft\",\n      \"editDraft\",\n      \"editRecipient\",\n      \"confirmRecipient\",\n      \"approve\",\n      \"exportApproved\",\n      \"simulateReturn\",\n      \"reopenReview\",\n      \"reset\"\n    ],\n    \"limitations\": \"A local fictional demonstration; AI generation, roles and delivery are simulated. Export is a functional TXT download. No backend, real records, authentication or sending. Browser-render QA was unavailable.\"\n  }\n}\n"
+    }
+  ],
+  "current_revisions": [
+    {
+      "prototype_key": "A",
+      "prototype_name": "Letter Studio",
+      "phase": "current_revision",
+      "source_file": "logs/update-A.json",
+      "source_sha256": "7884f555d42256b476061d342d5b30483727dde45bc4aad638e2d91f524be35d",
+      "source_bytes": 4698,
+      "exchange_count": 1,
+      "display_exchanges": [
+        {
+          "display_label": "A-update-1",
+          "display_label_basis": "exchange",
+          "source_entry": 1,
+          "timestamp": "2026-10-20T07:15:39.014126+00:00",
+          "timestamp_source_field": "timestamp_utc",
+          "time_basis": null,
+          "from": "AI assistant",
+          "to": "coding agent",
+          "provenance": "AI assistant → coding agent",
+          "purpose": "Improve the existing document-first specialist prototype within the shared notes-to-approved-report workflow.",
+          "exact_prompt": "Implement bounded page A only in live checkout /workspace/scratch/905a0515b0da/referralflow-lab/dist/A.html. Root owns other files/publication. Preserve test API window.demo. Read existing page then fix audited recipient carryover, add actual source-linked review aids (click supplied Assessment/Treatment/Follow-up to focus/highlight source; no semantic accuracy claims), improve concise first-use task guidance and keyboard/mobile readability, add Reset demo. Preserve approval invalidation/frozen exports, missing info gate, no real send or AI. Normalize brand RF navy/blue. MAIN CASE identical across A/B/C: fictional patient Alex Morgan, DOB12 March1984, visit20October2026, caseRF-1042; specialistDr.Arjun Patel; GPDr.Elena Ruiz; Cedar Grove Dental; referrals@cedargrove.example. Referral periodontal assessment; Assessment 'Localized gum inflammation was recorded around tooth #19.'; Treatment 'Periodontal assessment completed. Findings were discussed with the patient.'; Follow-up 'Specialist review in six weeks.'; Requested action 'Please share the prior radiograph before the follow-up visit.'; Unresolved 'The earlier radiograph was not included.' Retain incomplete case Sofia Bennett with missingfollow-up (same variant available in B/C as applicable). A guided task: review source, create/reportedit, confirmrecipient, approve/export. All modelgeneration localdeterministic and simulationclearlyshortlabel. Keep name Letter Studio, specialistpersona. Add responsive unintrusive headerlink to evidence.html. No fabricated value/usageclaims. Log this actual instruction plus implementation outcome to logs/update-A.json with author AI assistant→coding agent,date and scope (preserveprior5logsinA.json). Do NOT run browser, startserver, installbrowser, publish, or edit QA/rootguide. Return own codevalidation and main changes. Need robust polished productpage, avoid giant academicdisclaimers.",
+          "recorded_outcome": "Implemented the shared Alex Morgan case; retained Sofia Bennett missing-follow-up scenario; cleared case and recipient state to prevent recipient carryover; added source section buttons selecting exact supplied Assessment/Treatment/Follow-up ranges with focus, visual emphasis and live text; surfaced recorded source gaps separately from absent fields and required acknowledgement; preserved approval invalidation, immutable snapshots and escaped TXT/HTML exports; added a real Reset demo action, concise task guidance, keyboard skip link, evidence link, larger mobile controls and consistent RF navy/blue branding.",
+          "outcome_source_field": "result",
+          "recorded_validation": {
+            "assertions": 50,
+            "failures": 0,
+            "method": "Own Node VM execution with explicit DOM stubs and actual updated window.demo functions; static HTML checks. No browser rendering or visual verification.",
+            "coverage": [
+              "Exact shared case and recorded radiograph gap",
+              "Assessment/Treatment/Follow-up source selection and focus, missing-section feedback, CRLF span correctness",
+              "Recipient fields and salutation cannot inherit from the preceding case",
+              "Missing destination prevents approval",
+              "Recorded gap and absent follow-up require explicit acknowledgement",
+              "Letter, source and recipient changes invalidate approval",
+              "Earlier exports and internal approved snapshots remain frozen",
+              "HTML export escapes edited text",
+              "Reset button clears source, draft, recipient and approval and restores task focus",
+              "No external script, network API or sending code added"
+            ]
+          }
+        }
+      ],
+      "raw_record": {
+        "prototype": "A · Letter Studio",
+        "attribution": "AI assistant → coding agent",
+        "author": "AI assistant → coding agent",
+        "timestamp_utc": "2026-10-20T07:15:39.014126+00:00",
+        "scope": {
+          "modified": ["dist/A.html"],
+          "new_log": "logs/update-A.json",
+          "original_prompt_history": "logs/A.json preserved unchanged",
+          "execution": "Local source edit and bounded Node VM verification only; no browser, server, installation, publishing, or external sending"
+        },
+        "exchanges": [
+          {
+            "exchange": "A-update-1",
+            "from": "AI assistant",
+            "to": "coding agent",
+            "prompt": "Implement bounded page A only in live checkout /workspace/scratch/905a0515b0da/referralflow-lab/dist/A.html. Root owns other files/publication. Preserve test API window.demo. Read existing page then fix audited recipient carryover, add actual source-linked review aids (click supplied Assessment/Treatment/Follow-up to focus/highlight source; no semantic accuracy claims), improve concise first-use task guidance and keyboard/mobile readability, add Reset demo. Preserve approval invalidation/frozen exports, missing info gate, no real send or AI. Normalize brand RF navy/blue. MAIN CASE identical across A/B/C: fictional patient Alex Morgan, DOB12 March1984, visit20October2026, caseRF-1042; specialistDr.Arjun Patel; GPDr.Elena Ruiz; Cedar Grove Dental; referrals@cedargrove.example. Referral periodontal assessment; Assessment 'Localized gum inflammation was recorded around tooth #19.'; Treatment 'Periodontal assessment completed. Findings were discussed with the patient.'; Follow-up 'Specialist review in six weeks.'; Requested action 'Please share the prior radiograph before the follow-up visit.'; Unresolved 'The earlier radiograph was not included.' Retain incomplete case Sofia Bennett with missingfollow-up (same variant available in B/C as applicable). A guided task: review source, create/reportedit, confirmrecipient, approve/export. All modelgeneration localdeterministic and simulationclearlyshortlabel. Keep name Letter Studio, specialistpersona. Add responsive unintrusive headerlink to evidence.html. No fabricated value/usageclaims. Log this actual instruction plus implementation outcome to logs/update-A.json with author AI assistant→coding agent,date and scope (preserveprior5logsinA.json). Do NOT run browser, startserver, installbrowser, publish, or edit QA/rootguide. Return own codevalidation and main changes. Need robust polished productpage, avoid giant academicdisclaimers.",
+            "purpose": "Improve the existing document-first specialist prototype within the shared notes-to-approved-report workflow.",
+            "result": "Implemented the shared Alex Morgan case; retained Sofia Bennett missing-follow-up scenario; cleared case and recipient state to prevent recipient carryover; added source section buttons selecting exact supplied Assessment/Treatment/Follow-up ranges with focus, visual emphasis and live text; surfaced recorded source gaps separately from absent fields and required acknowledgement; preserved approval invalidation, immutable snapshots and escaped TXT/HTML exports; added a real Reset demo action, concise task guidance, keyboard skip link, evidence link, larger mobile controls and consistent RF navy/blue branding."
+          }
+        ],
+        "validation": {
+          "assertions": 50,
+          "failures": 0,
+          "method": "Own Node VM execution with explicit DOM stubs and actual updated window.demo functions; static HTML checks. No browser rendering or visual verification.",
+          "coverage": [
+            "Exact shared case and recorded radiograph gap",
+            "Assessment/Treatment/Follow-up source selection and focus, missing-section feedback, CRLF span correctness",
+            "Recipient fields and salutation cannot inherit from the preceding case",
+            "Missing destination prevents approval",
+            "Recorded gap and absent follow-up require explicit acknowledgement",
+            "Letter, source and recipient changes invalidate approval",
+            "Earlier exports and internal approved snapshots remain frozen",
+            "HTML export escapes edited text",
+            "Reset button clears source, draft, recipient and approval and restores task focus",
+            "No external script, network API or sending code added"
+          ]
+        },
+        "files": {
+          "dist/A.html": {
+            "sha256": "ce4afc076a6e542b9774c94f30b8592b880f30166bf0d79fde1c72a371a13f55"
+          }
+        },
+        "limitations": [
+          "AI drafting remains a local deterministic demonstration.",
+          "Source links locate labeled note text and do not validate clinical accuracy.",
+          "Roles, approval identity and delivery remain simulated.",
+          "Root is responsible for browser QA and publication."
+        ]
+      },
+      "raw_json": "{\n  \"prototype\": \"A · Letter Studio\",\n  \"attribution\": \"AI assistant → coding agent\",\n  \"author\": \"AI assistant → coding agent\",\n  \"timestamp_utc\": \"2026-10-20T07:15:39.014126+00:00\",\n  \"scope\": {\n    \"modified\": [\n      \"dist/A.html\"\n    ],\n    \"new_log\": \"logs/update-A.json\",\n    \"original_prompt_history\": \"logs/A.json preserved unchanged\",\n    \"execution\": \"Local source edit and bounded Node VM verification only; no browser, server, installation, publishing, or external sending\"\n  },\n  \"exchanges\": [\n    {\n      \"exchange\": \"A-update-1\",\n      \"from\": \"AI assistant\",\n      \"to\": \"coding agent\",\n      \"prompt\": \"Implement bounded page A only in live checkout /workspace/scratch/905a0515b0da/referralflow-lab/dist/A.html. Root owns other files/publication. Preserve test API window.demo. Read existing page then fix audited recipient carryover, add actual source-linked review aids (click supplied Assessment/Treatment/Follow-up to focus/highlight source; no semantic accuracy claims), improve concise first-use task guidance and keyboard/mobile readability, add Reset demo. Preserve approval invalidation/frozen exports, missing info gate, no real send or AI. Normalize brand RF navy/blue. MAIN CASE identical across A/B/C: fictional patient Alex Morgan, DOB12 March1984, visit20October2026, caseRF-1042; specialistDr.Arjun Patel; GPDr.Elena Ruiz; Cedar Grove Dental; referrals@cedargrove.example. Referral periodontal assessment; Assessment 'Localized gum inflammation was recorded around tooth #19.'; Treatment 'Periodontal assessment completed. Findings were discussed with the patient.'; Follow-up 'Specialist review in six weeks.'; Requested action 'Please share the prior radiograph before the follow-up visit.'; Unresolved 'The earlier radiograph was not included.' Retain incomplete case Sofia Bennett with missingfollow-up (same variant available in B/C as applicable). A guided task: review source, create/reportedit, confirmrecipient, approve/export. All modelgeneration localdeterministic and simulationclearlyshortlabel. Keep name Letter Studio, specialistpersona. Add responsive unintrusive headerlink to evidence.html. No fabricated value/usageclaims. Log this actual instruction plus implementation outcome to logs/update-A.json with author AI assistant→coding agent,date and scope (preserveprior5logsinA.json). Do NOT run browser, startserver, installbrowser, publish, or edit QA/rootguide. Return own codevalidation and main changes. Need robust polished productpage, avoid giant academicdisclaimers.\",\n      \"purpose\": \"Improve the existing document-first specialist prototype within the shared notes-to-approved-report workflow.\",\n      \"result\": \"Implemented the shared Alex Morgan case; retained Sofia Bennett missing-follow-up scenario; cleared case and recipient state to prevent recipient carryover; added source section buttons selecting exact supplied Assessment/Treatment/Follow-up ranges with focus, visual emphasis and live text; surfaced recorded source gaps separately from absent fields and required acknowledgement; preserved approval invalidation, immutable snapshots and escaped TXT/HTML exports; added a real Reset demo action, concise task guidance, keyboard skip link, evidence link, larger mobile controls and consistent RF navy/blue branding.\"\n    }\n  ],\n  \"validation\": {\n    \"assertions\": 50,\n    \"failures\": 0,\n    \"method\": \"Own Node VM execution with explicit DOM stubs and actual updated window.demo functions; static HTML checks. No browser rendering or visual verification.\",\n    \"coverage\": [\n      \"Exact shared case and recorded radiograph gap\",\n      \"Assessment/Treatment/Follow-up source selection and focus, missing-section feedback, CRLF span correctness\",\n      \"Recipient fields and salutation cannot inherit from the preceding case\",\n      \"Missing destination prevents approval\",\n      \"Recorded gap and absent follow-up require explicit acknowledgement\",\n      \"Letter, source and recipient changes invalidate approval\",\n      \"Earlier exports and internal approved snapshots remain frozen\",\n      \"HTML export escapes edited text\",\n      \"Reset button clears source, draft, recipient and approval and restores task focus\",\n      \"No external script, network API or sending code added\"\n    ]\n  },\n  \"files\": {\n    \"dist/A.html\": {\n      \"sha256\": \"ce4afc076a6e542b9774c94f30b8592b880f30166bf0d79fde1c72a371a13f55\"\n    }\n  },\n  \"limitations\": [\n    \"AI drafting remains a local deterministic demonstration.\",\n    \"Source links locate labeled note text and do not validate clinical accuracy.\",\n    \"Roles, approval identity and delivery remain simulated.\",\n    \"Root is responsible for browser QA and publication.\"\n  ]\n}\n"
+    },
+    {
+      "prototype_key": "B",
+      "prototype_name": "Referral Brief",
+      "phase": "current_revision",
+      "source_file": "logs/update-B.json",
+      "source_sha256": "93600e383fe0d42af3850cd951719f46cdeb3bae454de6859186b6a8990cddee",
+      "source_bytes": 4739,
+      "exchange_count": 1,
+      "display_exchanges": [
+        {
+          "display_label": "B6",
+          "display_label_basis": "id",
+          "source_entry": 1,
+          "timestamp": "2026-10-20 07:19:12 UTC",
+          "timestamp_source_field": "time",
+          "time_basis": null,
+          "from": "AI assistant",
+          "to": "coding agent",
+          "provenance": "AI assistant → coding agent",
+          "purpose": "Align the same fictional case across prototypes; add immediate seeded recipient sample and two review checks; preserve handed-off approved information during revisions.",
+          "exact_prompt": "Implement bounded pageB only at /workspace/scratch/905a0515b0da/referralflow-lab/dist/B.html and logs/update-B.json. Finishmemo thenproceedwithoutwaiting. Preservewindow.demo APIswherepossible. CurrentB ReferralBrief needs clinicianstructuredreview plus recipientactioncards withfullapprovedreport, export. MAIN CASE identical across A/B/C: fictionalAlex Morgan DOB12March1984 date20October2026 caseRF-1042; specialistDr.Arjun Patel; GPDr.Elena Ruiz Cedar Grove Dental referrals@cedargrove.example; Referralperiodontalassessment; Assessment 'Localized gum inflammation was recorded around tooth #19.'; Treatment 'Periodontal assessment completed. Findings were discussed with the patient.'; Follow-up 'Specialist review in six weeks.'; Requested action 'Please share the prior radiograph before the follow-up visit.'; Unresolved 'The earlier radiograph was not included.' Nextownerreferringpractice sendspriorradiograph, specialistreview6weeks (allsourcebacked). Simplefirst-use 'Open approved sample' givesexplicitlyseededfictional approvedsampletoGPso intelligiblewithoutcomplexprep; also'Prepare a brief' keepsdraftreviewapprove simulatedhandoffflow. This seededfixture must belabeledexample notactualuserapproval/send. Fixauditedsemantics: whenrevisiondraftstarts, previouslyhandedoffversionremainsreadable; newapprovedrevisionreplacesitonlyonexplicitnew simulatedhandoff, showearlierversion/currentrevisionstatuses accurately. NeverpublishunapproveddrafttoGP. Structuredfieldsfindings/treatment/action/owner/timing/unresolved andfullreportallapprovedfromsameversion. NoPDFattachmentsornewportal requirement;exportTXT. Approvalsrequireclinicianandrecipientchecks; modificationsinvalidatereview. ConsistentRFnavy/bluebrand, cleanresponsive/mobilereadability, keyboard/focus, resetdemo andevidence.html link. Noexternaldeps,no browser/server/publication. Old5promptsB.jsonpreserved; log thisactualprompt+outcome inupdate-B.jsonauthorAIassistant→codingagent. Noinventedcustomer/savings/clinicalclaims. ReturnnewAPIchangesforroottests. OwnBonly rootownsrest.",
+          "recorded_outcome": "Updated B.html only. The recipient view shows four cards and the exact approved report with TXT export. The shared case is Alex Morgan, RF-1042, with the specified source facts. Open approved sample creates explicitly labelled fictional seeded approval and handoff without marking the user's checks complete. Clinician review and recipient confirmation are separately required for every user approval. Edits and revisions invalidate current approval but retain the previously handed-off snapshot and its version-bound local response; a newer approval replaces it only after explicit simulated handoff. Follow-up timing and the legacy specialistNext field are synchronized. Added navy/blue branding, evidence link, keyboard tabs, mobile overrides, reset, local response export, and current-versus-recipient version notices. Passed 53 targeted Node VM API/markup assertions. No browser, server, publication, or live sending was performed. Original logs/B.json was not modified.",
+          "outcome_source_field": "result",
+          "recorded_validation": {
+            "passed": 53,
+            "mode": "Node VM executing actual window.demo API plus markup checks",
+            "visualQA": "Not performed; no browser was used."
+          }
+        }
+      ],
+      "raw_record": {
+        "prototype": "B · Referral Brief",
+        "product": "ReferralFlow AI",
+        "attribution": "AI assistant → coding agent",
+        "origin": "Actual follow-up development exchange. Original five exchanges in logs/B.json are preserved unchanged.",
+        "exchanges": [
+          {
+            "id": "B6",
+            "time": "2026-10-20 07:19:12 UTC",
+            "prompt": "Implement bounded pageB only at /workspace/scratch/905a0515b0da/referralflow-lab/dist/B.html and logs/update-B.json. Finishmemo thenproceedwithoutwaiting. Preservewindow.demo APIswherepossible. CurrentB ReferralBrief needs clinicianstructuredreview plus recipientactioncards withfullapprovedreport, export. MAIN CASE identical across A/B/C: fictionalAlex Morgan DOB12March1984 date20October2026 caseRF-1042; specialistDr.Arjun Patel; GPDr.Elena Ruiz Cedar Grove Dental referrals@cedargrove.example; Referralperiodontalassessment; Assessment 'Localized gum inflammation was recorded around tooth #19.'; Treatment 'Periodontal assessment completed. Findings were discussed with the patient.'; Follow-up 'Specialist review in six weeks.'; Requested action 'Please share the prior radiograph before the follow-up visit.'; Unresolved 'The earlier radiograph was not included.' Nextownerreferringpractice sendspriorradiograph, specialistreview6weeks (allsourcebacked). Simplefirst-use 'Open approved sample' givesexplicitlyseededfictional approvedsampletoGPso intelligiblewithoutcomplexprep; also'Prepare a brief' keepsdraftreviewapprove simulatedhandoffflow. This seededfixture must belabeledexample notactualuserapproval/send. Fixauditedsemantics: whenrevisiondraftstarts, previouslyhandedoffversionremainsreadable; newapprovedrevisionreplacesitonlyonexplicitnew simulatedhandoff, showearlierversion/currentrevisionstatuses accurately. NeverpublishunapproveddrafttoGP. Structuredfieldsfindings/treatment/action/owner/timing/unresolved andfullreportallapprovedfromsameversion. NoPDFattachmentsornewportal requirement;exportTXT. Approvalsrequireclinicianandrecipientchecks; modificationsinvalidatereview. ConsistentRFnavy/bluebrand, cleanresponsive/mobilereadability, keyboard/focus, resetdemo andevidence.html link. Noexternaldeps,no browser/server/publication. Old5promptsB.jsonpreserved; log thisactualprompt+outcome inupdate-B.jsonauthorAIassistant→codingagent. Noinventedcustomer/savings/clinicalclaims. ReturnnewAPIchangesforroottests. OwnBonly rootownsrest.",
+            "purpose": "Align the same fictional case across prototypes; add immediate seeded recipient sample and two review checks; preserve handed-off approved information during revisions.",
+            "result": "Updated B.html only. The recipient view shows four cards and the exact approved report with TXT export. The shared case is Alex Morgan, RF-1042, with the specified source facts. Open approved sample creates explicitly labelled fictional seeded approval and handoff without marking the user's checks complete. Clinician review and recipient confirmation are separately required for every user approval. Edits and revisions invalidate current approval but retain the previously handed-off snapshot and its version-bound local response; a newer approval replaces it only after explicit simulated handoff. Follow-up timing and the legacy specialistNext field are synchronized. Added navy/blue branding, evidence link, keyboard tabs, mobile overrides, reset, local response export, and current-versus-recipient version notices. Passed 53 targeted Node VM API/markup assertions. No browser, server, publication, or live sending was performed. Original logs/B.json was not modified.",
+            "validation": {
+              "passed": 53,
+              "mode": "Node VM executing actual window.demo API plus markup checks",
+              "visualQA": "Not performed; no browser was used."
+            },
+            "apiChanges": {
+              "new": [
+                "confirmReview(value)",
+                "openApprovedSample()",
+                "loadApprovedSample() alias",
+                "prepareBrief()",
+                "getApprovedReportText()",
+                "getDraftText()",
+                "exportText()",
+                "getCase()"
+              ],
+              "approval": "confirmReview(true) and confirmRecipient(true) are both mandatory before approve().",
+              "revision": "delivered stays readable during edits, unchecking, and revisions, and while a new approval awaits handoff; handoff() is the replacement boundary.",
+              "fields": "treatment added. specialistNext aliases timing and stays synchronized. imageStatus and planStatus removed because the shared source does not support the former deferred-plan scenario.",
+              "response": "schemaVersion 2.0; caseId RF-1042; followup records free text rather than fixed legacy scheduling labels; remains tied to delivered version."
+            }
+          }
+        ]
+      },
+      "raw_json": "{\n  \"prototype\": \"B · Referral Brief\",\n  \"product\": \"ReferralFlow AI\",\n  \"attribution\": \"AI assistant → coding agent\",\n  \"origin\": \"Actual follow-up development exchange. Original five exchanges in logs/B.json are preserved unchanged.\",\n  \"exchanges\": [\n    {\n      \"id\": \"B6\",\n      \"time\": \"2026-10-20 07:19:12 UTC\",\n      \"prompt\": \"Implement bounded pageB only at /workspace/scratch/905a0515b0da/referralflow-lab/dist/B.html and logs/update-B.json. Finishmemo thenproceedwithoutwaiting. Preservewindow.demo APIswherepossible. CurrentB ReferralBrief needs clinicianstructuredreview plus recipientactioncards withfullapprovedreport, export. MAIN CASE identical across A/B/C: fictionalAlex Morgan DOB12March1984 date20October2026 caseRF-1042; specialistDr.Arjun Patel; GPDr.Elena Ruiz Cedar Grove Dental referrals@cedargrove.example; Referralperiodontalassessment; Assessment 'Localized gum inflammation was recorded around tooth #19.'; Treatment 'Periodontal assessment completed. Findings were discussed with the patient.'; Follow-up 'Specialist review in six weeks.'; Requested action 'Please share the prior radiograph before the follow-up visit.'; Unresolved 'The earlier radiograph was not included.' Nextownerreferringpractice sendspriorradiograph, specialistreview6weeks (allsourcebacked). Simplefirst-use 'Open approved sample' givesexplicitlyseededfictional approvedsampletoGPso intelligiblewithoutcomplexprep; also'Prepare a brief' keepsdraftreviewapprove simulatedhandoffflow. This seededfixture must belabeledexample notactualuserapproval/send. Fixauditedsemantics: whenrevisiondraftstarts, previouslyhandedoffversionremainsreadable; newapprovedrevisionreplacesitonlyonexplicitnew simulatedhandoff, showearlierversion/currentrevisionstatuses accurately. NeverpublishunapproveddrafttoGP. Structuredfieldsfindings/treatment/action/owner/timing/unresolved andfullreportallapprovedfromsameversion. NoPDFattachmentsornewportal requirement;exportTXT. Approvalsrequireclinicianandrecipientchecks; modificationsinvalidatereview. ConsistentRFnavy/bluebrand, cleanresponsive/mobilereadability, keyboard/focus, resetdemo andevidence.html link. Noexternaldeps,no browser/server/publication. Old5promptsB.jsonpreserved; log thisactualprompt+outcome inupdate-B.jsonauthorAIassistant→codingagent. Noinventedcustomer/savings/clinicalclaims. ReturnnewAPIchangesforroottests. OwnBonly rootownsrest.\",\n      \"purpose\": \"Align the same fictional case across prototypes; add immediate seeded recipient sample and two review checks; preserve handed-off approved information during revisions.\",\n      \"result\": \"Updated B.html only. The recipient view shows four cards and the exact approved report with TXT export. The shared case is Alex Morgan, RF-1042, with the specified source facts. Open approved sample creates explicitly labelled fictional seeded approval and handoff without marking the user's checks complete. Clinician review and recipient confirmation are separately required for every user approval. Edits and revisions invalidate current approval but retain the previously handed-off snapshot and its version-bound local response; a newer approval replaces it only after explicit simulated handoff. Follow-up timing and the legacy specialistNext field are synchronized. Added navy/blue branding, evidence link, keyboard tabs, mobile overrides, reset, local response export, and current-versus-recipient version notices. Passed 53 targeted Node VM API/markup assertions. No browser, server, publication, or live sending was performed. Original logs/B.json was not modified.\",\n      \"validation\": {\n        \"passed\": 53,\n        \"mode\": \"Node VM executing actual window.demo API plus markup checks\",\n        \"visualQA\": \"Not performed; no browser was used.\"\n      },\n      \"apiChanges\": {\n        \"new\": [\n          \"confirmReview(value)\",\n          \"openApprovedSample()\",\n          \"loadApprovedSample() alias\",\n          \"prepareBrief()\",\n          \"getApprovedReportText()\",\n          \"getDraftText()\",\n          \"exportText()\",\n          \"getCase()\"\n        ],\n        \"approval\": \"confirmReview(true) and confirmRecipient(true) are both mandatory before approve().\",\n        \"revision\": \"delivered stays readable during edits, unchecking, and revisions, and while a new approval awaits handoff; handoff() is the replacement boundary.\",\n        \"fields\": \"treatment added. specialistNext aliases timing and stays synchronized. imageStatus and planStatus removed because the shared source does not support the former deferred-plan scenario.\",\n        \"response\": \"schemaVersion 2.0; caseId RF-1042; followup records free text rather than fixed legacy scheduling labels; remains tied to delivered version.\"\n      }\n    }\n  ]\n}\n"
+    },
+    {
+      "prototype_key": "C",
+      "prototype_name": "Practice Relay",
+      "phase": "current_revision",
+      "source_file": "logs/update-C.json",
+      "source_sha256": "69296435417c6b257a2f237cecaa5304d171b404ea85bc0968bc15aaac288dc9",
+      "source_bytes": 7733,
+      "exchange_count": 1,
+      "display_exchanges": [
+        {
+          "display_label": "C current update 1",
+          "display_label_basis": "generated display label, not a historical prompt ID",
+          "source_entry": 1,
+          "timestamp": "2026-10-20T07:12:31Z",
+          "timestamp_source_field": "source_review_recorded_at_utc",
+          "time_basis": "UTC clock reading during source review; message transport did not expose a separate prompt receipt timestamp.",
+          "from": "AI assistant",
+          "to": "coding agent",
+          "provenance": "AI assistant → coding agent. No prompts are attributed to students.",
+          "purpose": "Correct lost specialist edits during navigation, clarify ownership and local completion, and align the shared fictional case without changing the agreed product concept.",
+          "exact_prompt": "Implement bounded page C only in /workspace/scratch/905a0515b0da/referralflow-lab/dist/C.html. Root owns other files/publication. Preservewindow.demo API. Improve existing Practice Relay with autosave or guaranteed preserve specialist edits on case/role navigation (auditedbug unsavedtextarea disappears), separate completed/returned from ready counts, make next owner/state explicit; simpleteamqueue no sprawlingdashboard. Standard RF brandnavy/blue. MAIN CASE same across A/B/C: fictionalpatientAlex Morgan DOB12March1984 visit20October2026 caseRF-1042 (you mayretainAPIkeyRF-104 internally foroldtests); specialistDr.Arjun Patel; GPDr.Elena Ruiz Cedar Grove Dental referrals@cedargrove.example; Referralperiodontalassessment; Assessment 'Localized gum inflammation was recorded around tooth #19.'; Treatment 'Periodontal assessment completed. Findings were discussed with the patient.'; Follow-up 'Specialist review in six weeks.'; Requested action 'Please share the prior radiograph before the follow-up visit.'; Unresolved 'The earlier radiograph was not included.' Keep coordinatorMaya Chen (notpatient). Retain blockedmissing-note example and anotherreviewcase. Staffcannotapprove, requirecorrectspecialistcheck/currentrecipient; editinvalidatesapproval; frozenexports; exportandlocalmarkreturnDISTINCT (nothingreal sent). Add two-minute primarytask and resetdemo, keyboard/mobile polish, unintrusive evidence.html link. KeepHTMLselfcontained, noexternaldependencies, no browser/server/publication. Actualprompthistory old5 preserved; log thisnewinstruction+outcome to logs/update-C.json authorAIassistant→codingagent date. Readdocsourcefirst and checkspecificstatefailures; no inventedclinicalfacts/metrics. Finaltell rootAPIchanges/testingneeds and ownvalidation.",
+          "recorded_outcome": [
+            "Main displayed case is RF-1042, Alex Morgan, DOB 12 March 1984, visit 20 October 2026, specialist Dr. Arjun Patel, GP Dr. Elena Ruiz at Cedar Grove Dental, referrals@cedargrove.example. Clinical statements match the supplied prompt. RF-104 remains the internal API key and RF-1042 is also accepted for selection.",
+            "Specialist report input saves to local in-memory state without re-rendering the textarea. Case/role navigation and approval flush pending text and recipient edits. Invalid pending recipient fields remain visible and block navigation until corrected or explicitly reverted.",
+            "Completed cases have a separate local-completion count and section; ready contains only approved cases still awaiting local completion. Next owner and next action appear on cards and the selected case.",
+            "Specialist identity/content review and current-recipient confirmation are distinct revision-bound approval checks. Coordinator cannot approve; changing report or recipient clears checks, approval, export and completion state.",
+            "Exports use the immutable approved snapshot. TXT export and marking completion are distinct actions and explicitly do not send anything.",
+            "Retained both missing-note examples and the seeded additional review case. Added two-minute task, reset, navy/blue branding, readable responsive queue/detail controls, focus preservation, and evidence.html link."
+          ],
+          "outcome_source_field": "outcome",
+          "recorded_validation": {
+            "method": "Node VM execution of actual inline scripts, domain-state assertions, and a DOM stub that recreates input/textarea buffers on rendering. No browser or server.",
+            "assertions_passed": 183,
+            "initial_regression_groups_passed": 14,
+            "additional_checks": "Pending UI changes flushed before direct API approval; prior checks invalidated; renewed checks permit approval; focus-preservation hook present.",
+            "coverage": [
+              "Exact shared fixture and ID alias",
+              "Preparation and wrong-role gates",
+              "Both specialist/recipient checks bound to revision",
+              "All missing-source actions denied without case mutation",
+              "Frozen export, local completion and separate ready/completed counts",
+              "Caller copy cannot mutate approval",
+              "Draft and recipient changes invalidate approval/export/completion",
+              "Unsaved textarea preserved on both case and role navigation, including without input event",
+              "Autosave keeps textarea element intact",
+              "Pending recipient saved or invalid fields retained",
+              "UI check states and completed section rendering",
+              "Script parsing, no external resources, two-minute task/reset/evidence link"
+            ],
+            "not_claimed": [
+              "Browser rendering or actual mobile visual inspection",
+              "Real authentication",
+              "Real AI model generation",
+              "Email or GP delivery",
+              "Customer testing or validated value"
+            ],
+            "root_follow_up": "Run root integration tests with the new confirmSpecialist gate; browser-render QA only if root chooses/has authorized capability. evidence.html is a root-owned relative destination."
+          }
+        }
+      ],
+      "raw_record": {
+        "prototype": "C · Practice Relay",
+        "artifact": "dist/C.html",
+        "authorship": "AI assistant → coding agent. No prompts are attributed to students.",
+        "date": "2026-10-20",
+        "prompt": "Implement bounded page C only in /workspace/scratch/905a0515b0da/referralflow-lab/dist/C.html. Root owns other files/publication. Preservewindow.demo API. Improve existing Practice Relay with autosave or guaranteed preserve specialist edits on case/role navigation (auditedbug unsavedtextarea disappears), separate completed/returned from ready counts, make next owner/state explicit; simpleteamqueue no sprawlingdashboard. Standard RF brandnavy/blue. MAIN CASE same across A/B/C: fictionalpatientAlex Morgan DOB12March1984 visit20October2026 caseRF-1042 (you mayretainAPIkeyRF-104 internally foroldtests); specialistDr.Arjun Patel; GPDr.Elena Ruiz Cedar Grove Dental referrals@cedargrove.example; Referralperiodontalassessment; Assessment 'Localized gum inflammation was recorded around tooth #19.'; Treatment 'Periodontal assessment completed. Findings were discussed with the patient.'; Follow-up 'Specialist review in six weeks.'; Requested action 'Please share the prior radiograph before the follow-up visit.'; Unresolved 'The earlier radiograph was not included.' Keep coordinatorMaya Chen (notpatient). Retain blockedmissing-note example and anotherreviewcase. Staffcannotapprove, requirecorrectspecialistcheck/currentrecipient; editinvalidatesapproval; frozenexports; exportandlocalmarkreturnDISTINCT (nothingreal sent). Add two-minute primarytask and resetdemo, keyboard/mobile polish, unintrusive evidence.html link. KeepHTMLselfcontained, noexternaldependencies, no browser/server/publication. Actualprompthistory old5 preserved; log thisnewinstruction+outcome to logs/update-C.json authorAIassistant→codingagent date. Readdocsourcefirst and checkspecificstatefailures; no inventedclinicalfacts/metrics. Finaltell rootAPIchanges/testingneeds and ownvalidation.",
+        "from": "AI assistant",
+        "to": "coding agent",
+        "source_review_recorded_at_utc": "2026-10-20T07:12:31Z",
+        "time_basis": "UTC clock reading during source review; message transport did not expose a separate prompt receipt timestamp.",
+        "sources_read_before_editing": [
+          "dist/C.html",
+          "logs/C.json",
+          "qa/verify.mjs",
+          "qa/result.json",
+          "/workspace/scratch/905a0515b0da/audit_previous_site/START_HERE.md",
+          "/workspace/scratch/905a0515b0da/audit_previous_site/HANDOFF_CONTEXT.md",
+          "/workspace/scratch/905a0515b0da/prototype_market_evidence.md"
+        ],
+        "history_preservation": "Original logs/C.json and its five actual C1–C5 exchanges were not modified. This is a separate later update; the historical freeze/hash still describes that earlier version.",
+        "purpose": "Correct lost specialist edits during navigation, clarify ownership and local completion, and align the shared fictional case without changing the agreed product concept.",
+        "outcome": [
+          "Main displayed case is RF-1042, Alex Morgan, DOB 12 March 1984, visit 20 October 2026, specialist Dr. Arjun Patel, GP Dr. Elena Ruiz at Cedar Grove Dental, referrals@cedargrove.example. Clinical statements match the supplied prompt. RF-104 remains the internal API key and RF-1042 is also accepted for selection.",
+          "Specialist report input saves to local in-memory state without re-rendering the textarea. Case/role navigation and approval flush pending text and recipient edits. Invalid pending recipient fields remain visible and block navigation until corrected or explicitly reverted.",
+          "Completed cases have a separate local-completion count and section; ready contains only approved cases still awaiting local completion. Next owner and next action appear on cards and the selected case.",
+          "Specialist identity/content review and current-recipient confirmation are distinct revision-bound approval checks. Coordinator cannot approve; changing report or recipient clears checks, approval, export and completion state.",
+          "Exports use the immutable approved snapshot. TXT export and marking completion are distinct actions and explicitly do not send anything.",
+          "Retained both missing-note examples and the seeded additional review case. Added two-minute task, reset, navy/blue branding, readable responsive queue/detail controls, focus preservation, and evidence.html link."
+        ],
+        "api": {
+          "preserved_methods": [
+            "getState",
+            "selectCase",
+            "setRole",
+            "checkSource",
+            "checkRecipient",
+            "generateDraft",
+            "editDraft",
+            "editRecipient",
+            "confirmRecipient",
+            "approve",
+            "exportApproved",
+            "simulateReturn",
+            "reopenReview",
+            "reset"
+          ],
+          "added_methods": ["confirmSpecialist(checked)", "getCounts()"],
+          "compatible_extensions": [
+            "selectCase accepts RF-1042 as alias for RF-104",
+            "editDraft(text, options) accepts optional {render:false} for synchronous in-tab autosave",
+            "editRecipient(name, practice, email, options) adds optional destination and render options; old two-argument calls retain current destination"
+          ],
+          "approval_test_change": "Call confirmSpecialist(true) and confirmRecipient(true) after the last edit. Merely confirming the recipient now correctly fails approval.",
+          "state_additions": [
+            "displayId",
+            "dob on main case",
+            "specialist",
+            "recipientEmail",
+            "specialistReviewed",
+            "reviewConfirmedRevision",
+            "recipientConfirmedRevision"
+          ],
+          "snapshot_additions": [
+            "caseId",
+            "patient",
+            "dob",
+            "recipientEmail",
+            "approvedBy now named specialist"
+          ]
+        },
+        "validation": {
+          "method": "Node VM execution of actual inline scripts, domain-state assertions, and a DOM stub that recreates input/textarea buffers on rendering. No browser or server.",
+          "assertions_passed": 183,
+          "initial_regression_groups_passed": 14,
+          "additional_checks": "Pending UI changes flushed before direct API approval; prior checks invalidated; renewed checks permit approval; focus-preservation hook present.",
+          "coverage": [
+            "Exact shared fixture and ID alias",
+            "Preparation and wrong-role gates",
+            "Both specialist/recipient checks bound to revision",
+            "All missing-source actions denied without case mutation",
+            "Frozen export, local completion and separate ready/completed counts",
+            "Caller copy cannot mutate approval",
+            "Draft and recipient changes invalidate approval/export/completion",
+            "Unsaved textarea preserved on both case and role navigation, including without input event",
+            "Autosave keeps textarea element intact",
+            "Pending recipient saved or invalid fields retained",
+            "UI check states and completed section rendering",
+            "Script parsing, no external resources, two-minute task/reset/evidence link"
+          ],
+          "not_claimed": [
+            "Browser rendering or actual mobile visual inspection",
+            "Real authentication",
+            "Real AI model generation",
+            "Email or GP delivery",
+            "Customer testing or validated value"
+          ],
+          "root_follow_up": "Run root integration tests with the new confirmSpecialist gate; browser-render QA only if root chooses/has authorized capability. evidence.html is a root-owned relative destination."
+        },
+        "before_sha256": "e872e6acda5277919c0dd9c54020a69b1508ff8954b497751138c79eb2b3aa69",
+        "after_sha256": "12d20d853bce2e6b3326a0900c38754d1a65d18b09ce0b05e3292d65a60f8270",
+        "artifact_bytes": 64476,
+        "completed_at_utc": "2026-10-20T07:17:34.995281+00:00",
+        "scope": "Only dist/C.html and this new logs/update-C.json were written. No publication, browser, server, or modification to A/B/root-owned pages."
+      },
+      "raw_json": "{\n  \"prototype\": \"C · Practice Relay\",\n  \"artifact\": \"dist/C.html\",\n  \"authorship\": \"AI assistant → coding agent. No prompts are attributed to students.\",\n  \"date\": \"2026-10-20\",\n  \"prompt\": \"Implement bounded page C only in /workspace/scratch/905a0515b0da/referralflow-lab/dist/C.html. Root owns other files/publication. Preservewindow.demo API. Improve existing Practice Relay with autosave or guaranteed preserve specialist edits on case/role navigation (auditedbug unsavedtextarea disappears), separate completed/returned from ready counts, make next owner/state explicit; simpleteamqueue no sprawlingdashboard. Standard RF brandnavy/blue. MAIN CASE same across A/B/C: fictionalpatientAlex Morgan DOB12March1984 visit20October2026 caseRF-1042 (you mayretainAPIkeyRF-104 internally foroldtests); specialistDr.Arjun Patel; GPDr.Elena Ruiz Cedar Grove Dental referrals@cedargrove.example; Referralperiodontalassessment; Assessment 'Localized gum inflammation was recorded around tooth #19.'; Treatment 'Periodontal assessment completed. Findings were discussed with the patient.'; Follow-up 'Specialist review in six weeks.'; Requested action 'Please share the prior radiograph before the follow-up visit.'; Unresolved 'The earlier radiograph was not included.' Keep coordinatorMaya Chen (notpatient). Retain blockedmissing-note example and anotherreviewcase. Staffcannotapprove, requirecorrectspecialistcheck/currentrecipient; editinvalidatesapproval; frozenexports; exportandlocalmarkreturnDISTINCT (nothingreal sent). Add two-minute primarytask and resetdemo, keyboard/mobile polish, unintrusive evidence.html link. KeepHTMLselfcontained, noexternaldependencies, no browser/server/publication. Actualprompthistory old5 preserved; log thisnewinstruction+outcome to logs/update-C.json authorAIassistant→codingagent date. Readdocsourcefirst and checkspecificstatefailures; no inventedclinicalfacts/metrics. Finaltell rootAPIchanges/testingneeds and ownvalidation.\",\n  \"from\": \"AI assistant\",\n  \"to\": \"coding agent\",\n  \"source_review_recorded_at_utc\": \"2026-10-20T07:12:31Z\",\n  \"time_basis\": \"UTC clock reading during source review; message transport did not expose a separate prompt receipt timestamp.\",\n  \"sources_read_before_editing\": [\n    \"dist/C.html\",\n    \"logs/C.json\",\n    \"qa/verify.mjs\",\n    \"qa/result.json\",\n    \"/workspace/scratch/905a0515b0da/audit_previous_site/START_HERE.md\",\n    \"/workspace/scratch/905a0515b0da/audit_previous_site/HANDOFF_CONTEXT.md\",\n    \"/workspace/scratch/905a0515b0da/prototype_market_evidence.md\"\n  ],\n  \"history_preservation\": \"Original logs/C.json and its five actual C1–C5 exchanges were not modified. This is a separate later update; the historical freeze/hash still describes that earlier version.\",\n  \"purpose\": \"Correct lost specialist edits during navigation, clarify ownership and local completion, and align the shared fictional case without changing the agreed product concept.\",\n  \"outcome\": [\n    \"Main displayed case is RF-1042, Alex Morgan, DOB 12 March 1984, visit 20 October 2026, specialist Dr. Arjun Patel, GP Dr. Elena Ruiz at Cedar Grove Dental, referrals@cedargrove.example. Clinical statements match the supplied prompt. RF-104 remains the internal API key and RF-1042 is also accepted for selection.\",\n    \"Specialist report input saves to local in-memory state without re-rendering the textarea. Case/role navigation and approval flush pending text and recipient edits. Invalid pending recipient fields remain visible and block navigation until corrected or explicitly reverted.\",\n    \"Completed cases have a separate local-completion count and section; ready contains only approved cases still awaiting local completion. Next owner and next action appear on cards and the selected case.\",\n    \"Specialist identity/content review and current-recipient confirmation are distinct revision-bound approval checks. Coordinator cannot approve; changing report or recipient clears checks, approval, export and completion state.\",\n    \"Exports use the immutable approved snapshot. TXT export and marking completion are distinct actions and explicitly do not send anything.\",\n    \"Retained both missing-note examples and the seeded additional review case. Added two-minute task, reset, navy/blue branding, readable responsive queue/detail controls, focus preservation, and evidence.html link.\"\n  ],\n  \"api\": {\n    \"preserved_methods\": [\n      \"getState\",\n      \"selectCase\",\n      \"setRole\",\n      \"checkSource\",\n      \"checkRecipient\",\n      \"generateDraft\",\n      \"editDraft\",\n      \"editRecipient\",\n      \"confirmRecipient\",\n      \"approve\",\n      \"exportApproved\",\n      \"simulateReturn\",\n      \"reopenReview\",\n      \"reset\"\n    ],\n    \"added_methods\": [\n      \"confirmSpecialist(checked)\",\n      \"getCounts()\"\n    ],\n    \"compatible_extensions\": [\n      \"selectCase accepts RF-1042 as alias for RF-104\",\n      \"editDraft(text, options) accepts optional {render:false} for synchronous in-tab autosave\",\n      \"editRecipient(name, practice, email, options) adds optional destination and render options; old two-argument calls retain current destination\"\n    ],\n    \"approval_test_change\": \"Call confirmSpecialist(true) and confirmRecipient(true) after the last edit. Merely confirming the recipient now correctly fails approval.\",\n    \"state_additions\": [\n      \"displayId\",\n      \"dob on main case\",\n      \"specialist\",\n      \"recipientEmail\",\n      \"specialistReviewed\",\n      \"reviewConfirmedRevision\",\n      \"recipientConfirmedRevision\"\n    ],\n    \"snapshot_additions\": [\n      \"caseId\",\n      \"patient\",\n      \"dob\",\n      \"recipientEmail\",\n      \"approvedBy now named specialist\"\n    ]\n  },\n  \"validation\": {\n    \"method\": \"Node VM execution of actual inline scripts, domain-state assertions, and a DOM stub that recreates input/textarea buffers on rendering. No browser or server.\",\n    \"assertions_passed\": 183,\n    \"initial_regression_groups_passed\": 14,\n    \"additional_checks\": \"Pending UI changes flushed before direct API approval; prior checks invalidated; renewed checks permit approval; focus-preservation hook present.\",\n    \"coverage\": [\n      \"Exact shared fixture and ID alias\",\n      \"Preparation and wrong-role gates\",\n      \"Both specialist/recipient checks bound to revision\",\n      \"All missing-source actions denied without case mutation\",\n      \"Frozen export, local completion and separate ready/completed counts\",\n      \"Caller copy cannot mutate approval\",\n      \"Draft and recipient changes invalidate approval/export/completion\",\n      \"Unsaved textarea preserved on both case and role navigation, including without input event\",\n      \"Autosave keeps textarea element intact\",\n      \"Pending recipient saved or invalid fields retained\",\n      \"UI check states and completed section rendering\",\n      \"Script parsing, no external resources, two-minute task/reset/evidence link\"\n    ],\n    \"not_claimed\": [\n      \"Browser rendering or actual mobile visual inspection\",\n      \"Real authentication\",\n      \"Real AI model generation\",\n      \"Email or GP delivery\",\n      \"Customer testing or validated value\"\n    ],\n    \"root_follow_up\": \"Run root integration tests with the new confirmSpecialist gate; browser-render QA only if root chooses/has authorized capability. evidence.html is a root-owned relative destination.\"\n  },\n  \"before_sha256\": \"e872e6acda5277919c0dd9c54020a69b1508ff8954b497751138c79eb2b3aa69\",\n  \"after_sha256\": \"12d20d853bce2e6b3326a0900c38754d1a65d18b09ce0b05e3292d65a60f8270\",\n  \"artifact_bytes\": 64476,\n  \"completed_at_utc\": \"2026-10-20T07:17:34.995281+00:00\",\n  \"scope\": \"Only dist/C.html and this new logs/update-C.json were written. No publication, browser, server, or modification to A/B/root-owned pages.\"\n}\n"
+    }
+  ]
+}

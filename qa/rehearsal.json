@@ -1,5 +1,5 @@
 {
-  "timestamp": "2026-10-22T02:11:52.155Z",
+  "timestamp": "2026-10-25T23:25:15.712Z",
   "method": "Node VM state-transition tests with explicit DOM stubs; no browser rendering, human usability test, team rehearsal or real delivery verified",
   "label": "Two scripted API walkthroughs of all three prototypes",
   "humanOrTeamRehearsal": false,
@@ -48,7 +48,7 @@
             }
           ],
           "status": "passed",
-          "exportSha256": "5a21df5d997012a54c095f48fa2db34fe328d08c9f7bb5f689ce14ce14f2fb02"
+          "exportSha256": "638e75e64065ff85c6987b9394620e7749c2edd423a748dc71ade20fab0d6232"
         },
         {
           "prototype": "B",
@@ -138,7 +138,7 @@
             }
           ],
           "status": "passed",
-          "exportSha256": "d4917184b2ef9e4e3e38ba47b0193369eb0c036ea19b8ed72aa8d95836b78015"
+          "exportSha256": "d2f4b33171d246555cd3a9198422384dc27f8f9099ced06a70f04fd593eebc4e"
         }
       ]
     },
@@ -187,7 +187,7 @@
             }
           ],
           "status": "passed",
-          "exportSha256": "3dfd607295a8e175d96f68422b1d2ad00f494a2c042dcd7f2654f5e7acb78726"
+          "exportSha256": "453f4feb49dfb6405b50f160eb750f53997b2bbc9fb47d7bd2c5dd5f37a9ee64"
         },
         {
           "prototype": "B",
@@ -305,7 +305,7 @@
             }
           ],
           "status": "passed",
-          "exportSha256": "093097239a86612f93e59a87b21dd12d554cd3596c5197a0a665bbe2e60a5bf4"
+          "exportSha256": "05d589eea690152bf1a7f9eb3a444b44046568f359c28483ffd4ce2d3ddb1369"
         }
       ]
     }

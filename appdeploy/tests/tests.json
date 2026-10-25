@@ -1,0 +1,116 @@
+[
+  {
+    "name": "Prepare, review and export the fictional voice example",
+    "sanity": true,
+    "viewport": "desktop",
+    "covers": [
+      "A sample audio playback",
+      "A prepared fallback labelled simulation",
+      "consent guardrail",
+      "editable report generation",
+      "review and recipient gates",
+      "unresolved source acknowledgement",
+      "approved TXT/HTML export",
+      "source and recipient changes revoke approval"
+    ],
+    "description": "Verifies the reliable core demonstration with consent and approval controls.",
+    "steps": [
+      "Open the root Letter Studio page; recording and processing must be disabled without permission.",
+      "Load fictional visit, play audio, check permission and choose Use prepared example transcript.",
+      "Verify transcript, fields and letter show Alex Morgan, six weeks, and the missing radiograph. The status explicitly identifies a fixed prepared example.",
+      "Verify approval/export are blocked before review; acknowledge unresolved information and confirm complete review and recipient. Approve and export TXT and HTML.",
+      "Change the recipient or transcript; verify approval and export are blocked until preparation and checks are repeated."
+    ],
+    "expected": "Fictional audio and labelled prepared fields produce an editable letter; both export types unlock only for an approved current version, and edits revoke approval."
+  },
+  {
+    "name": "Transcribe audio and extract corrected transcript with AI",
+    "viewport": "desktop",
+    "covers": [
+      "POST /api/voice/analyze AI audio transcription",
+      "POST /api/voice/extract AI text extraction",
+      "editable transcript",
+      "case metadata",
+      "AI source quote validation",
+      "unknown information preserved"
+    ],
+    "description": "Verifies both AI endpoints through their useful rendered output.",
+    "steps": [
+      "Load fictional visit on the root page, confirm permission, then choose Prepare report from recording.",
+      "Wait for the AI response; verify a nonempty transcript of the visit, clinical fields and editable report. Verify six-week review and the radiograph request are preserved, without an invented appointment date.",
+      "Correct the transcript by adding Specialist: Please ask the referring practice to telephone our office. Then choose Prepare report from this transcript.",
+      "Verify the transcript preserves the correction and report fields reflect explicit source wording; no approval is automatically granted."
+    ],
+    "expected": "Both audio and text AI routes display useful source-grounded output, preserve unknowns and leave specialist approval outstanding."
+  },
+  {
+    "name": "Recover from voice AI failure on mobile and reset the case",
+    "viewport": "mobile",
+    "covers": [
+      "POST /api/voice/analyze failure and fallback",
+      "mobile recording controls",
+      "microphone permission or unsupported browser recovery",
+      "permission off stops capture",
+      "case reset clears voice state"
+    ],
+    "description": "Verifies the visible retry/fallback path and mobile case cleanup.",
+    "qa_faults": [
+      {
+        "method": "POST",
+        "path": "/api/voice/analyze",
+        "status": 502,
+        "body_json": {
+          "error": "simulated_ai_unavailable"
+        }
+      }
+    ],
+    "steps": [
+      "Open the root page on mobile; load the fictional visit and confirm permission. Try Record visit, then Stop if browser permission is available. If permission is unavailable, verify the message offers the sample path.",
+      "Reload the fictional visit, confirm permission and prepare the report from the recording.",
+      "Verify the AI error preserves audio and offers a prepared example; use that fallback and verify a draft appears.",
+      "Turn permission off and verify recording/processing are disabled. Reset demo and verify transcript, audio, case details, draft and approval are cleared."
+    ],
+    "expected": "All controls fit mobile; capture either works or explains recovery; an AI failure preserves the sample and permits a clearly labelled fallback; reset removes voice/case content."
+  },
+  {
+    "name": "Interpret an approved recipient brief and revise safely",
+    "viewport": "desktop",
+    "covers": [
+      "B draft fields",
+      "B specialist review and recipient checks",
+      "B simulated handoff",
+      "B recipient action owner timing",
+      "B full report and local observation",
+      "B revision invalidates approval"
+    ],
+    "description": "Verifies recipient comprehension and the approved-version boundary.",
+    "steps": [
+      "Navigate to B.html and open specialist review. Generate the sample draft.",
+      "Try approval without both checks and verify it is blocked; then confirm report review and recipient and approve this version.",
+      "Simulate the practice handoff. Identify Cedar Grove Dental as the office that shares the earlier radiograph before the specialist review in six weeks. Open the full approved report.",
+      "Return to specialist review and create a revision or edit a field; verify the new revision requires approval and cannot replace the already approved recipient version silently."
+    ],
+    "expected": "The approved recipient brief and full report agree on action, owner and timing; unapproved edits require new review."
+  },
+  {
+    "name": "Move a coordinator case through specialist approval and export",
+    "viewport": "desktop",
+    "covers": [
+      "C coordinator preparation",
+      "C specialist-only approval",
+      "C approved export and simulated return",
+      "C missing-source block",
+      "C role and case isolation",
+      "overview guide and prompt navigation"
+    ],
+    "description": "Verifies team handoff states and blocked preparation when the source is missing.",
+    "steps": [
+      "Navigate to C.html. As coordinator, select the case in Prepare, inspect existing notes, check source and proposed recipient, then prepare the draft.",
+      "Verify the coordinator cannot approve. Switch to specialist, inspect the draft, confirm clinical review and current recipient, and approve.",
+      "Switch back to coordinator, export the approved report, then simulate return. Verify the returned state.",
+      "Select the missing-note case and verify preparation and export remain blocked.",
+      "Open Overview, Guide and Prompt history; verify navigation to all prototypes and five attributed initial exchanges per prototype are accessible."
+    ],
+    "expected": "Only the specialist demo role approves; the coordinator exports the approved snapshot; missing notes and another case cannot reuse approval, and the support pages remain accessible."
+  }
+]

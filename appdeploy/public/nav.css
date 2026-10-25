@@ -1,0 +1,185 @@
+/* Shared site navigation: the Letter Studio icon rail on every page, plus footer link lists. */
+body {
+  padding-left: 76px;
+}
+.rf-rail {
+  position: fixed;
+  inset: 0 auto 0 0;
+  box-sizing: border-box;
+  width: 76px;
+  background: #10243d;
+  color: #a5b5ca;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  gap: 14px;
+  padding: 24px 12px;
+  z-index: 40;
+  font-family:
+    Inter,
+    -apple-system,
+    BlinkMacSystemFont,
+    'Segoe UI',
+    sans-serif;
+}
+.rf-rail a {
+  text-decoration: none;
+  -webkit-tap-highlight-color: transparent;
+}
+.rf-rail a:focus-visible {
+  outline: 3px solid #81aaff;
+  outline-offset: 3px;
+}
+.rf-rail-brand {
+  position: relative;
+  width: 43px;
+  height: 43px;
+  display: grid;
+  place-items: center;
+  flex-shrink: 0;
+  border-radius: 13px;
+  background: #fff;
+  color: #10243d;
+  font-size: 16px;
+  font-weight: 800;
+  letter-spacing: -1px;
+  margin-bottom: 31px;
+}
+.rf-rail-brand[aria-current='page'] {
+  box-shadow: 0 0 0 3px #2964cb;
+}
+.rf-rail-link {
+  position: relative;
+  width: 44px;
+  height: 44px;
+  flex-shrink: 0;
+  border-radius: 11px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #a5b5ca;
+}
+.rf-rail-link:hover {
+  background: #ffffff12;
+  color: #fff;
+}
+.rf-rail-link[aria-current='page'] {
+  background: #2964cb;
+  color: #fff;
+  box-shadow: 0 5px 15px #0002;
+}
+.rf-rail svg {
+  width: 20px;
+  height: 20px;
+  fill: none;
+  stroke: currentColor;
+  stroke-width: 1.75;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  flex-shrink: 0;
+}
+.rf-rail-bottom {
+  margin-top: auto;
+  writing-mode: vertical-rl;
+  letter-spacing: 1px;
+  font-size: 10px;
+  color: #7f94af;
+}
+/* Name tooltips: shown on hover and keyboard focus. */
+.rf-rail-brand::after,
+.rf-rail-link::after {
+  content: attr(data-label);
+  position: absolute;
+  left: calc(100% + 12px);
+  top: 50%;
+  transform: translateY(-50%);
+  background: #10243d;
+  color: #fff;
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 0;
+  line-height: 1;
+  white-space: nowrap;
+  padding: 8px 10px;
+  border-radius: 6px;
+  box-shadow: 0 6px 18px #0003;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.12s;
+}
+.rf-rail-brand:focus-visible::after,
+.rf-rail-link:focus-visible::after {
+  opacity: 1;
+}
+@media (hover: hover) {
+  .rf-rail-brand:hover::after,
+  .rf-rail-link:hover::after {
+    opacity: 1;
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .rf-rail-brand::after,
+  .rf-rail-link::after {
+    transition: none;
+  }
+}
+.rf-footer-nav {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px 18px;
+  margin-top: 10px;
+  font-size: 12px;
+}
+.rf-footer-nav a[aria-current='page'] {
+  font-weight: 700;
+  text-decoration: none;
+  color: inherit;
+}
+footer .rf-footer-nav {
+  flex-basis: 100%;
+}
+@media (max-width: 760px) {
+  body {
+    padding-left: 0;
+  }
+  .rf-rail {
+    position: relative;
+    width: 100%;
+    height: 60px;
+    padding: 8px 16px;
+    flex-direction: row;
+    justify-content: flex-start;
+    gap: 10px;
+  }
+  .rf-rail-brand {
+    width: 40px;
+    height: 40px;
+    margin: 0 10px 0 0;
+    font-size: 15px;
+  }
+  .rf-rail-bottom {
+    display: none;
+  }
+  .rf-rail-brand::after,
+  .rf-rail-link::after {
+    left: 50%;
+    top: calc(100% + 8px);
+    transform: translateX(-50%);
+  }
+  .rf-footer-nav {
+    gap: 0 16px;
+  }
+  .rf-footer-nav a {
+    min-height: 44px;
+    display: inline-flex;
+    align-items: center;
+  }
+}
+@media print {
+  body {
+    padding-left: 0;
+  }
+  .rf-rail {
+    display: none;
+  }
+}

@@ -1,0 +1,9 @@
+ReferralFlow AI — deployed source recovery
+
+Live version: https://referralflow-ai-voice-and-three-prototypes-zstv8f.v2.appdeploy.ai/
+Host: AppDeploy; app id referralflow-ai-voice-and-three-prototypes-zstv8f
+Source snapshot: 1792969136135
+
+This is the source for the hosted frontend+backend app. The host injects @appdeploy/client and @appdeploy/sdk. The backend implements audio transcription and quoted-field extraction. Binary sample audio is in public/resources. The original GitHub Pages repository was not updated because the connection could not access it. Use the published links for tonight’s submission.
+
+Prompt history remains attributed to its actual participants. Use fictional test data only. No production authentication, clinical validation, or message delivery is provided.

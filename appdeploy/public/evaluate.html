@@ -1,0 +1,414 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>Observe & compare | ReferralFlow</title>
+    <link rel="stylesheet" href="site.css" />
+    <link rel="stylesheet" href="nav.css" />
+  </head>
+  <body>
+    <a class="skip" href="#main">Skip to content</a>
+    <aside class="rf-rail" aria-label="Site navigation">
+      <a
+        class="rf-rail-brand"
+        href="overview.html"
+        aria-label="Overview"
+        data-label="Overview"
+        >RF</a
+      >
+      <a
+        class="rf-rail-link"
+        href="A.html"
+        aria-label="A · Letter Studio"
+        data-label="A · Letter Studio"
+        ><svg viewBox="0 0 24 24">
+          <path d="M7 3H4v18h16V7l-4-4H7Z" />
+          <path d="M15 3v5h5M8 12h8M8 16h6" /></svg
+      ></a>
+      <a
+        class="rf-rail-link"
+        href="B.html"
+        aria-label="B · Referral Brief"
+        data-label="B · Referral Brief"
+        ><svg viewBox="0 0 24 24">
+          <rect x="3" y="5" width="18" height="14" rx="2" />
+          <path d="m3 7 9 6 9-6" /></svg
+      ></a>
+      <a
+        class="rf-rail-link"
+        href="C.html"
+        aria-label="C · Practice Relay"
+        data-label="C · Practice Relay"
+        ><svg viewBox="0 0 24 24">
+          <rect x="3" y="4" width="5" height="16" rx="1" />
+          <rect x="10" y="4" width="5" height="10" rx="1" />
+          <rect x="17" y="4" width="4" height="13" rx="1" /></svg
+      ></a>
+      <a
+        class="rf-rail-link"
+        href="guide.html"
+        aria-label="Presentation guide"
+        data-label="Presentation guide"
+        ><svg viewBox="0 0 24 24">
+          <circle cx="12" cy="12" r="9" />
+          <path d="M9.5 9a2.5 2.5 0 1 1 4 2c-1 .7-1.5 1-1.5 3M12 17h.01" /></svg
+      ></a>
+      <div class="rf-rail-bottom">DENTAL DEMAND LABS</div>
+    </aside>
+    <header><a class="brand" href="overview.html">ReferralFlow</a></header>
+    <main id="main">
+      <div class="eyebrow">Blank observation record</div>
+      <h1>Observe the work.<br />Record the decision.</h1>
+      <p class="lede">
+        Capture actual behavior, the class vote and later buyer commitments.
+        Nothing is prefilled as a result.
+      </p>
+      <div class="notice">
+        Use participant codes and fictional cases. Rotate test order. A, B and C
+        test different tasks, so their total times should not be ranked as
+        equivalent. Compare each with the same role’s actual current workflow.
+        Local drafting and delivery are simulated.
+      </div>
+      <div class="grid">
+        <article class="card">
+          <h3>A · Letter Studio</h3>
+          <p>Create, check, edit, approve and export Alex’s report.</p>
+          <p class="small">
+            Observe source checks, help requests, missing information, wrong
+            recipient/version and correction effort.
+          </p>
+          <a href="A.html">Open A →</a>
+        </article>
+        <article class="card">
+          <h3>B · Referral Brief</h3>
+          <p>
+            Open the approved sample. State the next action, responsible office
+            and timing.
+          </p>
+          <p class="small">
+            Expected: referring practice supplies the prior radiograph before
+            specialist follow-up; six-week review; no calendar appointment
+            supplied.
+          </p>
+          <a href="B.html">Open B →</a>
+        </article>
+        <article class="card">
+          <h3>C · Practice Relay</h3>
+          <p>
+            Prepare, obtain specialist approval, export, then mark local
+            completion. Inspect a missing-note case.
+          </p>
+          <p class="small">
+            Observe ownership, routing, saved edits and whether incomplete work
+            stays blocked.
+          </p>
+          <a href="C.html">Open C →</a>
+        </article>
+      </div>
+      <form id="scorecard">
+        <section class="card">
+          <h2 style="margin-top: 0">Session context</h2>
+          <div class="grid">
+            <div>
+              <label for="participant">Participant / session code</label
+              ><input
+                id="participant"
+                name="participant"
+                placeholder="P01 or CLASS-01"
+                required
+              />
+            </div>
+            <div>
+              <label for="role">Participant role</label
+              ><select id="role" name="role">
+                <option value="">Choose role</option>
+                <option>Classmate</option>
+                <option>Specialist</option>
+                <option>Coordinator / assistant</option>
+                <option>Referring dentist</option>
+                <option>Class vote session</option>
+              </select>
+            </div>
+            <div>
+              <label for="order">Test order</label
+              ><select id="order" name="order">
+                <option>A–B–C</option>
+                <option>B–C–A</option>
+                <option>C–A–B</option>
+                <option>Other / partial</option>
+              </select>
+            </div>
+          </div>
+          <label for="baseline"
+            >Current workflow / software and task baseline</label
+          ><textarea
+            id="baseline"
+            name="baseline"
+            placeholder="What does this person currently do, and which task was actually observed? Leave blank if unknown."
+          ></textarea>
+        </section>
+        <div class="grid" id="observations"></div>
+        <section class="card">
+          <h2 style="margin-top: 0">Selection and class vote</h2>
+          <div class="grid">
+            <div>
+              <label for="voteA">Actual votes for A</label
+              ><input
+                type="number"
+                min="0"
+                step="1"
+                id="voteA"
+                name="voteA"
+                placeholder="Not recorded"
+              />
+            </div>
+            <div>
+              <label for="voteB">Actual votes for B</label
+              ><input
+                type="number"
+                min="0"
+                step="1"
+                id="voteB"
+                name="voteB"
+                placeholder="Not recorded"
+              />
+            </div>
+            <div>
+              <label for="voteC">Actual votes for C</label
+              ><input
+                type="number"
+                min="0"
+                step="1"
+                id="voteC"
+                name="voteC"
+                placeholder="Not recorded"
+              />
+            </div>
+          </div>
+          <label for="abstentions">Abstentions / no choice</label
+          ><input
+            type="number"
+            min="0"
+            step="1"
+            id="abstentions"
+            name="abstentions"
+            placeholder="Not recorded"
+          /><label for="choice">Actual class or team choice</label
+          ><select name="choice" id="choice">
+            <option value="">No vote recorded</option>
+            <option value="A">A · Letter Studio</option>
+            <option value="B">B · Referral Brief</option>
+            <option value="C">C · Practice Relay</option></select
+          ><label for="reason"
+            >Observed evidence, objections and planned changes</label
+          ><textarea
+            id="reason"
+            name="reason"
+            placeholder="Explain the choice after testing. Record any disagreement and the next test."
+          ></textarea>
+        </section>
+        <section class="card">
+          <details>
+            <summary>Optional later customer / commercial evidence</summary>
+            <p class="small">
+              Complete only after an actual buyer conversation or pilot. A class
+              preference does not fill these fields. Record no patient
+              information.
+            </p>
+            <div class="grid">
+              <div>
+                <label for="reportsMonth">Observed reports per month</label
+                ><input
+                  type="number"
+                  min="0"
+                  id="reportsMonth"
+                  name="reportsMonth"
+                  placeholder="Unknown"
+                />
+              </div>
+              <div>
+                <label for="monthlyPrice"
+                  >Recurring price actually offered</label
+                ><input
+                  type="number"
+                  min="0"
+                  step="0.01"
+                  id="monthlyPrice"
+                  name="monthlyPrice"
+                  placeholder="Not offered"
+                />
+              </div>
+              <div>
+                <label for="currency">Currency</label
+                ><input id="currency" name="currency" placeholder="e.g. USD" />
+              </div>
+            </div>
+            <label for="buyerRole"
+              >Who has buying authority? How was that confirmed?</label
+            ><input
+              id="buyerRole"
+              name="buyerRole"
+              placeholder="Not established"
+            /><label for="commitment"
+              >Strongest commitment actually observed</label
+            ><select id="commitment" name="commitment">
+              <option value="">No commercial evidence recorded</option>
+              <option>Liked the demonstration</option>
+              <option>Agreed to a next meeting</option>
+              <option>Accepted a stated pilot price; unpaid</option>
+              <option>Paid for a pilot</option>
+              <option>Repeated use observed after payment</option>
+              <option>Renewed at the stated price</option>
+              <option>Declined the offer</option>
+              <option>Stopped using / cancelled</option>
+            </select>
+            <div class="grid">
+              <div>
+                <label for="directCosts"
+                  >Measured direct cost per practice/month</label
+                ><input
+                  type="number"
+                  min="0"
+                  step="0.01"
+                  id="directCosts"
+                  name="directCosts"
+                  placeholder="Unknown"
+                />
+              </div>
+              <div>
+                <label for="supportMinutes"
+                  >Founder support minutes/practice/month</label
+                ><input
+                  type="number"
+                  min="0"
+                  id="supportMinutes"
+                  name="supportMinutes"
+                  placeholder="Unknown"
+                />
+              </div>
+              <div>
+                <label for="setupMinutes">One-time setup minutes/practice</label
+                ><input
+                  type="number"
+                  min="0"
+                  id="setupMinutes"
+                  name="setupMinutes"
+                  placeholder="Unknown"
+                />
+              </div>
+            </div>
+            <label for="commercialNotes"
+              >Evidence, dates, costs included and unresolved questions</label
+            ><textarea
+              id="commercialNotes"
+              name="commercialNotes"
+              placeholder="Document the source and period. Separate revenue, contribution and profit; include founder labor assumptions."
+            ></textarea>
+          </details>
+        </section>
+        <div class="row">
+          <button type="submit">Download observation record</button
+          ><button type="reset" class="secondary">Clear this form</button>
+        </div>
+        <p id="status" role="status" aria-live="polite" class="small"></p>
+      </form>
+      <p class="small">
+        Entries remain in this tab until reset or reload. Download JSON to
+        retain them. This form sends no data.
+      </p>
+    </main>
+    <footer>
+      Dental Demand Labs · ReferralFlow ·
+      <a href="guide.html">Decision and presentation guide</a>
+      <nav class="rf-footer-nav" aria-label="All pages">
+        <a href="overview.html">Overview</a
+        ><a href="A.html">A · Letter Studio</a
+        ><a href="B.html">B · Referral Brief</a
+        ><a href="C.html">C · Practice Relay</a><a href="guide.html">Guide</a
+        ><a href="evidence.html">Evidence</a
+        ><a href="evaluate.html" aria-current="page">Test record</a
+        ><a href="development-log.html">Prompt log</a>
+      </nav>
+    </footer>
+    <script>
+      'use strict';
+      document.getElementById('observations').innerHTML = ['A', 'B', 'C']
+        .map(
+          id =>
+            `<fieldset><legend>Prototype ${id}</legend><label for="outcome${id}">Outcome</label><select id="outcome${id}" name="outcome${id}"><option>Not tested</option><option>Completed without help</option><option>Completed with help</option><option>Could not complete</option></select><label for="time${id}">Observed task time (seconds)</label><input type="number" min="0" step="1" name="time${id}" id="time${id}" placeholder="Not recorded"><label for="baseline${id}">Same-task baseline time (seconds)</label><input type="number" min="0" step="1" name="baseline${id}" id="baseline${id}" placeholder="Not measured"><label for="errors${id}">Critical errors actually observed</label><input type="number" min="0" step="1" name="errors${id}" id="errors${id}" placeholder="Not assessed"><label for="notes${id}">Behavior, help requests and participant’s words</label><textarea name="notes${id}" id="notes${id}" placeholder="Record what happened. For B, capture the action, owner and timing answer."></textarea></fieldset>`
+        )
+        .join('');
+      function collect(data) {
+        const str = k => String(data.get(k) || '');
+        const num = k => {
+          const v = data.get(k);
+          if (v === null || v === undefined || String(v).trim() === '')
+            return null;
+          const n = Number(v);
+          return Number.isFinite(n) && n >= 0 ? n : null;
+        };
+        const out = {
+          schemaVersion: 3,
+          recordedAt: new Date().toISOString(),
+          participant: str('participant'),
+          role: str('role') || 'Not recorded',
+          order: str('order'),
+          fictionalCase: 'Alex Morgan / RF-1042',
+          baselineWorkflow: str('baseline'),
+          observations: {},
+          votes: {
+            A: num('voteA'),
+            B: num('voteB'),
+            C: num('voteC'),
+            abstentions: num('abstentions'),
+          },
+          selection: str('choice') || 'No vote recorded',
+          rationale: str('reason'),
+          commercial: {
+            reportsPerMonth: num('reportsMonth'),
+            offeredMonthlyPrice: num('monthlyPrice'),
+            currency: str('currency'),
+            buyerAuthorityEvidence: str('buyerRole'),
+            observedCommitment:
+              str('commitment') || 'No commercial evidence recorded',
+            directMonthlyCostPerPractice: num('directCosts'),
+            founderSupportMinutesPerPracticeMonth: num('supportMinutes'),
+            setupMinutesPerPractice: num('setupMinutes'),
+            notes: str('commercialNotes'),
+          },
+          limits:
+            'Prototype interaction only. AI generation, roles and delivery simulated. No customer value or willingness-to-pay evidence inferred from a class vote. Different tasks cannot be ranked by raw total time; compare the same role and task against an observed baseline.',
+        };
+        for (const id of ['A', 'B', 'C'])
+          out.observations[id] = {
+            seconds: num('time' + id),
+            baselineSeconds: num('baseline' + id),
+            criticalErrors: num('errors' + id),
+            outcome: str('outcome' + id) || 'Not tested',
+            notes: str('notes' + id),
+          };
+        return out;
+      }
+      document.getElementById('scorecard').addEventListener('submit', e => {
+        e.preventDefault();
+        const blob = new Blob(
+            [JSON.stringify(collect(new FormData(e.target)), null, 2)],
+            { type: 'application/json' }
+          ),
+          url = URL.createObjectURL(blob),
+          a = document.createElement('a');
+        a.href = url;
+        a.download = 'ReferralFlow_Observation_Record.json';
+        a.click();
+        setTimeout(() => URL.revokeObjectURL(url), 1000);
+        document.getElementById('status').textContent =
+          'Observation record downloaded. No data was transmitted.';
+      });
+      document.getElementById('scorecard').addEventListener('reset', () => {
+        document.getElementById('status').textContent = '';
+      });
+      window.scorecard = { collect };
+    </script>
+  </body>
+</html>

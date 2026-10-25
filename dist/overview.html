@@ -1,0 +1,497 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>ReferralFlow AI | Design Review</title>
+    <meta
+      name="description"
+      content="Explore three ReferralFlow AI interaction prototypes for Dental Demand Labs."
+    />
+    <style>
+      :root {
+        color-scheme: light;
+        --ink: #17253a;
+        --muted: #667085;
+        --blue: #365bdf;
+        --line: #e3e7ed;
+      }
+      * {
+        box-sizing: border-box;
+      }
+      body {
+        margin: 0;
+        font:
+          15px/1.6 system-ui,
+          -apple-system,
+          sans-serif;
+        color: var(--ink);
+        background: #f7f8fb;
+      }
+      a {
+        color: inherit;
+      }
+      header {
+        padding: 23px 5vw;
+        border-bottom: 1px solid var(--line);
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        background: white;
+      }
+      .brand {
+        display: flex;
+        align-items: center;
+        gap: 7px;
+        font-size: 20px;
+        letter-spacing: -0.8px;
+        font-weight: 750;
+      }
+      .brand span {
+        color: var(--blue);
+      }
+      .wrap {
+        max-width: 1280px;
+        margin: auto;
+        padding: 60px 36px;
+      }
+      .eyebrow {
+        color: var(--blue);
+        font-size: 11px;
+        letter-spacing: 1.8px;
+        font-weight: 750;
+        text-transform: uppercase;
+      }
+      h1 {
+        font-size: clamp(36px, 5vw, 65px);
+        letter-spacing: -2.8px;
+        line-height: 1.06;
+        margin: 18px 0 22px;
+        max-width: 850px;
+      }
+      h2 {
+        font-size: 23px;
+        letter-spacing: -0.6px;
+        line-height: 1.2;
+        margin: 10px 0 12px;
+      }
+      .intro {
+        font-size: 18px;
+        color: var(--muted);
+        max-width: 800px;
+      }
+      .meta {
+        display: flex;
+        gap: 15px;
+        align-items: center;
+        flex-wrap: wrap;
+        margin: 28px 0 42px;
+        font-size: 12px;
+        color: var(--muted);
+      }
+      .tag {
+        padding: 6px 10px;
+        border: 1px solid var(--line);
+        border-radius: 6px;
+        background: white;
+      }
+      .grid {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 20px;
+      }
+      .card {
+        border: 1px solid var(--line);
+        border-radius: 14px;
+        background: white;
+        overflow: hidden;
+        display: flex;
+        flex-direction: column;
+        box-shadow: 0 8px 30px #17253a05;
+      }
+      .visual {
+        height: 214px;
+        padding: 24px;
+        background: #eaf0fc;
+        border-bottom: 1px solid var(--line);
+        overflow: hidden;
+      }
+      .visual.b {
+        background: #f4ede4;
+      }
+      .visual.c {
+        background: #e7f1ee;
+      }
+      .miniapp {
+        height: 230px;
+        background: #fff;
+        border: 1px solid #d5dce7;
+        border-radius: 8px;
+        display: flex;
+        overflow: hidden;
+        box-shadow: 0 8px 30px #17253a12;
+      }
+      .minibar {
+        width: 34px;
+        background: #18243d;
+      }
+      .minibody {
+        padding: 16px;
+        width: 100%;
+      }
+      .minititle {
+        font-size: 10px;
+        font-weight: 750;
+        margin-bottom: 12px;
+      }
+      .miniline {
+        height: 4px;
+        margin: 9px 0;
+        background: #e2e7ef;
+        border-radius: 4px;
+        width: 90%;
+      }
+      .miniline.short {
+        width: 65%;
+      }
+      .minibtn {
+        font-size: 8px;
+        background: var(--blue);
+        color: white;
+        display: inline-block;
+        padding: 5px 10px;
+        border-radius: 4px;
+        margin-top: 12px;
+      }
+      .minirow {
+        display: flex;
+        gap: 7px;
+      }
+      .minibox {
+        border: 1px solid #e2e4df;
+        background: #fffdfa;
+        padding: 9px;
+        font-size: 8px;
+        flex: 1;
+        border-radius: 5px;
+        min-height: 52px;
+      }
+      .minilane {
+        flex: 1;
+        background: #f5f8f8;
+        padding: 7px;
+        border-radius: 5px;
+        font-size: 7px;
+      }
+      .minicard {
+        background: white;
+        padding: 9px 6px;
+        border: 1px solid #d8e4df;
+        border-radius: 5px;
+        margin-top: 9px;
+      }
+      .body {
+        padding: 25px;
+        display: flex;
+        flex-direction: column;
+        flex: 1;
+      }
+      .num {
+        font-size: 10px;
+        letter-spacing: 1.2px;
+        color: var(--muted);
+        text-transform: uppercase;
+        font-weight: 700;
+      }
+      .body p {
+        color: var(--muted);
+        margin: 0 0 20px;
+      }
+      .persona {
+        font-size: 12px;
+        border-top: 1px solid var(--line);
+        padding-top: 15px;
+        margin-top: auto;
+      }
+      .open {
+        margin-top: 20px;
+        text-decoration: none;
+        text-align: center;
+        background: var(--blue);
+        color: white;
+        border-radius: 6px;
+        padding: 12px;
+        font-size: 13px;
+        font-weight: 650;
+      }
+      .card:nth-child(2) .open {
+        background: #245fd2;
+      }
+      .card:nth-child(3) .open {
+        background: #245fd2;
+      }
+      .workflow {
+        margin: 45px 0 0;
+        padding: 26px 30px;
+        border: 1px solid var(--line);
+        background: white;
+        border-radius: 12px;
+      }
+      .workflow p {
+        color: var(--muted);
+        margin: 6px 0;
+      }
+      .workflow b {
+        color: var(--ink);
+      }
+      footer {
+        font-size: 12px;
+        color: var(--muted);
+        margin-top: 28px;
+        display: flex;
+        justify-content: space-between;
+        gap: 20px;
+        flex-wrap: wrap;
+      }
+      a:focus-visible {
+        outline: 3px solid #365bdf;
+        outline-offset: 5px;
+      }
+      @media (max-width: 850px) {
+        .grid {
+          grid-template-columns: 1fr;
+        }
+        .wrap {
+          padding: 35px 20px;
+        }
+        .visual {
+          height: 200px;
+        }
+        .intro {
+          font-size: 16px;
+        }
+        header {
+          padding: 19px;
+          flex-wrap: wrap;
+          gap: 12px;
+        }
+        h1 {
+          letter-spacing: -1.4px;
+        }
+        .workflow {
+          padding: 20px;
+        }
+      }
+    </style>
+    <link rel="stylesheet" href="nav.css" />
+  </head>
+  <body>
+    <aside class="rf-rail" aria-label="Site navigation">
+      <a
+        class="rf-rail-brand"
+        href="overview.html"
+        aria-label="Overview"
+        data-label="Overview"
+        aria-current="page"
+        >RF</a
+      >
+      <a
+        class="rf-rail-link"
+        href="A.html"
+        aria-label="A · Letter Studio"
+        data-label="A · Letter Studio"
+        ><svg viewBox="0 0 24 24">
+          <path d="M7 3H4v18h16V7l-4-4H7Z" />
+          <path d="M15 3v5h5M8 12h8M8 16h6" /></svg
+      ></a>
+      <a
+        class="rf-rail-link"
+        href="B.html"
+        aria-label="B · Referral Brief"
+        data-label="B · Referral Brief"
+        ><svg viewBox="0 0 24 24">
+          <rect x="3" y="5" width="18" height="14" rx="2" />
+          <path d="m3 7 9 6 9-6" /></svg
+      ></a>
+      <a
+        class="rf-rail-link"
+        href="C.html"
+        aria-label="C · Practice Relay"
+        data-label="C · Practice Relay"
+        ><svg viewBox="0 0 24 24">
+          <rect x="3" y="4" width="5" height="16" rx="1" />
+          <rect x="10" y="4" width="5" height="10" rx="1" />
+          <rect x="17" y="4" width="4" height="13" rx="1" /></svg
+      ></a>
+      <a
+        class="rf-rail-link"
+        href="guide.html"
+        aria-label="Presentation guide"
+        data-label="Presentation guide"
+        ><svg viewBox="0 0 24 24">
+          <circle cx="12" cy="12" r="9" />
+          <path d="M9.5 9a2.5 2.5 0 1 1 4 2c-1 .7-1.5 1-1.5 3M12 17h.01" /></svg
+      ></a>
+      <div class="rf-rail-bottom">DENTAL DEMAND LABS</div>
+    </aside>
+    <header>
+      <div class="brand">ReferralFlow <span>AI</span></div>
+    </header>
+    <main class="wrap">
+      <div class="eyebrow">Dental Demand Labs / MENG 570 / Week 9</div>
+      <h1>Finish the report.<br />Close the loop.</h1>
+      <p class="intro">
+        Three interactive approaches to turning a recorded visit or existing
+        specialist notes into a reviewed update for the referring dentist.
+        Choose a workspace and try the task.
+      </p>
+      <div class="meta">
+        <span class="tag">3 interactive alternatives</span
+        ><span class="tag">Shared fictional case: Alex Morgan</span
+        ><span>Choose a workspace to start the demo.</span>
+      </div>
+      <div class="grid">
+        <article class="card">
+          <div class="visual" aria-hidden="true">
+            <div class="miniapp">
+              <div class="minibar"></div>
+              <div class="minibody">
+                <div class="minititle">Letter Studio</div>
+                <div class="minirow">
+                  <div style="flex: 2">
+                    <div class="miniline short"></div>
+                    <div class="miniline"></div>
+                    <div class="miniline"></div>
+                    <div class="miniline short"></div>
+                    <div class="miniline"></div>
+                    <span class="minibtn">Approve letter</span>
+                  </div>
+                  <div class="minibox">
+                    SOURCE NOTE<br /><br />Findings<br /><br />Follow-up
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="body">
+            <div class="num">Prototype A / Document first</div>
+            <h2>Letter Studio</h2>
+            <p>
+              Open the hosted voice workspace, record a fictional visit, prepare draft fields with AI, and review
+              the letter with its source close by.
+            </p>
+            <div class="persona">
+              Dr. Arjun Patel<br /><b>Owner-periodontist</b>
+            </div>
+            <a class="open" href="https://referralflow-ai-voice-and-three-prototypes-zstv8f.v2.appdeploy.ai/">Open Letter Studio + live voice →</a>
+            <a href="A.html" style="margin-top:12px">Try the prepared voice example here →</a>
+          </div>
+        </article>
+        <article class="card">
+          <div class="visual b" aria-hidden="true">
+            <div class="miniapp">
+              <div class="minibody" style="background: #fffcf7">
+                <div class="minititle">Referral Brief</div>
+                <div class="minirow">
+                  <div class="minibox">
+                    YOUR NEXT ACTION<br /><br />Share earlier radiograph
+                  </div>
+                  <div class="minibox">
+                    SPECIALIST NEXT STEP<br /><br />Review image
+                  </div>
+                </div>
+                <div class="minibox" style="margin-top: 8px">
+                  FOLLOW-UP TIMING<br /><br />Not yet scheduled
+                </div>
+                <span class="minibtn" style="background: #245fd2"
+                  >Read approved report</span
+                >
+              </div>
+            </div>
+          </div>
+          <div class="body">
+            <div class="num">Prototype B / Recipient first</div>
+            <h2>Referral Brief</h2>
+            <p>
+              Turn an approved specialist report into a clear handoff: next
+              action, responsible office, and open questions.
+            </p>
+            <div class="persona">
+              Dr. Elena Ruiz<br /><b>Referring general dentist</b>
+            </div>
+            <a class="open" href="B.html">Open Referral Brief →</a>
+          </div>
+        </article>
+        <article class="card">
+          <div class="visual c" aria-hidden="true">
+            <div class="miniapp">
+              <div class="minibar" style="background: #26384a"></div>
+              <div class="minibody">
+                <div class="minititle">Practice Relay</div>
+                <div class="minirow">
+                  <div class="minilane">
+                    PREPARE
+                    <div class="minicard">Note missing<br />On hold</div>
+                  </div>
+                  <div class="minilane">
+                    REVIEW
+                    <div class="minicard">Draft report<br />Dr. Patel</div>
+                  </div>
+                  <div class="minilane">
+                    RETURN
+                    <div class="minicard">Approved<br />Export ready</div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="body">
+            <div class="num">Prototype C / Team first</div>
+            <h2>Practice Relay</h2>
+            <p>
+              Make preparation, specialist review, and approved return visible
+              across a small practice team.
+            </p>
+            <div class="persona">
+              Maya Chen<br /><b>Clinical assistant / referral coordinator</b>
+            </div>
+            <a class="open" href="C.html">Open Practice Relay →</a>
+          </div>
+        </article>
+      </div>
+      <div class="workflow">
+        <b>One shared case. Three ways to work.</b>
+        <p>
+          Consent-based recording or available specialist notes → transcript /
+          source → editable draft → specialist review and approval → approved
+          copy or export into the practice’s existing channel.
+        </p>
+        <p>
+          <b>Working:</b> Prototype A microphone recording, AI transcription and
+          field extraction, editing, review controls, state changes, approved
+          report export, and comparison records. <b>Simulated:</b> B/C draft
+          generation, identities, role changes, transmission, and receipts. A
+          labelled prepared voice example is available if AI fails. No real
+          patient information is used.
+        </p>
+      </div>
+      <footer>
+        <span
+          >Dental Demand Labs · Prototype testing · Customer value and
+          profitability remain unverified.</span
+        ><a href="guide.html"
+          >Read the requirements, hypotheses &amp; test plan →</a
+        >
+        <nav class="rf-footer-nav" aria-label="All pages">
+          <a href="overview.html" aria-current="page">Overview</a
+          ><a href="A.html">A · Letter Studio</a
+          ><a href="B.html">B · Referral Brief</a
+          ><a href="C.html">C · Practice Relay</a><a href="guide.html">Guide</a
+          ><a href="evidence.html">Evidence</a
+          ><a href="evaluate.html">Test record</a
+          ><a href="development-log.html">Prompt log</a>
+        </nav>
+      </footer>
+    </main>
+  </body>
+</html>

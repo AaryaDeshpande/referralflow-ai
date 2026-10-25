@@ -25,7 +25,7 @@ git switch -c your-name/short-change-description
 npm start
 ```
 
-Edit the relevant file, check it in a browser at desktop and phone widths, and run `npm test`. To share the change:
+Edit the source in `appdeploy/`, run `npm run sync:pages`, and check it in a browser at desktop and phone widths, and run `npm test`. To share the change:
 
 ```sh
 git add .
@@ -39,7 +39,7 @@ Open a pull request on GitHub. Write access permits direct pushes, but branches 
 
 - Keep specialist review and approval before any approved export.
 - Preserve unknown source information and fictional-data labels.
-- Retain the distinction between demonstrated local behavior and simulated AI/roles/delivery.
+- Retain the distinction between live hosted voice AI, the fixed Pages example, local note templates, and simulated roles/delivery.
 - Preserve an already delivered snapshot when editing a later draft, as the current design implements.
 - Check shared `dist/site.css` and `dist/nav.css` changes in A, B, C and the hub. The left rail markup is repeated in each page (and in `build-log.py` for the prompt log), so update every copy when adding a rail link.
 - Record new development prompts honestly. Do not fabricate customer findings or team rehearsals.

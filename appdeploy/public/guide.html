@@ -1,0 +1,172 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>ReferralFlow | Presentation guide</title>
+    <link rel="stylesheet" href="site.css" />
+    <style>
+      body {
+        max-width: 1000px;
+        margin: 40px auto;
+        padding: 0 24px;
+        color: #17253a;
+        font: 17px/1.65 system-ui;
+      }
+      nav {
+        display: flex;
+        gap: 20px;
+        flex-wrap: wrap;
+      }
+      h1 {
+        font-size: 42px;
+        line-height: 1.15;
+      }
+      h2 {
+        margin-top: 36px;
+      }
+      th,
+      td {
+        padding: 15px;
+        border-bottom: 1px solid #ddd;
+        text-align: left;
+        vertical-align: top;
+      }
+      table {
+        width: 100%;
+        border-collapse: collapse;
+      }
+      a {
+        color: #1647d8;
+      }
+      .notice {
+        padding: 20px;
+        background: #eaf0ff;
+      }
+    </style>
+  </head>
+  <body>
+    <nav>
+      <a href="overview.html">Overview</a
+      ><a href="A.html">A: Letter Studio + voice</a
+      ><a href="B.html">B: Referral Brief</a
+      ><a href="C.html">C: Practice Relay</a>
+    </nav>
+    <h1>Three hypotheses for closing the referral loop</h1>
+    <p>Dental Demand Labs · MENG 570 · October 25, 2026</p>
+    <h2>Problem and evolution</h2>
+    <p>
+      A specialist needs to return a useful report after treating a referred
+      patient. Our earlier discovery narrowed broad administrative work to
+      drafting, reviewing and returning that report. One periodontist interview
+      directly grounds the specialist task. Recipient and coordinator needs
+      remain hypotheses to test.
+    </p>
+    <h2>Shared approach, different questions</h2>
+    <table>
+      <tr>
+        <th>Prototype / persona</th>
+        <th>Hypothesis and test task</th>
+      </tr>
+      <tr>
+        <td>A · Dr. Arjun Patel, owner-periodontist</td>
+        <td>
+          Recording a consented fictional visit can reduce re-entry. A
+          transcript and source beside an editable letter may support accurate
+          review. Load the audio, confirm permission, prepare fields, check the
+          source, acknowledge the missing radiograph, confirm recipient and
+          approve.
+        </td>
+      </tr>
+      <tr>
+        <td>B · Dr. Elena Ruiz, referring dentist</td>
+        <td>
+          An approved brief organized around action, owner and timing may make
+          the handoff easier to interpret. Identify who shares the earlier
+          radiograph and when, then verify the full approved report.
+        </td>
+      </tr>
+      <tr>
+        <td>C · Maya Chen, assistant / coordinator</td>
+        <td>
+          Visible ownership and approval states may let a coordinator prepare
+          and return a report while retaining specialist approval. Move a case
+          from Prepare through specialist review to approved export; try a
+          missing-note case.
+        </td>
+      </tr>
+    </table>
+    <h2>Voice workflow</h2>
+    <p>
+      Permission → recording → AI transcript and quoted fields → editable letter
+      → specialist review and recipient confirmation → approved export.
+      Microphone capture and audio/text AI work in A. Case identifiers and
+      destination are supplied by the tester, never inferred from speech. Edit
+      the transcript to correct it, then prepare a new report. Changed content
+      clears approval. Unstated information remains visible.
+    </p>
+    <p>
+      The sample is a synthetic fictional conversation. The prepared-example
+      button is a clearly labelled fixed fallback; it does not call AI. Use
+      fictional test data only. A real recording or transcript is sent to the
+      hosted AI service when you request processing. This is a class prototype
+      with no production privacy or clinical validation.
+    </p>
+    <h2>Working and simulated</h2>
+    <p>
+      Working: recording, audio playback, AI transcription and field extraction
+      in A, editable drafts, review and recipient gates, approval invalidation,
+      TXT/HTML export, B/C state transitions and observation records. Simulated:
+      B/C sample drafting, demo role identities, practice handoff, transmission
+      and receipts. Export does not send an email.
+    </p>
+    <h2>Product decisions</h2>
+    <p>
+      We keep voice input in A so B and C can test recipient clarity and team
+      ownership. We retain clinician review, explicit unknowns, and the existing
+      authorized return channel. We defer practice-management integration,
+      autonomous sending, diagnosis and EHR replacement until need, reliability
+      and workflow value are tested.
+    </p>
+    <h2>Testing plan</h2>
+    <p>
+      Observe task completion, missed or invented facts, help required and
+      review time against the current workflow within each role. Use two
+      prototype cases, including incomplete information. Class preference is a
+      signal for the next customer test; it does not establish clinical
+      accuracy, willingness to pay or profitability. No customer outcomes or
+      class votes are claimed here.
+    </p>
+    <h2>Submission and rehearsal</h2>
+    <p>
+      Submit three clickable links, the presentation slides, the recorded
+      explanation/demo, and the attributed prompt log (five actual initial build
+      exchanges per prototype). The source log contains 18 preserved exchanges
+      total. Current implementation notes are separate from that historical
+      record. Do two actual team rehearsals and record timing/issues before
+      submission.
+    </p>
+    <p class="notice">
+      The package does not itself prove a team rehearsal, customer test or
+      Canvas submission. The team must complete those actions.
+    </p>
+    <nav>
+      <a href="development-log.html">Prompt history</a
+      ><a href="development-log.json" download>Prompt JSON</a
+      ><a href="evaluate.html">Observation form</a
+      ><a href="evidence.html">Earlier source record</a>
+    </nav>
+    <h2>Course sources</h2>
+    <p>
+      <a href="https://canvas.duke.edu/courses/83113/assignments/390657"
+        >Prototype assignment</a
+      >
+      ·
+      <a href="https://canvas.duke.edu/courses/83113/announcements/351318"
+        >October 23 clarification</a
+      >. October 15 and 22 Panopto captions informed the explanation of
+      hypotheses, distinct alternatives and concise demonstrations. The existing
+      demo was recorded by Jason Dorman before voice was added.
+    </p>
+  </body>
+</html>
